@@ -9,9 +9,9 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>SmartShelfService</module>
-        <module>InventoryService</module>
-        <module>CheckoutService</module>
+        <module>smart-shelf-service</module>
+        <module>inventory-service</module>
+        <module>checkout-service</module>
     </modules>
 
     <properties>
