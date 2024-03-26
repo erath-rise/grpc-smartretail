@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option java_multiple_files = false;
+option java_package = "com.smartretail";
+option java_outer_classname = "SmartShelfProto";
+
+package smartretail.smartshelf;
+
+service SmartShelfService {
+  rpc GetShelfInfo (GetShelfInfoRequest) returns (stream GetShelfInfoResponse) {}
+  rpc UpdateShelfInfo (UpdateShelfInfoRequest) returns (UpdateShelfInfoResponse) {}
+}
+
+message GetShelfInfoRequest {}
+
+message GetShelfInfoResponse {
+  string shelfId = 1;
+  string productId = 2;
+  int32 quantity = 3;
+}
+
+message UpdateShelfInfoRequest {
+  string shelfId = 1;
+  string productId = 2;
+  int32 quantity = 3;
+}
+
+message UpdateShelfInfoResponse {
+  bool success = 1;
+}
