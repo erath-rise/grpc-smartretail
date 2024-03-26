@@ -34,6 +34,6 @@ build/
 ### VS Code ###
 .vscode/
 
-### Mac OS ###
+###  ###
 .DS_Store
-/frontend/client-app-gui/
+frontend/client-app-gui/node_modules
