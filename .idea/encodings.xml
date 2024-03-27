@@ -5,12 +5,12 @@
     <file url="file://$PROJECT_DIR$/CheckoutService/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SmartShelfService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SmartShelfService/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/backend/checkout-service/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/backend/checkout-service/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/backend/inventory-service/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/backend/inventory-service/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/backend/smart-shelf-service/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/backend/smart-shelf-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/checkout-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/checkout-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/inventory-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/inventory-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smart-shelf-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smart-shelf-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>
