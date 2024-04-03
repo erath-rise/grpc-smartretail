@@ -47,7 +47,7 @@ public class RetailServer {
 
     private void registerToConsul() {
         System.out.println("Registering to Consul...");
-        ConsulClient client = new ConsulClient("localhost");
+        ConsulClient client = new ConsulClient("localhost", 8500);
         NewService newService = new NewService();
         newService.setId("retail-server");
         newService.setName("retail-server");
@@ -55,13 +55,11 @@ public class RetailServer {
         newService.setPort(8080);
         client.agentServiceRegister(newService);
         System.out.println("Register to Consul successfully");
-        newService.setCheck(new NewService.Check());
-        newService.getCheck().setGrpc("localhost:8080");
-        newService.getCheck().setInterval("10s");
+
         // health check
-//        newService.setCheck(new NewService.Check());
-//        newService.getCheck().setHttp("http://localhost:8080/health");
-//        newService.getCheck().setInterval("10s");
+        newService.setCheck(new NewService.Check());
+        newService.getCheck().setHttp("http://localhost:8080/health");
+        newService.getCheck().setInterval("10s");
 
         // Deregister service when server is stopped
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
