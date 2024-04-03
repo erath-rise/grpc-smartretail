@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_multiple_files = false;
+option java_outer_classname = "InventoryProto";
+
+service InventoryService {
+  rpc getInventory (InventoryRequest) returns (InventoryResponse) {}
+  rpc updateInventory (stream InventoryUpdate) returns (InventoryUpdateResponse) {}
+}
+
+message InventoryRequest {
+  string productId = 1;
+}
+
+message InventoryResponse {
+  int32 quantity = 1;
+}
+
+message InventoryUpdate {
+  string productId = 1;
+  int32 quantity = 2;
+}
+
+message InventoryUpdateResponse {
+  bool success = 1;
+}

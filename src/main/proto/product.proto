@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = false;
+option java_outer_classname = "ProductProto";
+
+service ProductService {
+  rpc getProduct (ProductRequest) returns (ProductResponse) {}
+}
+
+message ProductRequest {
+  string productId = 1;
+}
+
+message ProductResponse {
+  string productId = 1;
+  string name = 2;
+  string description = 3;
+  double price = 4;
+}
