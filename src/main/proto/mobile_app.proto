@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option java_multiple_files = false;
+option java_package = "com.smartretail";
+option java_outer_classname = "MobileAppProto";
+
+import "oven.proto";
+import "fridge.proto";
+
+service MobileAppService {
+  rpc GetOvenStatus(oven.OvenStatusRequest) returns (oven.OvenStatusResponse);
+  rpc ControlOven(oven.OvenControlRequest) returns (oven.OvenControlResponse);
+  rpc MonitorOven(oven.OvenMonitorRequest) returns (stream oven.OvenStatusResponse);
+
+  rpc GetFridgeStatus(fridge.FridgeStatusRequest) returns (fridge.FridgeStatusResponse);
+  rpc ControlFridge(fridge.ControlFridgeRequest) returns (fridge.ControlFridgeResponse);
+  rpc MonitorFridge(fridge.MonitorFridgeRequest) returns (stream fridge.FridgeStatusResponse);
+
+  rpc ReceiveNotification(NotificationRequest) returns (NotificationResponse);
+}
+
+message NotificationRequest {
+  string clientId = 1;
+}
+
+message NotificationResponse {
+  bool success = 1;
+  string message = 2;
+}
