@@ -1,5 +1,7 @@
 /Users/ideng/Documents/grpc-smartretail/grpc-smartretail/src/main/java/com/smartretail/com/smartretail/FridgeProto.java
 /Users/ideng/Documents/grpc-smartretail/grpc-smartretail/src/main/java/com/smartretail/com/smartretail/MobileAppProto.java
+/Users/ideng/Documents/grpc-smartretail/grpc-smartretail/src/main/java/com/smartretail/fridge/FridgeServer.java
+/Users/ideng/Documents/grpc-smartretail/grpc-smartretail/src/main/java/com/smartretail/fridge/FridgeServiceImpl.java
 /Users/ideng/Documents/grpc-smartretail/grpc-smartretail/src/main/java/com/smartretail/com/smartretail/MobileAppServiceGrpc.java
 /Users/ideng/Documents/grpc-smartretail/grpc-smartretail/src/main/java/com/smartretail/com/smartretail/FridgeServiceGrpc.java
 /Users/ideng/Documents/grpc-smartretail/grpc-smartretail/src/main/java/com/smartretail/com/smartretail/OvenServiceGrpc.java

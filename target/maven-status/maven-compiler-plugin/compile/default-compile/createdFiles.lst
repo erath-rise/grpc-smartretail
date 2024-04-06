@@ -1,8 +1,10 @@
 com/smartretail/OvenServiceGrpc$AsyncService.class
+com/smartretail/MobileAppProto$HealthCheckRequest$Builder.class
 com/smartretail/FridgeProto$FridgeStatusResponse$1.class
 com/smartretail/MobileAppServiceGrpc$MobileAppServiceBlockingStub.class
 com/smartretail/MobileAppProto$NotificationResponse.class
 com/smartretail/MobileAppServiceGrpc$MobileAppServiceFutureStub.class
+com/smartretail/MobileAppProto$HealthCheckResponseOrBuilder.class
 com/smartretail/OvenProto$OvenControlRequest$1.class
 com/smartretail/MobileAppProto$NotificationResponse$Builder.class
 com/smartretail/OvenServiceGrpc$2.class
@@ -26,6 +28,7 @@ com/smartretail/FridgeProto$FridgeStatusRequest.class
 com/smartretail/FridgeProto$FridgeStatusResponse.class
 com/smartretail/OvenProto$OvenControlRequest$Builder.class
 com/smartretail/OvenServiceGrpc$OvenServiceBlockingStub.class
+com/smartretail/MobileAppProto$HealthCheckResponse$1.class
 com/smartretail/FridgeProto$FridgeStatusResponse$Builder.class
 com/smartretail/FridgeProto$ControlFridgeRequest.class
 com/smartretail/FridgeProto$HealthCheckRequest$Builder.class
@@ -35,6 +38,7 @@ com/smartretail/FridgeProto$HealthCheckResponse$Builder.class
 com/smartretail/FridgeProto$HealthCheckRequest.class
 com/smartretail/FridgeProto$ControlFridgeRequestOrBuilder.class
 com/smartretail/FridgeServiceGrpc$FridgeServiceFutureStub.class
+com/smartretail/MobileAppProto$HealthCheckRequest.class
 com/smartretail/OvenProto$HealthCheckRequest$1.class
 com/smartretail/FridgeProto$HealthCheckResponse.class
 com/smartretail/OvenProto$HealthCheckResponse$Builder.class
@@ -45,6 +49,7 @@ com/smartretail/OvenProto$OvenStatusResponse$Builder.class
 com/smartretail/OvenProto$OvenStatusResponseOrBuilder.class
 com/smartretail/FridgeServiceGrpc.class
 com/smartretail/OvenProto$OvenStatusResponse$1.class
+com/smartretail/MobileAppProto$HealthCheckRequestOrBuilder.class
 com/smartretail/FridgeProto$ControlFridgeResponse$1.class
 com/smartretail/OvenProto$HealthCheckResponse.class
 com/smartretail/FridgeServiceGrpc$FridgeServiceBaseDescriptorSupplier.class
@@ -92,6 +97,7 @@ com/smartretail/FridgeProto$FridgeStatusRequest$Builder.class
 com/smartretail/FridgeProto$MonitorFridgeRequestOrBuilder.class
 com/smartretail/MobileAppServiceGrpc$AsyncService.class
 com/smartretail/MobileAppServiceGrpc$MobileAppServiceStub.class
+com/smartretail/MobileAppProto$HealthCheckResponse.class
 com/smartretail/FridgeProto$FridgeStatusRequest$1.class
 com/smartretail/MobileAppServiceGrpc$MethodHandlers.class
 com/smartretail/OvenProto$OvenStatusRequest.class
@@ -99,7 +105,9 @@ com/smartretail/OvenServiceGrpc$3.class
 com/smartretail/OvenProto$OvenStatusRequestOrBuilder.class
 com/smartretail/FridgeServiceGrpc$3.class
 com/smartretail/OvenProto$OvenControlResponseOrBuilder.class
+com/smartretail/MobileAppProto$HealthCheckRequest$1.class
 com/smartretail/MobileAppProto$NotificationResponseOrBuilder.class
+com/smartretail/MobileAppProto$HealthCheckResponse$Builder.class
 com/smartretail/FridgeServiceGrpc$FridgeServiceFileDescriptorSupplier.class
 com/smartretail/MobileAppProto.class
 com/smartretail/OvenProto$HealthCheckRequest$Builder.class

@@ -1,5 +1,6 @@
 package com.smartretail.fridge;
 
+
 import com.smartretail.generated.FridgeProto;
 import com.smartretail.generated.FridgeServiceGrpc;
 import io.grpc.stub.StreamObserver;

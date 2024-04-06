@@ -16,7 +16,7 @@ public final class OvenServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<OvenProto.OvenStatusRequest,
-          OvenProto.OvenStatusResponse> getGetOvenStatusMethod;
+      OvenProto.OvenStatusResponse> getGetOvenStatusMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getOvenStatus",
@@ -24,7 +24,7 @@ public final class OvenServiceGrpc {
       responseType = OvenProto.OvenStatusResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<OvenProto.OvenStatusRequest,
-          OvenProto.OvenStatusResponse> getGetOvenStatusMethod() {
+      OvenProto.OvenStatusResponse> getGetOvenStatusMethod() {
     io.grpc.MethodDescriptor<OvenProto.OvenStatusRequest, OvenProto.OvenStatusResponse> getGetOvenStatusMethod;
     if ((getGetOvenStatusMethod = OvenServiceGrpc.getGetOvenStatusMethod) == null) {
       synchronized (OvenServiceGrpc.class) {
@@ -47,7 +47,7 @@ public final class OvenServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<OvenProto.OvenControlRequest,
-          OvenProto.OvenControlResponse> getControlOvenMethod;
+      OvenProto.OvenControlResponse> getControlOvenMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "ControlOven",
@@ -55,7 +55,7 @@ public final class OvenServiceGrpc {
       responseType = OvenProto.OvenControlResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<OvenProto.OvenControlRequest,
-          OvenProto.OvenControlResponse> getControlOvenMethod() {
+      OvenProto.OvenControlResponse> getControlOvenMethod() {
     io.grpc.MethodDescriptor<OvenProto.OvenControlRequest, OvenProto.OvenControlResponse> getControlOvenMethod;
     if ((getControlOvenMethod = OvenServiceGrpc.getControlOvenMethod) == null) {
       synchronized (OvenServiceGrpc.class) {
@@ -78,7 +78,7 @@ public final class OvenServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<OvenProto.OvenMonitorRequest,
-          OvenProto.OvenStatusResponse> getMonitorOvenMethod;
+      OvenProto.OvenStatusResponse> getMonitorOvenMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "MonitorOven",
@@ -86,7 +86,7 @@ public final class OvenServiceGrpc {
       responseType = OvenProto.OvenStatusResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<OvenProto.OvenMonitorRequest,
-          OvenProto.OvenStatusResponse> getMonitorOvenMethod() {
+      OvenProto.OvenStatusResponse> getMonitorOvenMethod() {
     io.grpc.MethodDescriptor<OvenProto.OvenMonitorRequest, OvenProto.OvenStatusResponse> getMonitorOvenMethod;
     if ((getMonitorOvenMethod = OvenServiceGrpc.getMonitorOvenMethod) == null) {
       synchronized (OvenServiceGrpc.class) {
@@ -109,7 +109,7 @@ public final class OvenServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<OvenProto.OvenStatusResponse,
-          OvenProto.OvenControlRequest> getOptimizeOvenMethod;
+      OvenProto.OvenControlRequest> getOptimizeOvenMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "OptimizeOven",
@@ -117,7 +117,7 @@ public final class OvenServiceGrpc {
       responseType = OvenProto.OvenControlRequest.class,
       methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
   public static io.grpc.MethodDescriptor<OvenProto.OvenStatusResponse,
-          OvenProto.OvenControlRequest> getOptimizeOvenMethod() {
+      OvenProto.OvenControlRequest> getOptimizeOvenMethod() {
     io.grpc.MethodDescriptor<OvenProto.OvenStatusResponse, OvenProto.OvenControlRequest> getOptimizeOvenMethod;
     if ((getOptimizeOvenMethod = OvenServiceGrpc.getOptimizeOvenMethod) == null) {
       synchronized (OvenServiceGrpc.class) {
@@ -140,7 +140,7 @@ public final class OvenServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<OvenProto.HealthCheckRequest,
-          OvenProto.HealthCheckResponse> getHealthCheckMethod;
+      OvenProto.HealthCheckResponse> getHealthCheckMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "HealthCheck",
@@ -148,7 +148,7 @@ public final class OvenServiceGrpc {
       responseType = OvenProto.HealthCheckResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<OvenProto.HealthCheckRequest,
-          OvenProto.HealthCheckResponse> getHealthCheckMethod() {
+      OvenProto.HealthCheckResponse> getHealthCheckMethod() {
     io.grpc.MethodDescriptor<OvenProto.HealthCheckRequest, OvenProto.HealthCheckResponse> getHealthCheckMethod;
     if ((getHealthCheckMethod = OvenServiceGrpc.getHealthCheckMethod) == null) {
       synchronized (OvenServiceGrpc.class) {
@@ -475,36 +475,36 @@ public final class OvenServiceGrpc {
           getGetOvenStatusMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-                    OvenProto.OvenStatusRequest,
-                    OvenProto.OvenStatusResponse>(
+              OvenProto.OvenStatusRequest,
+              OvenProto.OvenStatusResponse>(
                 service, METHODID_GET_OVEN_STATUS)))
         .addMethod(
           getControlOvenMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-                    OvenProto.OvenControlRequest,
-                    OvenProto.OvenControlResponse>(
+              OvenProto.OvenControlRequest,
+              OvenProto.OvenControlResponse>(
                 service, METHODID_CONTROL_OVEN)))
         .addMethod(
           getMonitorOvenMethod(),
           io.grpc.stub.ServerCalls.asyncServerStreamingCall(
             new MethodHandlers<
-                    OvenProto.OvenMonitorRequest,
-                    OvenProto.OvenStatusResponse>(
+              OvenProto.OvenMonitorRequest,
+              OvenProto.OvenStatusResponse>(
                 service, METHODID_MONITOR_OVEN)))
         .addMethod(
           getOptimizeOvenMethod(),
           io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
             new MethodHandlers<
-                    OvenProto.OvenStatusResponse,
-                    OvenProto.OvenControlRequest>(
+              OvenProto.OvenStatusResponse,
+              OvenProto.OvenControlRequest>(
                 service, METHODID_OPTIMIZE_OVEN)))
         .addMethod(
           getHealthCheckMethod(),
           io.grpc.stub.ServerCalls.asyncServerStreamingCall(
             new MethodHandlers<
-                    OvenProto.HealthCheckRequest,
-                    OvenProto.HealthCheckResponse>(
+              OvenProto.HealthCheckRequest,
+              OvenProto.HealthCheckResponse>(
                 service, METHODID_HEALTH_CHECK)))
         .build();
   }
