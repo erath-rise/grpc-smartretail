@@ -70,6 +70,7 @@ public class FridgeServiceImpl extends FridgeServiceGrpc.FridgeServiceImplBase {
     @Override
     public void monitorFridge(FridgeProto.MonitorFridgeRequest request, StreamObserver<FridgeProto.FridgeStatusResponse> responseObserver) {
         String fridgeId = request.getFridgeId();
+        System.out.println("Streaming fridge status 5 times: ");
         for (int i = 0; i < 5; i++) {
             FridgeProto.FridgeStatusResponse status = fridgeStatusData.get(fridgeId);
             if (status != null) {
