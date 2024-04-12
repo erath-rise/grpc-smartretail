@@ -18,18 +18,6 @@ public final class FridgeProto {
   public interface FridgeStatusRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:fridge.FridgeStatusRequest)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string fridgeId = 1;</code>
-     * @return The fridgeId.
-     */
-    java.lang.String getFridgeId();
-    /**
-     * <code>string fridgeId = 1;</code>
-     * @return The bytes for fridgeId.
-     */
-    com.google.protobuf.ByteString
-        getFridgeIdBytes();
   }
   /**
    * Protobuf type {@code fridge.FridgeStatusRequest}
@@ -44,7 +32,6 @@ public final class FridgeProto {
       super(builder);
     }
     private FridgeStatusRequest() {
-      fridgeId_ = "";
     }
 
     @java.lang.Override
@@ -67,45 +54,6 @@ public final class FridgeProto {
               FridgeProto.FridgeStatusRequest.class, FridgeProto.FridgeStatusRequest.Builder.class);
     }
 
-    public static final int FRIDGEID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object fridgeId_ = "";
-    /**
-     * <code>string fridgeId = 1;</code>
-     * @return The fridgeId.
-     */
-    @java.lang.Override
-    public java.lang.String getFridgeId() {
-      java.lang.Object ref = fridgeId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        fridgeId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string fridgeId = 1;</code>
-     * @return The bytes for fridgeId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getFridgeIdBytes() {
-      java.lang.Object ref = fridgeId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        fridgeId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -120,9 +68,6 @@ public final class FridgeProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fridgeId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fridgeId_);
-      }
       getUnknownFields().writeTo(output);
     }
 
@@ -132,9 +77,6 @@ public final class FridgeProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fridgeId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fridgeId_);
-      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -150,8 +92,6 @@ public final class FridgeProto {
       }
       FridgeProto.FridgeStatusRequest other = (FridgeProto.FridgeStatusRequest) obj;
 
-      if (!getFridgeId()
-          .equals(other.getFridgeId())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -163,8 +103,6 @@ public final class FridgeProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FRIDGEID_FIELD_NUMBER;
-      hash = (53 * hash) + getFridgeId().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -282,7 +220,7 @@ public final class FridgeProto {
                 FridgeProto.FridgeStatusRequest.class, FridgeProto.FridgeStatusRequest.Builder.class);
       }
 
-      // Construct using com.smartretail.FridgeProto.FridgeStatusRequest.newBuilder()
+      // Construct using fridge.FridgeProto.FridgeStatusRequest.newBuilder()
       private Builder() {
 
       }
@@ -295,8 +233,6 @@ public final class FridgeProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        fridgeId_ = "";
         return this;
       }
 
@@ -323,16 +259,8 @@ public final class FridgeProto {
       @java.lang.Override
       public FridgeProto.FridgeStatusRequest buildPartial() {
         FridgeProto.FridgeStatusRequest result = new FridgeProto.FridgeStatusRequest(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(FridgeProto.FridgeStatusRequest result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.fridgeId_ = fridgeId_;
-        }
       }
 
       @java.lang.Override
@@ -379,11 +307,6 @@ public final class FridgeProto {
 
       public Builder mergeFrom(FridgeProto.FridgeStatusRequest other) {
         if (other == FridgeProto.FridgeStatusRequest.getDefaultInstance()) return this;
-        if (!other.getFridgeId().isEmpty()) {
-          fridgeId_ = other.fridgeId_;
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -410,11 +333,6 @@ public final class FridgeProto {
               case 0:
                 done = true;
                 break;
-              case 10: {
-                fridgeId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -428,79 +346,6 @@ public final class FridgeProto {
         } finally {
           onChanged();
         } // finally
-        return this;
-      }
-      private int bitField0_;
-
-      private java.lang.Object fridgeId_ = "";
-      /**
-       * <code>string fridgeId = 1;</code>
-       * @return The fridgeId.
-       */
-      public java.lang.String getFridgeId() {
-        java.lang.Object ref = fridgeId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          fridgeId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string fridgeId = 1;</code>
-       * @return The bytes for fridgeId.
-       */
-      public com.google.protobuf.ByteString
-          getFridgeIdBytes() {
-        java.lang.Object ref = fridgeId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          fridgeId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string fridgeId = 1;</code>
-       * @param value The fridgeId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFridgeId(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        fridgeId_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string fridgeId = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFridgeId() {
-        fridgeId_ = getDefaultInstance().getFridgeId();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string fridgeId = 1;</code>
-       * @param value The bytes for fridgeId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFridgeIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        fridgeId_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       @java.lang.Override
@@ -572,34 +417,16 @@ public final class FridgeProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string fridgeId = 1;</code>
-     * @return The fridgeId.
+     * <code>bool isFridgeOn = 2;</code>
+     * @return The isFridgeOn.
      */
-    java.lang.String getFridgeId();
-    /**
-     * <code>string fridgeId = 1;</code>
-     * @return The bytes for fridgeId.
-     */
-    com.google.protobuf.ByteString
-        getFridgeIdBytes();
+    boolean getIsFridgeOn();
 
     /**
-     * <code>bool isOn = 2;</code>
-     * @return The isOn.
-     */
-    boolean getIsOn();
-
-    /**
-     * <code>string temperature = 3;</code>
+     * <code>float temperature = 3;</code>
      * @return The temperature.
      */
-    java.lang.String getTemperature();
-    /**
-     * <code>string temperature = 3;</code>
-     * @return The bytes for temperature.
-     */
-    com.google.protobuf.ByteString
-        getTemperatureBytes();
+    float getTemperature();
   }
   /**
    * Protobuf type {@code fridge.FridgeStatusResponse}
@@ -614,8 +441,6 @@ public final class FridgeProto {
       super(builder);
     }
     private FridgeStatusResponse() {
-      fridgeId_ = "";
-      temperature_ = "";
     }
 
     @java.lang.Override
@@ -638,93 +463,26 @@ public final class FridgeProto {
               FridgeProto.FridgeStatusResponse.class, FridgeProto.FridgeStatusResponse.Builder.class);
     }
 
-    public static final int FRIDGEID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object fridgeId_ = "";
+    public static final int ISFRIDGEON_FIELD_NUMBER = 2;
+    private boolean isFridgeOn_ = false;
     /**
-     * <code>string fridgeId = 1;</code>
-     * @return The fridgeId.
+     * <code>bool isFridgeOn = 2;</code>
+     * @return The isFridgeOn.
      */
     @java.lang.Override
-    public java.lang.String getFridgeId() {
-      java.lang.Object ref = fridgeId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        fridgeId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string fridgeId = 1;</code>
-     * @return The bytes for fridgeId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getFridgeIdBytes() {
-      java.lang.Object ref = fridgeId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        fridgeId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ISON_FIELD_NUMBER = 2;
-    private boolean isOn_ = false;
-    /**
-     * <code>bool isOn = 2;</code>
-     * @return The isOn.
-     */
-    @java.lang.Override
-    public boolean getIsOn() {
-      return isOn_;
+    public boolean getIsFridgeOn() {
+      return isFridgeOn_;
     }
 
     public static final int TEMPERATURE_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object temperature_ = "";
+    private float temperature_ = 0F;
     /**
-     * <code>string temperature = 3;</code>
+     * <code>float temperature = 3;</code>
      * @return The temperature.
      */
     @java.lang.Override
-    public java.lang.String getTemperature() {
-      java.lang.Object ref = temperature_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        temperature_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string temperature = 3;</code>
-     * @return The bytes for temperature.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTemperatureBytes() {
-      java.lang.Object ref = temperature_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        temperature_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public float getTemperature() {
+      return temperature_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -741,14 +499,11 @@ public final class FridgeProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fridgeId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fridgeId_);
+      if (isFridgeOn_ != false) {
+        output.writeBool(2, isFridgeOn_);
       }
-      if (isOn_ != false) {
-        output.writeBool(2, isOn_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(temperature_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, temperature_);
+      if (java.lang.Float.floatToRawIntBits(temperature_) != 0) {
+        output.writeFloat(3, temperature_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -759,15 +514,13 @@ public final class FridgeProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fridgeId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fridgeId_);
-      }
-      if (isOn_ != false) {
+      if (isFridgeOn_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, isOn_);
+          .computeBoolSize(2, isFridgeOn_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(temperature_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, temperature_);
+      if (java.lang.Float.floatToRawIntBits(temperature_) != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(3, temperature_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -784,12 +537,11 @@ public final class FridgeProto {
       }
       FridgeProto.FridgeStatusResponse other = (FridgeProto.FridgeStatusResponse) obj;
 
-      if (!getFridgeId()
-          .equals(other.getFridgeId())) return false;
-      if (getIsOn()
-          != other.getIsOn()) return false;
-      if (!getTemperature()
-          .equals(other.getTemperature())) return false;
+      if (getIsFridgeOn()
+          != other.getIsFridgeOn()) return false;
+      if (java.lang.Float.floatToIntBits(getTemperature())
+          != java.lang.Float.floatToIntBits(
+              other.getTemperature())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -801,13 +553,12 @@ public final class FridgeProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FRIDGEID_FIELD_NUMBER;
-      hash = (53 * hash) + getFridgeId().hashCode();
-      hash = (37 * hash) + ISON_FIELD_NUMBER;
+      hash = (37 * hash) + ISFRIDGEON_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsOn());
+          getIsFridgeOn());
       hash = (37 * hash) + TEMPERATURE_FIELD_NUMBER;
-      hash = (53 * hash) + getTemperature().hashCode();
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getTemperature());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -925,7 +676,7 @@ public final class FridgeProto {
                 FridgeProto.FridgeStatusResponse.class, FridgeProto.FridgeStatusResponse.Builder.class);
       }
 
-      // Construct using com.smartretail.FridgeProto.FridgeStatusResponse.newBuilder()
+      // Construct using fridge.FridgeProto.FridgeStatusResponse.newBuilder()
       private Builder() {
 
       }
@@ -939,9 +690,8 @@ public final class FridgeProto {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        fridgeId_ = "";
-        isOn_ = false;
-        temperature_ = "";
+        isFridgeOn_ = false;
+        temperature_ = 0F;
         return this;
       }
 
@@ -976,12 +726,9 @@ public final class FridgeProto {
       private void buildPartial0(FridgeProto.FridgeStatusResponse result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.fridgeId_ = fridgeId_;
+          result.isFridgeOn_ = isFridgeOn_;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.isOn_ = isOn_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
           result.temperature_ = temperature_;
         }
       }
@@ -1030,18 +777,11 @@ public final class FridgeProto {
 
       public Builder mergeFrom(FridgeProto.FridgeStatusResponse other) {
         if (other == FridgeProto.FridgeStatusResponse.getDefaultInstance()) return this;
-        if (!other.getFridgeId().isEmpty()) {
-          fridgeId_ = other.fridgeId_;
-          bitField0_ |= 0x00000001;
-          onChanged();
+        if (other.getIsFridgeOn() != false) {
+          setIsFridgeOn(other.getIsFridgeOn());
         }
-        if (other.getIsOn() != false) {
-          setIsOn(other.getIsOn());
-        }
-        if (!other.getTemperature().isEmpty()) {
-          temperature_ = other.temperature_;
-          bitField0_ |= 0x00000004;
-          onChanged();
+        if (other.getTemperature() != 0F) {
+          setTemperature(other.getTemperature());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1069,21 +809,16 @@ public final class FridgeProto {
               case 0:
                 done = true;
                 break;
-              case 10: {
-                fridgeId_ = input.readStringRequireUtf8();
+              case 16: {
+                isFridgeOn_ = input.readBool();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 10
-              case 16: {
-                isOn_ = input.readBool();
+              } // case 16
+              case 29: {
+                temperature_ = input.readFloat();
                 bitField0_ |= 0x00000002;
                 break;
-              } // case 16
-              case 26: {
-                temperature_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
+              } // case 29
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -1101,178 +836,66 @@ public final class FridgeProto {
       }
       private int bitField0_;
 
-      private java.lang.Object fridgeId_ = "";
+      private boolean isFridgeOn_ ;
       /**
-       * <code>string fridgeId = 1;</code>
-       * @return The fridgeId.
-       */
-      public java.lang.String getFridgeId() {
-        java.lang.Object ref = fridgeId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          fridgeId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string fridgeId = 1;</code>
-       * @return The bytes for fridgeId.
-       */
-      public com.google.protobuf.ByteString
-          getFridgeIdBytes() {
-        java.lang.Object ref = fridgeId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          fridgeId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string fridgeId = 1;</code>
-       * @param value The fridgeId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFridgeId(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        fridgeId_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string fridgeId = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFridgeId() {
-        fridgeId_ = getDefaultInstance().getFridgeId();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string fridgeId = 1;</code>
-       * @param value The bytes for fridgeId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFridgeIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        fridgeId_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      private boolean isOn_ ;
-      /**
-       * <code>bool isOn = 2;</code>
-       * @return The isOn.
+       * <code>bool isFridgeOn = 2;</code>
+       * @return The isFridgeOn.
        */
       @java.lang.Override
-      public boolean getIsOn() {
-        return isOn_;
+      public boolean getIsFridgeOn() {
+        return isFridgeOn_;
       }
       /**
-       * <code>bool isOn = 2;</code>
-       * @param value The isOn to set.
+       * <code>bool isFridgeOn = 2;</code>
+       * @param value The isFridgeOn to set.
        * @return This builder for chaining.
        */
-      public Builder setIsOn(boolean value) {
+      public Builder setIsFridgeOn(boolean value) {
 
-        isOn_ = value;
+        isFridgeOn_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool isFridgeOn = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsFridgeOn() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        isFridgeOn_ = false;
+        onChanged();
+        return this;
+      }
+
+      private float temperature_ ;
+      /**
+       * <code>float temperature = 3;</code>
+       * @return The temperature.
+       */
+      @java.lang.Override
+      public float getTemperature() {
+        return temperature_;
+      }
+      /**
+       * <code>float temperature = 3;</code>
+       * @param value The temperature to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTemperature(float value) {
+
+        temperature_ = value;
         bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>bool isOn = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsOn() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        isOn_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object temperature_ = "";
-      /**
-       * <code>string temperature = 3;</code>
-       * @return The temperature.
-       */
-      public java.lang.String getTemperature() {
-        java.lang.Object ref = temperature_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          temperature_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string temperature = 3;</code>
-       * @return The bytes for temperature.
-       */
-      public com.google.protobuf.ByteString
-          getTemperatureBytes() {
-        java.lang.Object ref = temperature_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          temperature_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string temperature = 3;</code>
-       * @param value The temperature to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTemperature(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        temperature_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string temperature = 3;</code>
+       * <code>float temperature = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearTemperature() {
-        temperature_ = getDefaultInstance().getTemperature();
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string temperature = 3;</code>
-       * @param value The bytes for temperature to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTemperatureBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        temperature_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        temperature_ = 0F;
         onChanged();
         return this;
       }
@@ -1340,107 +963,55 @@ public final class FridgeProto {
 
   }
 
-  public interface ControlFridgeRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:fridge.ControlFridgeRequest)
+  public interface FridgeControlRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:fridge.FridgeControlRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string fridgeId = 1;</code>
-     * @return The fridgeId.
-     */
-    java.lang.String getFridgeId();
-    /**
-     * <code>string fridgeId = 1;</code>
-     * @return The bytes for fridgeId.
-     */
-    com.google.protobuf.ByteString
-        getFridgeIdBytes();
-
-    /**
-     * <code>bool turnOn = 2;</code>
+     * <code>bool turnOn = 1;</code>
      * @return The turnOn.
      */
     boolean getTurnOn();
   }
   /**
-   * Protobuf type {@code fridge.ControlFridgeRequest}
+   * Protobuf type {@code fridge.FridgeControlRequest}
    */
-  public static final class ControlFridgeRequest extends
+  public static final class FridgeControlRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:fridge.ControlFridgeRequest)
-      ControlFridgeRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:fridge.FridgeControlRequest)
+      FridgeControlRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ControlFridgeRequest.newBuilder() to construct.
-    private ControlFridgeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use FridgeControlRequest.newBuilder() to construct.
+    private FridgeControlRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ControlFridgeRequest() {
-      fridgeId_ = "";
+    private FridgeControlRequest() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new ControlFridgeRequest();
+      return new FridgeControlRequest();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return FridgeProto.internal_static_fridge_ControlFridgeRequest_descriptor;
+      return FridgeProto.internal_static_fridge_FridgeControlRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return FridgeProto.internal_static_fridge_ControlFridgeRequest_fieldAccessorTable
+      return FridgeProto.internal_static_fridge_FridgeControlRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              FridgeProto.ControlFridgeRequest.class, FridgeProto.ControlFridgeRequest.Builder.class);
+              FridgeProto.FridgeControlRequest.class, FridgeProto.FridgeControlRequest.Builder.class);
     }
 
-    public static final int FRIDGEID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object fridgeId_ = "";
-    /**
-     * <code>string fridgeId = 1;</code>
-     * @return The fridgeId.
-     */
-    @java.lang.Override
-    public java.lang.String getFridgeId() {
-      java.lang.Object ref = fridgeId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        fridgeId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string fridgeId = 1;</code>
-     * @return The bytes for fridgeId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getFridgeIdBytes() {
-      java.lang.Object ref = fridgeId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        fridgeId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TURNON_FIELD_NUMBER = 2;
+    public static final int TURNON_FIELD_NUMBER = 1;
     private boolean turnOn_ = false;
     /**
-     * <code>bool turnOn = 2;</code>
+     * <code>bool turnOn = 1;</code>
      * @return The turnOn.
      */
     @java.lang.Override
@@ -1462,11 +1033,8 @@ public final class FridgeProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fridgeId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fridgeId_);
-      }
       if (turnOn_ != false) {
-        output.writeBool(2, turnOn_);
+        output.writeBool(1, turnOn_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1477,12 +1045,9 @@ public final class FridgeProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fridgeId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fridgeId_);
-      }
       if (turnOn_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, turnOn_);
+          .computeBoolSize(1, turnOn_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1494,13 +1059,11 @@ public final class FridgeProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof FridgeProto.ControlFridgeRequest)) {
+      if (!(obj instanceof FridgeProto.FridgeControlRequest)) {
         return super.equals(obj);
       }
-      FridgeProto.ControlFridgeRequest other = (FridgeProto.ControlFridgeRequest) obj;
+      FridgeProto.FridgeControlRequest other = (FridgeProto.FridgeControlRequest) obj;
 
-      if (!getFridgeId()
-          .equals(other.getFridgeId())) return false;
       if (getTurnOn()
           != other.getTurnOn()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -1514,8 +1077,6 @@ public final class FridgeProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FRIDGEID_FIELD_NUMBER;
-      hash = (53 * hash) + getFridgeId().hashCode();
       hash = (37 * hash) + TURNON_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getTurnOn());
@@ -1524,44 +1085,44 @@ public final class FridgeProto {
       return hash;
     }
 
-    public static FridgeProto.ControlFridgeRequest parseFrom(
+    public static FridgeProto.FridgeControlRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static FridgeProto.ControlFridgeRequest parseFrom(
+    public static FridgeProto.FridgeControlRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static FridgeProto.ControlFridgeRequest parseFrom(
+    public static FridgeProto.FridgeControlRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static FridgeProto.ControlFridgeRequest parseFrom(
+    public static FridgeProto.FridgeControlRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static FridgeProto.ControlFridgeRequest parseFrom(byte[] data)
+    public static FridgeProto.FridgeControlRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static FridgeProto.ControlFridgeRequest parseFrom(
+    public static FridgeProto.FridgeControlRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static FridgeProto.ControlFridgeRequest parseFrom(java.io.InputStream input)
+    public static FridgeProto.FridgeControlRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static FridgeProto.ControlFridgeRequest parseFrom(
+    public static FridgeProto.FridgeControlRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1569,26 +1130,26 @@ public final class FridgeProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static FridgeProto.ControlFridgeRequest parseDelimitedFrom(java.io.InputStream input)
+    public static FridgeProto.FridgeControlRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static FridgeProto.ControlFridgeRequest parseDelimitedFrom(
+    public static FridgeProto.FridgeControlRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static FridgeProto.ControlFridgeRequest parseFrom(
+    public static FridgeProto.FridgeControlRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static FridgeProto.ControlFridgeRequest parseFrom(
+    public static FridgeProto.FridgeControlRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1601,7 +1162,7 @@ public final class FridgeProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(FridgeProto.ControlFridgeRequest prototype) {
+    public static Builder newBuilder(FridgeProto.FridgeControlRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1617,26 +1178,26 @@ public final class FridgeProto {
       return builder;
     }
     /**
-     * Protobuf type {@code fridge.ControlFridgeRequest}
+     * Protobuf type {@code fridge.FridgeControlRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:fridge.ControlFridgeRequest)
-        FridgeProto.ControlFridgeRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:fridge.FridgeControlRequest)
+        FridgeProto.FridgeControlRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return FridgeProto.internal_static_fridge_ControlFridgeRequest_descriptor;
+        return FridgeProto.internal_static_fridge_FridgeControlRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return FridgeProto.internal_static_fridge_ControlFridgeRequest_fieldAccessorTable
+        return FridgeProto.internal_static_fridge_FridgeControlRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                FridgeProto.ControlFridgeRequest.class, FridgeProto.ControlFridgeRequest.Builder.class);
+                FridgeProto.FridgeControlRequest.class, FridgeProto.FridgeControlRequest.Builder.class);
       }
 
-      // Construct using com.smartretail.FridgeProto.ControlFridgeRequest.newBuilder()
+      // Construct using fridge.FridgeProto.FridgeControlRequest.newBuilder()
       private Builder() {
 
       }
@@ -1650,7 +1211,6 @@ public final class FridgeProto {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        fridgeId_ = "";
         turnOn_ = false;
         return this;
       }
@@ -1658,17 +1218,17 @@ public final class FridgeProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return FridgeProto.internal_static_fridge_ControlFridgeRequest_descriptor;
+        return FridgeProto.internal_static_fridge_FridgeControlRequest_descriptor;
       }
 
       @java.lang.Override
-      public FridgeProto.ControlFridgeRequest getDefaultInstanceForType() {
-        return FridgeProto.ControlFridgeRequest.getDefaultInstance();
+      public FridgeProto.FridgeControlRequest getDefaultInstanceForType() {
+        return FridgeProto.FridgeControlRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public FridgeProto.ControlFridgeRequest build() {
-        FridgeProto.ControlFridgeRequest result = buildPartial();
+      public FridgeProto.FridgeControlRequest build() {
+        FridgeProto.FridgeControlRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1676,19 +1236,16 @@ public final class FridgeProto {
       }
 
       @java.lang.Override
-      public FridgeProto.ControlFridgeRequest buildPartial() {
-        FridgeProto.ControlFridgeRequest result = new FridgeProto.ControlFridgeRequest(this);
+      public FridgeProto.FridgeControlRequest buildPartial() {
+        FridgeProto.FridgeControlRequest result = new FridgeProto.FridgeControlRequest(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(FridgeProto.ControlFridgeRequest result) {
+      private void buildPartial0(FridgeProto.FridgeControlRequest result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.fridgeId_ = fridgeId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
           result.turnOn_ = turnOn_;
         }
       }
@@ -1727,21 +1284,16 @@ public final class FridgeProto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof FridgeProto.ControlFridgeRequest) {
-          return mergeFrom((FridgeProto.ControlFridgeRequest)other);
+        if (other instanceof FridgeProto.FridgeControlRequest) {
+          return mergeFrom((FridgeProto.FridgeControlRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(FridgeProto.ControlFridgeRequest other) {
-        if (other == FridgeProto.ControlFridgeRequest.getDefaultInstance()) return this;
-        if (!other.getFridgeId().isEmpty()) {
-          fridgeId_ = other.fridgeId_;
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
+      public Builder mergeFrom(FridgeProto.FridgeControlRequest other) {
+        if (other == FridgeProto.FridgeControlRequest.getDefaultInstance()) return this;
         if (other.getTurnOn() != false) {
           setTurnOn(other.getTurnOn());
         }
@@ -1771,16 +1323,11 @@ public final class FridgeProto {
               case 0:
                 done = true;
                 break;
-              case 10: {
-                fridgeId_ = input.readStringRequireUtf8();
+              case 8: {
+                turnOn_ = input.readBool();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 10
-              case 16: {
-                turnOn_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
+              } // case 8
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -1798,81 +1345,9 @@ public final class FridgeProto {
       }
       private int bitField0_;
 
-      private java.lang.Object fridgeId_ = "";
-      /**
-       * <code>string fridgeId = 1;</code>
-       * @return The fridgeId.
-       */
-      public java.lang.String getFridgeId() {
-        java.lang.Object ref = fridgeId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          fridgeId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string fridgeId = 1;</code>
-       * @return The bytes for fridgeId.
-       */
-      public com.google.protobuf.ByteString
-          getFridgeIdBytes() {
-        java.lang.Object ref = fridgeId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          fridgeId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string fridgeId = 1;</code>
-       * @param value The fridgeId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFridgeId(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        fridgeId_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string fridgeId = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFridgeId() {
-        fridgeId_ = getDefaultInstance().getFridgeId();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string fridgeId = 1;</code>
-       * @param value The bytes for fridgeId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFridgeIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        fridgeId_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
       private boolean turnOn_ ;
       /**
-       * <code>bool turnOn = 2;</code>
+       * <code>bool turnOn = 1;</code>
        * @return The turnOn.
        */
       @java.lang.Override
@@ -1880,23 +1355,23 @@ public final class FridgeProto {
         return turnOn_;
       }
       /**
-       * <code>bool turnOn = 2;</code>
+       * <code>bool turnOn = 1;</code>
        * @param value The turnOn to set.
        * @return This builder for chaining.
        */
       public Builder setTurnOn(boolean value) {
 
         turnOn_ = value;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>bool turnOn = 2;</code>
+       * <code>bool turnOn = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearTurnOn() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         turnOn_ = false;
         onChanged();
         return this;
@@ -1914,23 +1389,23 @@ public final class FridgeProto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:fridge.ControlFridgeRequest)
+      // @@protoc_insertion_point(builder_scope:fridge.FridgeControlRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:fridge.ControlFridgeRequest)
-    private static final FridgeProto.ControlFridgeRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:fridge.FridgeControlRequest)
+    private static final FridgeProto.FridgeControlRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new FridgeProto.ControlFridgeRequest();
+      DEFAULT_INSTANCE = new FridgeProto.FridgeControlRequest();
     }
 
-    public static FridgeProto.ControlFridgeRequest getDefaultInstance() {
+    public static FridgeProto.FridgeControlRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ControlFridgeRequest>
-        PARSER = new com.google.protobuf.AbstractParser<ControlFridgeRequest>() {
+    private static final com.google.protobuf.Parser<FridgeControlRequest>
+        PARSER = new com.google.protobuf.AbstractParser<FridgeControlRequest>() {
       @java.lang.Override
-      public ControlFridgeRequest parsePartialFrom(
+      public FridgeControlRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1949,163 +1424,59 @@ public final class FridgeProto {
       }
     };
 
-    public static com.google.protobuf.Parser<ControlFridgeRequest> parser() {
+    public static com.google.protobuf.Parser<FridgeControlRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ControlFridgeRequest> getParserForType() {
+    public com.google.protobuf.Parser<FridgeControlRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public FridgeProto.ControlFridgeRequest getDefaultInstanceForType() {
+    public FridgeProto.FridgeControlRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface ControlFridgeResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:fridge.ControlFridgeResponse)
+  public interface FridgeControlResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:fridge.FridgeControlResponse)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string success = 1;</code>
-     * @return The success.
-     */
-    java.lang.String getSuccess();
-    /**
-     * <code>string success = 1;</code>
-     * @return The bytes for success.
-     */
-    com.google.protobuf.ByteString
-        getSuccessBytes();
-
-    /**
-     * <code>string message = 2;</code>
-     * @return The message.
-     */
-    java.lang.String getMessage();
-    /**
-     * <code>string message = 2;</code>
-     * @return The bytes for message.
-     */
-    com.google.protobuf.ByteString
-        getMessageBytes();
   }
   /**
-   * Protobuf type {@code fridge.ControlFridgeResponse}
+   * Protobuf type {@code fridge.FridgeControlResponse}
    */
-  public static final class ControlFridgeResponse extends
+  public static final class FridgeControlResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:fridge.ControlFridgeResponse)
-      ControlFridgeResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:fridge.FridgeControlResponse)
+      FridgeControlResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ControlFridgeResponse.newBuilder() to construct.
-    private ControlFridgeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use FridgeControlResponse.newBuilder() to construct.
+    private FridgeControlResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ControlFridgeResponse() {
-      success_ = "";
-      message_ = "";
+    private FridgeControlResponse() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new ControlFridgeResponse();
+      return new FridgeControlResponse();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return FridgeProto.internal_static_fridge_ControlFridgeResponse_descriptor;
+      return FridgeProto.internal_static_fridge_FridgeControlResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return FridgeProto.internal_static_fridge_ControlFridgeResponse_fieldAccessorTable
+      return FridgeProto.internal_static_fridge_FridgeControlResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              FridgeProto.ControlFridgeResponse.class, FridgeProto.ControlFridgeResponse.Builder.class);
-    }
-
-    public static final int SUCCESS_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object success_ = "";
-    /**
-     * <code>string success = 1;</code>
-     * @return The success.
-     */
-    @java.lang.Override
-    public java.lang.String getSuccess() {
-      java.lang.Object ref = success_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        success_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string success = 1;</code>
-     * @return The bytes for success.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSuccessBytes() {
-      java.lang.Object ref = success_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        success_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int MESSAGE_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object message_ = "";
-    /**
-     * <code>string message = 2;</code>
-     * @return The message.
-     */
-    @java.lang.Override
-    public java.lang.String getMessage() {
-      java.lang.Object ref = message_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        message_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string message = 2;</code>
-     * @return The bytes for message.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getMessageBytes() {
-      java.lang.Object ref = message_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        message_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+              FridgeProto.FridgeControlResponse.class, FridgeProto.FridgeControlResponse.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2122,12 +1493,6 @@ public final class FridgeProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(success_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, success_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
-      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2137,12 +1502,6 @@ public final class FridgeProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(success_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, success_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
-      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2153,15 +1512,11 @@ public final class FridgeProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof FridgeProto.ControlFridgeResponse)) {
+      if (!(obj instanceof FridgeProto.FridgeControlResponse)) {
         return super.equals(obj);
       }
-      FridgeProto.ControlFridgeResponse other = (FridgeProto.ControlFridgeResponse) obj;
+      FridgeProto.FridgeControlResponse other = (FridgeProto.FridgeControlResponse) obj;
 
-      if (!getSuccess()
-          .equals(other.getSuccess())) return false;
-      if (!getMessage()
-          .equals(other.getMessage())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2173,53 +1528,49 @@ public final class FridgeProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SUCCESS_FIELD_NUMBER;
-      hash = (53 * hash) + getSuccess().hashCode();
-      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getMessage().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static FridgeProto.ControlFridgeResponse parseFrom(
+    public static FridgeProto.FridgeControlResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static FridgeProto.ControlFridgeResponse parseFrom(
+    public static FridgeProto.FridgeControlResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static FridgeProto.ControlFridgeResponse parseFrom(
+    public static FridgeProto.FridgeControlResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static FridgeProto.ControlFridgeResponse parseFrom(
+    public static FridgeProto.FridgeControlResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static FridgeProto.ControlFridgeResponse parseFrom(byte[] data)
+    public static FridgeProto.FridgeControlResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static FridgeProto.ControlFridgeResponse parseFrom(
+    public static FridgeProto.FridgeControlResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static FridgeProto.ControlFridgeResponse parseFrom(java.io.InputStream input)
+    public static FridgeProto.FridgeControlResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static FridgeProto.ControlFridgeResponse parseFrom(
+    public static FridgeProto.FridgeControlResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2227,26 +1578,26 @@ public final class FridgeProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static FridgeProto.ControlFridgeResponse parseDelimitedFrom(java.io.InputStream input)
+    public static FridgeProto.FridgeControlResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static FridgeProto.ControlFridgeResponse parseDelimitedFrom(
+    public static FridgeProto.FridgeControlResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static FridgeProto.ControlFridgeResponse parseFrom(
+    public static FridgeProto.FridgeControlResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static FridgeProto.ControlFridgeResponse parseFrom(
+    public static FridgeProto.FridgeControlResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2259,7 +1610,7 @@ public final class FridgeProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(FridgeProto.ControlFridgeResponse prototype) {
+    public static Builder newBuilder(FridgeProto.FridgeControlResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2275,26 +1626,26 @@ public final class FridgeProto {
       return builder;
     }
     /**
-     * Protobuf type {@code fridge.ControlFridgeResponse}
+     * Protobuf type {@code fridge.FridgeControlResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:fridge.ControlFridgeResponse)
-        FridgeProto.ControlFridgeResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:fridge.FridgeControlResponse)
+        FridgeProto.FridgeControlResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return FridgeProto.internal_static_fridge_ControlFridgeResponse_descriptor;
+        return FridgeProto.internal_static_fridge_FridgeControlResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return FridgeProto.internal_static_fridge_ControlFridgeResponse_fieldAccessorTable
+        return FridgeProto.internal_static_fridge_FridgeControlResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                FridgeProto.ControlFridgeResponse.class, FridgeProto.ControlFridgeResponse.Builder.class);
+                FridgeProto.FridgeControlResponse.class, FridgeProto.FridgeControlResponse.Builder.class);
       }
 
-      // Construct using com.smartretail.FridgeProto.ControlFridgeResponse.newBuilder()
+      // Construct using fridge.FridgeProto.FridgeControlResponse.newBuilder()
       private Builder() {
 
       }
@@ -2307,26 +1658,23 @@ public final class FridgeProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        success_ = "";
-        message_ = "";
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return FridgeProto.internal_static_fridge_ControlFridgeResponse_descriptor;
+        return FridgeProto.internal_static_fridge_FridgeControlResponse_descriptor;
       }
 
       @java.lang.Override
-      public FridgeProto.ControlFridgeResponse getDefaultInstanceForType() {
-        return FridgeProto.ControlFridgeResponse.getDefaultInstance();
+      public FridgeProto.FridgeControlResponse getDefaultInstanceForType() {
+        return FridgeProto.FridgeControlResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public FridgeProto.ControlFridgeResponse build() {
-        FridgeProto.ControlFridgeResponse result = buildPartial();
+      public FridgeProto.FridgeControlResponse build() {
+        FridgeProto.FridgeControlResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2334,21 +1682,10 @@ public final class FridgeProto {
       }
 
       @java.lang.Override
-      public FridgeProto.ControlFridgeResponse buildPartial() {
-        FridgeProto.ControlFridgeResponse result = new FridgeProto.ControlFridgeResponse(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+      public FridgeProto.FridgeControlResponse buildPartial() {
+        FridgeProto.FridgeControlResponse result = new FridgeProto.FridgeControlResponse(this);
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(FridgeProto.ControlFridgeResponse result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.success_ = success_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.message_ = message_;
-        }
       }
 
       @java.lang.Override
@@ -2385,26 +1722,16 @@ public final class FridgeProto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof FridgeProto.ControlFridgeResponse) {
-          return mergeFrom((FridgeProto.ControlFridgeResponse)other);
+        if (other instanceof FridgeProto.FridgeControlResponse) {
+          return mergeFrom((FridgeProto.FridgeControlResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(FridgeProto.ControlFridgeResponse other) {
-        if (other == FridgeProto.ControlFridgeResponse.getDefaultInstance()) return this;
-        if (!other.getSuccess().isEmpty()) {
-          success_ = other.success_;
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
-        if (!other.getMessage().isEmpty()) {
-          message_ = other.message_;
-          bitField0_ |= 0x00000002;
-          onChanged();
-        }
+      public Builder mergeFrom(FridgeProto.FridgeControlResponse other) {
+        if (other == FridgeProto.FridgeControlResponse.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2431,16 +1758,6 @@ public final class FridgeProto {
               case 0:
                 done = true;
                 break;
-              case 10: {
-                success_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                message_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -2456,151 +1773,6 @@ public final class FridgeProto {
         } // finally
         return this;
       }
-      private int bitField0_;
-
-      private java.lang.Object success_ = "";
-      /**
-       * <code>string success = 1;</code>
-       * @return The success.
-       */
-      public java.lang.String getSuccess() {
-        java.lang.Object ref = success_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          success_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string success = 1;</code>
-       * @return The bytes for success.
-       */
-      public com.google.protobuf.ByteString
-          getSuccessBytes() {
-        java.lang.Object ref = success_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          success_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string success = 1;</code>
-       * @param value The success to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSuccess(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        success_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string success = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSuccess() {
-        success_ = getDefaultInstance().getSuccess();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string success = 1;</code>
-       * @param value The bytes for success to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSuccessBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        success_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object message_ = "";
-      /**
-       * <code>string message = 2;</code>
-       * @return The message.
-       */
-      public java.lang.String getMessage() {
-        java.lang.Object ref = message_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          message_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string message = 2;</code>
-       * @return The bytes for message.
-       */
-      public com.google.protobuf.ByteString
-          getMessageBytes() {
-        java.lang.Object ref = message_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          message_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string message = 2;</code>
-       * @param value The message to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMessage(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        message_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string message = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMessage() {
-        message_ = getDefaultInstance().getMessage();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string message = 2;</code>
-       * @param value The bytes for message to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMessageBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        message_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2614,23 +1786,23 @@ public final class FridgeProto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:fridge.ControlFridgeResponse)
+      // @@protoc_insertion_point(builder_scope:fridge.FridgeControlResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:fridge.ControlFridgeResponse)
-    private static final FridgeProto.ControlFridgeResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:fridge.FridgeControlResponse)
+    private static final FridgeProto.FridgeControlResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new FridgeProto.ControlFridgeResponse();
+      DEFAULT_INSTANCE = new FridgeProto.FridgeControlResponse();
     }
 
-    public static FridgeProto.ControlFridgeResponse getDefaultInstance() {
+    public static FridgeProto.FridgeControlResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ControlFridgeResponse>
-        PARSER = new com.google.protobuf.AbstractParser<ControlFridgeResponse>() {
+    private static final com.google.protobuf.Parser<FridgeControlResponse>
+        PARSER = new com.google.protobuf.AbstractParser<FridgeControlResponse>() {
       @java.lang.Override
-      public ControlFridgeResponse parsePartialFrom(
+      public FridgeControlResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2649,569 +1821,17 @@ public final class FridgeProto {
       }
     };
 
-    public static com.google.protobuf.Parser<ControlFridgeResponse> parser() {
+    public static com.google.protobuf.Parser<FridgeControlResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ControlFridgeResponse> getParserForType() {
+    public com.google.protobuf.Parser<FridgeControlResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public FridgeProto.ControlFridgeResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface MonitorFridgeRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:fridge.MonitorFridgeRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string fridgeId = 1;</code>
-     * @return The fridgeId.
-     */
-    java.lang.String getFridgeId();
-    /**
-     * <code>string fridgeId = 1;</code>
-     * @return The bytes for fridgeId.
-     */
-    com.google.protobuf.ByteString
-        getFridgeIdBytes();
-  }
-  /**
-   * Protobuf type {@code fridge.MonitorFridgeRequest}
-   */
-  public static final class MonitorFridgeRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:fridge.MonitorFridgeRequest)
-      MonitorFridgeRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use MonitorFridgeRequest.newBuilder() to construct.
-    private MonitorFridgeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private MonitorFridgeRequest() {
-      fridgeId_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new MonitorFridgeRequest();
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return FridgeProto.internal_static_fridge_MonitorFridgeRequest_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return FridgeProto.internal_static_fridge_MonitorFridgeRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              FridgeProto.MonitorFridgeRequest.class, FridgeProto.MonitorFridgeRequest.Builder.class);
-    }
-
-    public static final int FRIDGEID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object fridgeId_ = "";
-    /**
-     * <code>string fridgeId = 1;</code>
-     * @return The fridgeId.
-     */
-    @java.lang.Override
-    public java.lang.String getFridgeId() {
-      java.lang.Object ref = fridgeId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        fridgeId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string fridgeId = 1;</code>
-     * @return The bytes for fridgeId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getFridgeIdBytes() {
-      java.lang.Object ref = fridgeId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        fridgeId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fridgeId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fridgeId_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fridgeId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fridgeId_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof FridgeProto.MonitorFridgeRequest)) {
-        return super.equals(obj);
-      }
-      FridgeProto.MonitorFridgeRequest other = (FridgeProto.MonitorFridgeRequest) obj;
-
-      if (!getFridgeId()
-          .equals(other.getFridgeId())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FRIDGEID_FIELD_NUMBER;
-      hash = (53 * hash) + getFridgeId().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static FridgeProto.MonitorFridgeRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static FridgeProto.MonitorFridgeRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static FridgeProto.MonitorFridgeRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static FridgeProto.MonitorFridgeRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static FridgeProto.MonitorFridgeRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static FridgeProto.MonitorFridgeRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static FridgeProto.MonitorFridgeRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static FridgeProto.MonitorFridgeRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static FridgeProto.MonitorFridgeRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static FridgeProto.MonitorFridgeRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static FridgeProto.MonitorFridgeRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static FridgeProto.MonitorFridgeRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(FridgeProto.MonitorFridgeRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code fridge.MonitorFridgeRequest}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:fridge.MonitorFridgeRequest)
-        FridgeProto.MonitorFridgeRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return FridgeProto.internal_static_fridge_MonitorFridgeRequest_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return FridgeProto.internal_static_fridge_MonitorFridgeRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                FridgeProto.MonitorFridgeRequest.class, FridgeProto.MonitorFridgeRequest.Builder.class);
-      }
-
-      // Construct using com.smartretail.FridgeProto.MonitorFridgeRequest.newBuilder()
-      private Builder() {
-
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        fridgeId_ = "";
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return FridgeProto.internal_static_fridge_MonitorFridgeRequest_descriptor;
-      }
-
-      @java.lang.Override
-      public FridgeProto.MonitorFridgeRequest getDefaultInstanceForType() {
-        return FridgeProto.MonitorFridgeRequest.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public FridgeProto.MonitorFridgeRequest build() {
-        FridgeProto.MonitorFridgeRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public FridgeProto.MonitorFridgeRequest buildPartial() {
-        FridgeProto.MonitorFridgeRequest result = new FridgeProto.MonitorFridgeRequest(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartial0(FridgeProto.MonitorFridgeRequest result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.fridgeId_ = fridgeId_;
-        }
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof FridgeProto.MonitorFridgeRequest) {
-          return mergeFrom((FridgeProto.MonitorFridgeRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(FridgeProto.MonitorFridgeRequest other) {
-        if (other == FridgeProto.MonitorFridgeRequest.getDefaultInstance()) return this;
-        if (!other.getFridgeId().isEmpty()) {
-          fridgeId_ = other.fridgeId_;
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                fridgeId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-      private int bitField0_;
-
-      private java.lang.Object fridgeId_ = "";
-      /**
-       * <code>string fridgeId = 1;</code>
-       * @return The fridgeId.
-       */
-      public java.lang.String getFridgeId() {
-        java.lang.Object ref = fridgeId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          fridgeId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string fridgeId = 1;</code>
-       * @return The bytes for fridgeId.
-       */
-      public com.google.protobuf.ByteString
-          getFridgeIdBytes() {
-        java.lang.Object ref = fridgeId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          fridgeId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string fridgeId = 1;</code>
-       * @param value The fridgeId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFridgeId(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        fridgeId_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string fridgeId = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFridgeId() {
-        fridgeId_ = getDefaultInstance().getFridgeId();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string fridgeId = 1;</code>
-       * @param value The bytes for fridgeId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFridgeIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        fridgeId_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:fridge.MonitorFridgeRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:fridge.MonitorFridgeRequest)
-    private static final FridgeProto.MonitorFridgeRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new FridgeProto.MonitorFridgeRequest();
-    }
-
-    public static FridgeProto.MonitorFridgeRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<MonitorFridgeRequest>
-        PARSER = new com.google.protobuf.AbstractParser<MonitorFridgeRequest>() {
-      @java.lang.Override
-      public MonitorFridgeRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
-
-    public static com.google.protobuf.Parser<MonitorFridgeRequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<MonitorFridgeRequest> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public FridgeProto.MonitorFridgeRequest getDefaultInstanceForType() {
+    public FridgeProto.FridgeControlResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3575,7 +2195,7 @@ public final class FridgeProto {
                 FridgeProto.HealthCheckRequest.class, FridgeProto.HealthCheckRequest.Builder.class);
       }
 
-      // Construct using com.smartretail.FridgeProto.HealthCheckRequest.newBuilder()
+      // Construct using fridge.FridgeProto.HealthCheckRequest.newBuilder()
       private Builder() {
 
       }
@@ -4285,7 +2905,7 @@ public final class FridgeProto {
                 FridgeProto.HealthCheckResponse.class, FridgeProto.HealthCheckResponse.Builder.class);
       }
 
-      // Construct using com.smartretail.FridgeProto.HealthCheckResponse.newBuilder()
+      // Construct using fridge.FridgeProto.HealthCheckResponse.newBuilder()
       private Builder() {
 
       }
@@ -4625,20 +3245,15 @@ public final class FridgeProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_fridge_FridgeStatusResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_fridge_ControlFridgeRequest_descriptor;
+    internal_static_fridge_FridgeControlRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_fridge_ControlFridgeRequest_fieldAccessorTable;
+      internal_static_fridge_FridgeControlRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_fridge_ControlFridgeResponse_descriptor;
+    internal_static_fridge_FridgeControlResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_fridge_ControlFridgeResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_fridge_MonitorFridgeRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_fridge_MonitorFridgeRequest_fieldAccessorTable;
+      internal_static_fridge_FridgeControlResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_fridge_HealthCheckRequest_descriptor;
   private static final 
@@ -4658,27 +3273,24 @@ public final class FridgeProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014fridge.proto\022\006fridge\"\'\n\023FridgeStatusRe" +
-      "quest\022\020\n\010fridgeId\030\001 \001(\t\"K\n\024FridgeStatusR" +
-      "esponse\022\020\n\010fridgeId\030\001 \001(\t\022\014\n\004isOn\030\002 \001(\010\022" +
-      "\023\n\013temperature\030\003 \001(\t\"8\n\024ControlFridgeReq" +
-      "uest\022\020\n\010fridgeId\030\001 \001(\t\022\016\n\006turnOn\030\002 \001(\010\"9" +
-      "\n\025ControlFridgeResponse\022\017\n\007success\030\001 \001(\t" +
-      "\022\017\n\007message\030\002 \001(\t\"(\n\024MonitorFridgeReques" +
-      "t\022\020\n\010fridgeId\030\001 \001(\t\"T\n\022HealthCheckReques" +
-      "t\022\023\n\013serviceName\030\001 \001(\t\022\026\n\016serviceVersion" +
-      "\030\002 \001(\t\022\021\n\ttimestamp\030\003 \001(\003\"6\n\023HealthCheck" +
-      "Response\022\016\n\006status\030\001 \001(\005\022\017\n\007message\030\002 \001(" +
-      "\t2\314\002\n\rFridgeService\022N\n\017GetFridgeStatus\022\033" +
-      ".fridge.FridgeStatusRequest\032\034.fridge.Fri" +
-      "dgeStatusResponse\"\000\022N\n\rControlFridge\022\034.f" +
-      "ridge.ControlFridgeRequest\032\035.fridge.Cont" +
-      "rolFridgeResponse\"\000\022O\n\rMonitorFridge\022\034.f" +
-      "ridge.MonitorFridgeRequest\032\034.fridge.Frid" +
-      "geStatusResponse\"\0000\001\022J\n\013HealthCheck\022\032.fr" +
-      "idge.HealthCheckRequest\032\033.fridge.HealthC" +
-      "heckResponse\"\0000\001B \n\017com.smartretailB\013Fri" +
-      "dgeProtoP\000b\006proto3"
+      "\n\014fridge.proto\022\006fridge\"\025\n\023FridgeStatusRe" +
+      "quest\"?\n\024FridgeStatusResponse\022\022\n\nisFridg" +
+      "eOn\030\002 \001(\010\022\023\n\013temperature\030\003 \001(\002\"&\n\024Fridge" +
+      "ControlRequest\022\016\n\006turnOn\030\001 \001(\010\"\027\n\025Fridge" +
+      "ControlResponse\"T\n\022HealthCheckRequest\022\023\n" +
+      "\013serviceName\030\001 \001(\t\022\026\n\016serviceVersion\030\002 \001" +
+      "(\t\022\021\n\ttimestamp\030\003 \001(\003\"6\n\023HealthCheckResp" +
+      "onse\022\016\n\006status\030\001 \001(\005\022\017\n\007message\030\002 \001(\t2\321\002" +
+      "\n\rFridgeService\022N\n\017GetFridgeStatus\022\033.fri" +
+      "dge.FridgeStatusRequest\032\034.fridge.FridgeS" +
+      "tatusResponse\"\000\022N\n\rControlFridge\022\034.fridg" +
+      "e.FridgeControlRequest\032\035.fridge.FridgeCo" +
+      "ntrolResponse\"\000\022T\n\022ReportFridgeStatus\022\034." +
+      "fridge.FridgeStatusResponse\032\034.fridge.Fri" +
+      "dgeControlRequest\"\000(\001\022J\n\013HealthCheck\022\032.f" +
+      "ridge.HealthCheckRequest\032\033.fridge.Health" +
+      "CheckResponse\"\0000\001B\017B\013FridgeProtoP\000b\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4689,39 +3301,33 @@ public final class FridgeProto {
     internal_static_fridge_FridgeStatusRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fridge_FridgeStatusRequest_descriptor,
-        new java.lang.String[] { "FridgeId", });
+        new java.lang.String[] { });
     internal_static_fridge_FridgeStatusResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_fridge_FridgeStatusResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fridge_FridgeStatusResponse_descriptor,
-        new java.lang.String[] { "FridgeId", "IsOn", "Temperature", });
-    internal_static_fridge_ControlFridgeRequest_descriptor =
+        new java.lang.String[] { "IsFridgeOn", "Temperature", });
+    internal_static_fridge_FridgeControlRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_fridge_ControlFridgeRequest_fieldAccessorTable = new
+    internal_static_fridge_FridgeControlRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_fridge_ControlFridgeRequest_descriptor,
-        new java.lang.String[] { "FridgeId", "TurnOn", });
-    internal_static_fridge_ControlFridgeResponse_descriptor =
+        internal_static_fridge_FridgeControlRequest_descriptor,
+        new java.lang.String[] { "TurnOn", });
+    internal_static_fridge_FridgeControlResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_fridge_ControlFridgeResponse_fieldAccessorTable = new
+    internal_static_fridge_FridgeControlResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_fridge_ControlFridgeResponse_descriptor,
-        new java.lang.String[] { "Success", "Message", });
-    internal_static_fridge_MonitorFridgeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_fridge_MonitorFridgeRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_fridge_MonitorFridgeRequest_descriptor,
-        new java.lang.String[] { "FridgeId", });
+        internal_static_fridge_FridgeControlResponse_descriptor,
+        new java.lang.String[] { });
     internal_static_fridge_HealthCheckRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_fridge_HealthCheckRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fridge_HealthCheckRequest_descriptor,
         new java.lang.String[] { "ServiceName", "ServiceVersion", "Timestamp", });
     internal_static_fridge_HealthCheckResponse_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_fridge_HealthCheckResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fridge_HealthCheckResponse_descriptor,

@@ -1,45 +1,46 @@
 syntax = "proto3";
 
 option java_multiple_files = false;
-option java_package = "com.smartretail";
 option java_outer_classname = "OvenProto";
 
 package oven;
 
+
 service OvenService {
-  rpc getOvenStatus(OvenStatusRequest) returns (OvenStatusResponse) {}
+  // Unary RPC for getting oven status
+  rpc GetOvenStatus(OvenStatusRequest) returns (OvenStatusResponse) {}
+
+  // Unary RPC for controlling the oven
   rpc ControlOven(OvenControlRequest) returns (OvenControlResponse) {}
-  rpc MonitorOven(OvenMonitorRequest) returns (stream OvenStatusResponse) {}
-  rpc OptimizeOven(stream OvenStatusResponse) returns (stream OvenControlRequest) {}
+
+  // Server Streaming RPC for real-time monitoring of oven status
+  rpc MonitorOvenStatus(OvenMonitorRequest) returns (stream OvenStatusResponse) {}
+
+  // Bidirectional Streaming RPC for energy optimization
+  rpc OptimizeEnergy(stream OvenStatusResponse) returns (stream OvenControlRequest) {}
 
   // Server-side streaming RPC for health check
   rpc HealthCheck(HealthCheckRequest) returns (stream HealthCheckResponse) {}
 }
 
 message OvenStatusRequest {
-  string ovenId = 1;
 }
 
 message OvenStatusResponse {
-  string ovenId = 1;
-  bool isOn = 2;
-  string currentTask = 3;
-  int32 temperature = 4;
-  int32 bakingTimeRemaining = 5;
+  bool isOvenOn = 1;
+  float temperature = 2;
+  string bakingTask = 3;
+  int32 remainingTime = 4;
 }
 
 message OvenControlRequest {
-  string ovenId = 1;
-  bool turnOn = 2;
+  bool turnOn = 1;
 }
 
 message OvenControlResponse {
-  string ovenId = 1;
-  string message = 2;
 }
 
 message OvenMonitorRequest {
-  string ovenId = 1;
 }
 
 message HealthCheckRequest {

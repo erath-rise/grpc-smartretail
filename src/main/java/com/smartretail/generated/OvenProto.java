@@ -18,18 +18,6 @@ public final class OvenProto {
   public interface OvenStatusRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:oven.OvenStatusRequest)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string ovenId = 1;</code>
-     * @return The ovenId.
-     */
-    java.lang.String getOvenId();
-    /**
-     * <code>string ovenId = 1;</code>
-     * @return The bytes for ovenId.
-     */
-    com.google.protobuf.ByteString
-        getOvenIdBytes();
   }
   /**
    * Protobuf type {@code oven.OvenStatusRequest}
@@ -44,7 +32,6 @@ public final class OvenProto {
       super(builder);
     }
     private OvenStatusRequest() {
-      ovenId_ = "";
     }
 
     @java.lang.Override
@@ -67,45 +54,6 @@ public final class OvenProto {
               OvenProto.OvenStatusRequest.class, OvenProto.OvenStatusRequest.Builder.class);
     }
 
-    public static final int OVENID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object ovenId_ = "";
-    /**
-     * <code>string ovenId = 1;</code>
-     * @return The ovenId.
-     */
-    @java.lang.Override
-    public java.lang.String getOvenId() {
-      java.lang.Object ref = ovenId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        ovenId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string ovenId = 1;</code>
-     * @return The bytes for ovenId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getOvenIdBytes() {
-      java.lang.Object ref = ovenId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        ovenId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -120,9 +68,6 @@ public final class OvenProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ovenId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ovenId_);
-      }
       getUnknownFields().writeTo(output);
     }
 
@@ -132,9 +77,6 @@ public final class OvenProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ovenId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ovenId_);
-      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -150,8 +92,6 @@ public final class OvenProto {
       }
       OvenProto.OvenStatusRequest other = (OvenProto.OvenStatusRequest) obj;
 
-      if (!getOvenId()
-          .equals(other.getOvenId())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -163,8 +103,6 @@ public final class OvenProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + OVENID_FIELD_NUMBER;
-      hash = (53 * hash) + getOvenId().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -282,7 +220,7 @@ public final class OvenProto {
                 OvenProto.OvenStatusRequest.class, OvenProto.OvenStatusRequest.Builder.class);
       }
 
-      // Construct using com.smartretail.OvenProto.OvenStatusRequest.newBuilder()
+      // Construct using oven.OvenProto.OvenStatusRequest.newBuilder()
       private Builder() {
 
       }
@@ -295,8 +233,6 @@ public final class OvenProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        ovenId_ = "";
         return this;
       }
 
@@ -323,16 +259,8 @@ public final class OvenProto {
       @java.lang.Override
       public OvenProto.OvenStatusRequest buildPartial() {
         OvenProto.OvenStatusRequest result = new OvenProto.OvenStatusRequest(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(OvenProto.OvenStatusRequest result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.ovenId_ = ovenId_;
-        }
       }
 
       @java.lang.Override
@@ -379,11 +307,6 @@ public final class OvenProto {
 
       public Builder mergeFrom(OvenProto.OvenStatusRequest other) {
         if (other == OvenProto.OvenStatusRequest.getDefaultInstance()) return this;
-        if (!other.getOvenId().isEmpty()) {
-          ovenId_ = other.ovenId_;
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -410,11 +333,6 @@ public final class OvenProto {
               case 0:
                 done = true;
                 break;
-              case 10: {
-                ovenId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -428,79 +346,6 @@ public final class OvenProto {
         } finally {
           onChanged();
         } // finally
-        return this;
-      }
-      private int bitField0_;
-
-      private java.lang.Object ovenId_ = "";
-      /**
-       * <code>string ovenId = 1;</code>
-       * @return The ovenId.
-       */
-      public java.lang.String getOvenId() {
-        java.lang.Object ref = ovenId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          ovenId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string ovenId = 1;</code>
-       * @return The bytes for ovenId.
-       */
-      public com.google.protobuf.ByteString
-          getOvenIdBytes() {
-        java.lang.Object ref = ovenId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          ovenId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string ovenId = 1;</code>
-       * @param value The ovenId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOvenId(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ovenId_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string ovenId = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOvenId() {
-        ovenId_ = getDefaultInstance().getOvenId();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string ovenId = 1;</code>
-       * @param value The bytes for ovenId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOvenIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        ovenId_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       @java.lang.Override
@@ -572,46 +417,34 @@ public final class OvenProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string ovenId = 1;</code>
-     * @return The ovenId.
+     * <code>bool isOvenOn = 1;</code>
+     * @return The isOvenOn.
      */
-    java.lang.String getOvenId();
-    /**
-     * <code>string ovenId = 1;</code>
-     * @return The bytes for ovenId.
-     */
-    com.google.protobuf.ByteString
-        getOvenIdBytes();
+    boolean getIsOvenOn();
 
     /**
-     * <code>bool isOn = 2;</code>
-     * @return The isOn.
-     */
-    boolean getIsOn();
-
-    /**
-     * <code>string currentTask = 3;</code>
-     * @return The currentTask.
-     */
-    java.lang.String getCurrentTask();
-    /**
-     * <code>string currentTask = 3;</code>
-     * @return The bytes for currentTask.
-     */
-    com.google.protobuf.ByteString
-        getCurrentTaskBytes();
-
-    /**
-     * <code>int32 temperature = 4;</code>
+     * <code>float temperature = 2;</code>
      * @return The temperature.
      */
-    int getTemperature();
+    float getTemperature();
 
     /**
-     * <code>int32 bakingTimeRemaining = 5;</code>
-     * @return The bakingTimeRemaining.
+     * <code>string bakingTask = 3;</code>
+     * @return The bakingTask.
      */
-    int getBakingTimeRemaining();
+    java.lang.String getBakingTask();
+    /**
+     * <code>string bakingTask = 3;</code>
+     * @return The bytes for bakingTask.
+     */
+    com.google.protobuf.ByteString
+        getBakingTaskBytes();
+
+    /**
+     * <code>int32 remainingTime = 4;</code>
+     * @return The remainingTime.
+     */
+    int getRemainingTime();
   }
   /**
    * Protobuf type {@code oven.OvenStatusResponse}
@@ -626,8 +459,7 @@ public final class OvenProto {
       super(builder);
     }
     private OvenStatusResponse() {
-      ovenId_ = "";
-      currentTask_ = "";
+      bakingTask_ = "";
     }
 
     @java.lang.Override
@@ -650,115 +482,76 @@ public final class OvenProto {
               OvenProto.OvenStatusResponse.class, OvenProto.OvenStatusResponse.Builder.class);
     }
 
-    public static final int OVENID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object ovenId_ = "";
+    public static final int ISOVENON_FIELD_NUMBER = 1;
+    private boolean isOvenOn_ = false;
     /**
-     * <code>string ovenId = 1;</code>
-     * @return The ovenId.
+     * <code>bool isOvenOn = 1;</code>
+     * @return The isOvenOn.
      */
     @java.lang.Override
-    public java.lang.String getOvenId() {
-      java.lang.Object ref = ovenId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        ovenId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string ovenId = 1;</code>
-     * @return The bytes for ovenId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getOvenIdBytes() {
-      java.lang.Object ref = ovenId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        ovenId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public boolean getIsOvenOn() {
+      return isOvenOn_;
     }
 
-    public static final int ISON_FIELD_NUMBER = 2;
-    private boolean isOn_ = false;
+    public static final int TEMPERATURE_FIELD_NUMBER = 2;
+    private float temperature_ = 0F;
     /**
-     * <code>bool isOn = 2;</code>
-     * @return The isOn.
-     */
-    @java.lang.Override
-    public boolean getIsOn() {
-      return isOn_;
-    }
-
-    public static final int CURRENTTASK_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object currentTask_ = "";
-    /**
-     * <code>string currentTask = 3;</code>
-     * @return The currentTask.
-     */
-    @java.lang.Override
-    public java.lang.String getCurrentTask() {
-      java.lang.Object ref = currentTask_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        currentTask_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string currentTask = 3;</code>
-     * @return The bytes for currentTask.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCurrentTaskBytes() {
-      java.lang.Object ref = currentTask_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        currentTask_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TEMPERATURE_FIELD_NUMBER = 4;
-    private int temperature_ = 0;
-    /**
-     * <code>int32 temperature = 4;</code>
+     * <code>float temperature = 2;</code>
      * @return The temperature.
      */
     @java.lang.Override
-    public int getTemperature() {
+    public float getTemperature() {
       return temperature_;
     }
 
-    public static final int BAKINGTIMEREMAINING_FIELD_NUMBER = 5;
-    private int bakingTimeRemaining_ = 0;
+    public static final int BAKINGTASK_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object bakingTask_ = "";
     /**
-     * <code>int32 bakingTimeRemaining = 5;</code>
-     * @return The bakingTimeRemaining.
+     * <code>string bakingTask = 3;</code>
+     * @return The bakingTask.
      */
     @java.lang.Override
-    public int getBakingTimeRemaining() {
-      return bakingTimeRemaining_;
+    public java.lang.String getBakingTask() {
+      java.lang.Object ref = bakingTask_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bakingTask_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string bakingTask = 3;</code>
+     * @return The bytes for bakingTask.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBakingTaskBytes() {
+      java.lang.Object ref = bakingTask_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        bakingTask_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int REMAININGTIME_FIELD_NUMBER = 4;
+    private int remainingTime_ = 0;
+    /**
+     * <code>int32 remainingTime = 4;</code>
+     * @return The remainingTime.
+     */
+    @java.lang.Override
+    public int getRemainingTime() {
+      return remainingTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -775,20 +568,17 @@ public final class OvenProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ovenId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ovenId_);
+      if (isOvenOn_ != false) {
+        output.writeBool(1, isOvenOn_);
       }
-      if (isOn_ != false) {
-        output.writeBool(2, isOn_);
+      if (java.lang.Float.floatToRawIntBits(temperature_) != 0) {
+        output.writeFloat(2, temperature_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currentTask_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, currentTask_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bakingTask_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, bakingTask_);
       }
-      if (temperature_ != 0) {
-        output.writeInt32(4, temperature_);
-      }
-      if (bakingTimeRemaining_ != 0) {
-        output.writeInt32(5, bakingTimeRemaining_);
+      if (remainingTime_ != 0) {
+        output.writeInt32(4, remainingTime_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -799,23 +589,20 @@ public final class OvenProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ovenId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ovenId_);
-      }
-      if (isOn_ != false) {
+      if (isOvenOn_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, isOn_);
+          .computeBoolSize(1, isOvenOn_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currentTask_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, currentTask_);
-      }
-      if (temperature_ != 0) {
+      if (java.lang.Float.floatToRawIntBits(temperature_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, temperature_);
+          .computeFloatSize(2, temperature_);
       }
-      if (bakingTimeRemaining_ != 0) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bakingTask_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, bakingTask_);
+      }
+      if (remainingTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, bakingTimeRemaining_);
+          .computeInt32Size(4, remainingTime_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -832,16 +619,15 @@ public final class OvenProto {
       }
       OvenProto.OvenStatusResponse other = (OvenProto.OvenStatusResponse) obj;
 
-      if (!getOvenId()
-          .equals(other.getOvenId())) return false;
-      if (getIsOn()
-          != other.getIsOn()) return false;
-      if (!getCurrentTask()
-          .equals(other.getCurrentTask())) return false;
-      if (getTemperature()
-          != other.getTemperature()) return false;
-      if (getBakingTimeRemaining()
-          != other.getBakingTimeRemaining()) return false;
+      if (getIsOvenOn()
+          != other.getIsOvenOn()) return false;
+      if (java.lang.Float.floatToIntBits(getTemperature())
+          != java.lang.Float.floatToIntBits(
+              other.getTemperature())) return false;
+      if (!getBakingTask()
+          .equals(other.getBakingTask())) return false;
+      if (getRemainingTime()
+          != other.getRemainingTime()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -853,17 +639,16 @@ public final class OvenProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + OVENID_FIELD_NUMBER;
-      hash = (53 * hash) + getOvenId().hashCode();
-      hash = (37 * hash) + ISON_FIELD_NUMBER;
+      hash = (37 * hash) + ISOVENON_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsOn());
-      hash = (37 * hash) + CURRENTTASK_FIELD_NUMBER;
-      hash = (53 * hash) + getCurrentTask().hashCode();
+          getIsOvenOn());
       hash = (37 * hash) + TEMPERATURE_FIELD_NUMBER;
-      hash = (53 * hash) + getTemperature();
-      hash = (37 * hash) + BAKINGTIMEREMAINING_FIELD_NUMBER;
-      hash = (53 * hash) + getBakingTimeRemaining();
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getTemperature());
+      hash = (37 * hash) + BAKINGTASK_FIELD_NUMBER;
+      hash = (53 * hash) + getBakingTask().hashCode();
+      hash = (37 * hash) + REMAININGTIME_FIELD_NUMBER;
+      hash = (53 * hash) + getRemainingTime();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -981,7 +766,7 @@ public final class OvenProto {
                 OvenProto.OvenStatusResponse.class, OvenProto.OvenStatusResponse.Builder.class);
       }
 
-      // Construct using com.smartretail.OvenProto.OvenStatusResponse.newBuilder()
+      // Construct using oven.OvenProto.OvenStatusResponse.newBuilder()
       private Builder() {
 
       }
@@ -995,11 +780,10 @@ public final class OvenProto {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        ovenId_ = "";
-        isOn_ = false;
-        currentTask_ = "";
-        temperature_ = 0;
-        bakingTimeRemaining_ = 0;
+        isOvenOn_ = false;
+        temperature_ = 0F;
+        bakingTask_ = "";
+        remainingTime_ = 0;
         return this;
       }
 
@@ -1034,19 +818,16 @@ public final class OvenProto {
       private void buildPartial0(OvenProto.OvenStatusResponse result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.ovenId_ = ovenId_;
+          result.isOvenOn_ = isOvenOn_;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.isOn_ = isOn_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.currentTask_ = currentTask_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.temperature_ = temperature_;
         }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.bakingTimeRemaining_ = bakingTimeRemaining_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.bakingTask_ = bakingTask_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.remainingTime_ = remainingTime_;
         }
       }
 
@@ -1094,24 +875,19 @@ public final class OvenProto {
 
       public Builder mergeFrom(OvenProto.OvenStatusResponse other) {
         if (other == OvenProto.OvenStatusResponse.getDefaultInstance()) return this;
-        if (!other.getOvenId().isEmpty()) {
-          ovenId_ = other.ovenId_;
-          bitField0_ |= 0x00000001;
-          onChanged();
+        if (other.getIsOvenOn() != false) {
+          setIsOvenOn(other.getIsOvenOn());
         }
-        if (other.getIsOn() != false) {
-          setIsOn(other.getIsOn());
+        if (other.getTemperature() != 0F) {
+          setTemperature(other.getTemperature());
         }
-        if (!other.getCurrentTask().isEmpty()) {
-          currentTask_ = other.currentTask_;
+        if (!other.getBakingTask().isEmpty()) {
+          bakingTask_ = other.bakingTask_;
           bitField0_ |= 0x00000004;
           onChanged();
         }
-        if (other.getTemperature() != 0) {
-          setTemperature(other.getTemperature());
-        }
-        if (other.getBakingTimeRemaining() != 0) {
-          setBakingTimeRemaining(other.getBakingTimeRemaining());
+        if (other.getRemainingTime() != 0) {
+          setRemainingTime(other.getRemainingTime());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1139,31 +915,26 @@ public final class OvenProto {
               case 0:
                 done = true;
                 break;
-              case 10: {
-                ovenId_ = input.readStringRequireUtf8();
+              case 8: {
+                isOvenOn_ = input.readBool();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 10
-              case 16: {
-                isOn_ = input.readBool();
+              } // case 8
+              case 21: {
+                temperature_ = input.readFloat();
                 bitField0_ |= 0x00000002;
                 break;
-              } // case 16
+              } // case 21
               case 26: {
-                currentTask_ = input.readStringRequireUtf8();
+                bakingTask_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
               case 32: {
-                temperature_ = input.readInt32();
+                remainingTime_ = input.readInt32();
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
-              case 40: {
-                bakingTimeRemaining_ = input.readInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 40
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -1181,242 +952,170 @@ public final class OvenProto {
       }
       private int bitField0_;
 
-      private java.lang.Object ovenId_ = "";
+      private boolean isOvenOn_ ;
       /**
-       * <code>string ovenId = 1;</code>
-       * @return The ovenId.
-       */
-      public java.lang.String getOvenId() {
-        java.lang.Object ref = ovenId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          ovenId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string ovenId = 1;</code>
-       * @return The bytes for ovenId.
-       */
-      public com.google.protobuf.ByteString
-          getOvenIdBytes() {
-        java.lang.Object ref = ovenId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          ovenId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string ovenId = 1;</code>
-       * @param value The ovenId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOvenId(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ovenId_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string ovenId = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOvenId() {
-        ovenId_ = getDefaultInstance().getOvenId();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string ovenId = 1;</code>
-       * @param value The bytes for ovenId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOvenIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        ovenId_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      private boolean isOn_ ;
-      /**
-       * <code>bool isOn = 2;</code>
-       * @return The isOn.
+       * <code>bool isOvenOn = 1;</code>
+       * @return The isOvenOn.
        */
       @java.lang.Override
-      public boolean getIsOn() {
-        return isOn_;
+      public boolean getIsOvenOn() {
+        return isOvenOn_;
       }
       /**
-       * <code>bool isOn = 2;</code>
-       * @param value The isOn to set.
+       * <code>bool isOvenOn = 1;</code>
+       * @param value The isOvenOn to set.
        * @return This builder for chaining.
        */
-      public Builder setIsOn(boolean value) {
+      public Builder setIsOvenOn(boolean value) {
 
-        isOn_ = value;
+        isOvenOn_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool isOvenOn = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsOvenOn() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        isOvenOn_ = false;
+        onChanged();
+        return this;
+      }
+
+      private float temperature_ ;
+      /**
+       * <code>float temperature = 2;</code>
+       * @return The temperature.
+       */
+      @java.lang.Override
+      public float getTemperature() {
+        return temperature_;
+      }
+      /**
+       * <code>float temperature = 2;</code>
+       * @param value The temperature to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTemperature(float value) {
+
+        temperature_ = value;
         bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>bool isOn = 2;</code>
+       * <code>float temperature = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIsOn() {
+      public Builder clearTemperature() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        isOn_ = false;
+        temperature_ = 0F;
         onChanged();
         return this;
       }
 
-      private java.lang.Object currentTask_ = "";
+      private java.lang.Object bakingTask_ = "";
       /**
-       * <code>string currentTask = 3;</code>
-       * @return The currentTask.
+       * <code>string bakingTask = 3;</code>
+       * @return The bakingTask.
        */
-      public java.lang.String getCurrentTask() {
-        java.lang.Object ref = currentTask_;
+      public java.lang.String getBakingTask() {
+        java.lang.Object ref = bakingTask_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          currentTask_ = s;
+          bakingTask_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string currentTask = 3;</code>
-       * @return The bytes for currentTask.
+       * <code>string bakingTask = 3;</code>
+       * @return The bytes for bakingTask.
        */
       public com.google.protobuf.ByteString
-          getCurrentTaskBytes() {
-        java.lang.Object ref = currentTask_;
+          getBakingTaskBytes() {
+        java.lang.Object ref = bakingTask_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          currentTask_ = b;
+          bakingTask_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string currentTask = 3;</code>
-       * @param value The currentTask to set.
+       * <code>string bakingTask = 3;</code>
+       * @param value The bakingTask to set.
        * @return This builder for chaining.
        */
-      public Builder setCurrentTask(
+      public Builder setBakingTask(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        currentTask_ = value;
+        bakingTask_ = value;
         bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
-       * <code>string currentTask = 3;</code>
+       * <code>string bakingTask = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearCurrentTask() {
-        currentTask_ = getDefaultInstance().getCurrentTask();
+      public Builder clearBakingTask() {
+        bakingTask_ = getDefaultInstance().getBakingTask();
         bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
       /**
-       * <code>string currentTask = 3;</code>
-       * @param value The bytes for currentTask to set.
+       * <code>string bakingTask = 3;</code>
+       * @param value The bytes for bakingTask to set.
        * @return This builder for chaining.
        */
-      public Builder setCurrentTaskBytes(
+      public Builder setBakingTaskBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        currentTask_ = value;
+        bakingTask_ = value;
         bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
 
-      private int temperature_ ;
+      private int remainingTime_ ;
       /**
-       * <code>int32 temperature = 4;</code>
-       * @return The temperature.
+       * <code>int32 remainingTime = 4;</code>
+       * @return The remainingTime.
        */
       @java.lang.Override
-      public int getTemperature() {
-        return temperature_;
+      public int getRemainingTime() {
+        return remainingTime_;
       }
       /**
-       * <code>int32 temperature = 4;</code>
-       * @param value The temperature to set.
+       * <code>int32 remainingTime = 4;</code>
+       * @param value The remainingTime to set.
        * @return This builder for chaining.
        */
-      public Builder setTemperature(int value) {
+      public Builder setRemainingTime(int value) {
 
-        temperature_ = value;
+        remainingTime_ = value;
         bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 temperature = 4;</code>
+       * <code>int32 remainingTime = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearTemperature() {
+      public Builder clearRemainingTime() {
         bitField0_ = (bitField0_ & ~0x00000008);
-        temperature_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int bakingTimeRemaining_ ;
-      /**
-       * <code>int32 bakingTimeRemaining = 5;</code>
-       * @return The bakingTimeRemaining.
-       */
-      @java.lang.Override
-      public int getBakingTimeRemaining() {
-        return bakingTimeRemaining_;
-      }
-      /**
-       * <code>int32 bakingTimeRemaining = 5;</code>
-       * @param value The bakingTimeRemaining to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBakingTimeRemaining(int value) {
-
-        bakingTimeRemaining_ = value;
-        bitField0_ |= 0x00000010;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 bakingTimeRemaining = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBakingTimeRemaining() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        bakingTimeRemaining_ = 0;
+        remainingTime_ = 0;
         onChanged();
         return this;
       }
@@ -1489,19 +1188,7 @@ public final class OvenProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string ovenId = 1;</code>
-     * @return The ovenId.
-     */
-    java.lang.String getOvenId();
-    /**
-     * <code>string ovenId = 1;</code>
-     * @return The bytes for ovenId.
-     */
-    com.google.protobuf.ByteString
-        getOvenIdBytes();
-
-    /**
-     * <code>bool turnOn = 2;</code>
+     * <code>bool turnOn = 1;</code>
      * @return The turnOn.
      */
     boolean getTurnOn();
@@ -1519,7 +1206,6 @@ public final class OvenProto {
       super(builder);
     }
     private OvenControlRequest() {
-      ovenId_ = "";
     }
 
     @java.lang.Override
@@ -1542,49 +1228,10 @@ public final class OvenProto {
               OvenProto.OvenControlRequest.class, OvenProto.OvenControlRequest.Builder.class);
     }
 
-    public static final int OVENID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object ovenId_ = "";
-    /**
-     * <code>string ovenId = 1;</code>
-     * @return The ovenId.
-     */
-    @java.lang.Override
-    public java.lang.String getOvenId() {
-      java.lang.Object ref = ovenId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        ovenId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string ovenId = 1;</code>
-     * @return The bytes for ovenId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getOvenIdBytes() {
-      java.lang.Object ref = ovenId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        ovenId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TURNON_FIELD_NUMBER = 2;
+    public static final int TURNON_FIELD_NUMBER = 1;
     private boolean turnOn_ = false;
     /**
-     * <code>bool turnOn = 2;</code>
+     * <code>bool turnOn = 1;</code>
      * @return The turnOn.
      */
     @java.lang.Override
@@ -1606,11 +1253,8 @@ public final class OvenProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ovenId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ovenId_);
-      }
       if (turnOn_ != false) {
-        output.writeBool(2, turnOn_);
+        output.writeBool(1, turnOn_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1621,12 +1265,9 @@ public final class OvenProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ovenId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ovenId_);
-      }
       if (turnOn_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, turnOn_);
+          .computeBoolSize(1, turnOn_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1643,8 +1284,6 @@ public final class OvenProto {
       }
       OvenProto.OvenControlRequest other = (OvenProto.OvenControlRequest) obj;
 
-      if (!getOvenId()
-          .equals(other.getOvenId())) return false;
       if (getTurnOn()
           != other.getTurnOn()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -1658,8 +1297,6 @@ public final class OvenProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + OVENID_FIELD_NUMBER;
-      hash = (53 * hash) + getOvenId().hashCode();
       hash = (37 * hash) + TURNON_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getTurnOn());
@@ -1780,7 +1417,7 @@ public final class OvenProto {
                 OvenProto.OvenControlRequest.class, OvenProto.OvenControlRequest.Builder.class);
       }
 
-      // Construct using com.smartretail.OvenProto.OvenControlRequest.newBuilder()
+      // Construct using oven.OvenProto.OvenControlRequest.newBuilder()
       private Builder() {
 
       }
@@ -1794,7 +1431,6 @@ public final class OvenProto {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        ovenId_ = "";
         turnOn_ = false;
         return this;
       }
@@ -1830,9 +1466,6 @@ public final class OvenProto {
       private void buildPartial0(OvenProto.OvenControlRequest result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.ovenId_ = ovenId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
           result.turnOn_ = turnOn_;
         }
       }
@@ -1881,11 +1514,6 @@ public final class OvenProto {
 
       public Builder mergeFrom(OvenProto.OvenControlRequest other) {
         if (other == OvenProto.OvenControlRequest.getDefaultInstance()) return this;
-        if (!other.getOvenId().isEmpty()) {
-          ovenId_ = other.ovenId_;
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
         if (other.getTurnOn() != false) {
           setTurnOn(other.getTurnOn());
         }
@@ -1915,16 +1543,11 @@ public final class OvenProto {
               case 0:
                 done = true;
                 break;
-              case 10: {
-                ovenId_ = input.readStringRequireUtf8();
+              case 8: {
+                turnOn_ = input.readBool();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 10
-              case 16: {
-                turnOn_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
+              } // case 8
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -1942,81 +1565,9 @@ public final class OvenProto {
       }
       private int bitField0_;
 
-      private java.lang.Object ovenId_ = "";
-      /**
-       * <code>string ovenId = 1;</code>
-       * @return The ovenId.
-       */
-      public java.lang.String getOvenId() {
-        java.lang.Object ref = ovenId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          ovenId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string ovenId = 1;</code>
-       * @return The bytes for ovenId.
-       */
-      public com.google.protobuf.ByteString
-          getOvenIdBytes() {
-        java.lang.Object ref = ovenId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          ovenId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string ovenId = 1;</code>
-       * @param value The ovenId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOvenId(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ovenId_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string ovenId = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOvenId() {
-        ovenId_ = getDefaultInstance().getOvenId();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string ovenId = 1;</code>
-       * @param value The bytes for ovenId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOvenIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        ovenId_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
       private boolean turnOn_ ;
       /**
-       * <code>bool turnOn = 2;</code>
+       * <code>bool turnOn = 1;</code>
        * @return The turnOn.
        */
       @java.lang.Override
@@ -2024,23 +1575,23 @@ public final class OvenProto {
         return turnOn_;
       }
       /**
-       * <code>bool turnOn = 2;</code>
+       * <code>bool turnOn = 1;</code>
        * @param value The turnOn to set.
        * @return This builder for chaining.
        */
       public Builder setTurnOn(boolean value) {
 
         turnOn_ = value;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>bool turnOn = 2;</code>
+       * <code>bool turnOn = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearTurnOn() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         turnOn_ = false;
         onChanged();
         return this;
@@ -2112,30 +1663,6 @@ public final class OvenProto {
   public interface OvenControlResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:oven.OvenControlResponse)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string ovenId = 1;</code>
-     * @return The ovenId.
-     */
-    java.lang.String getOvenId();
-    /**
-     * <code>string ovenId = 1;</code>
-     * @return The bytes for ovenId.
-     */
-    com.google.protobuf.ByteString
-        getOvenIdBytes();
-
-    /**
-     * <code>string message = 2;</code>
-     * @return The message.
-     */
-    java.lang.String getMessage();
-    /**
-     * <code>string message = 2;</code>
-     * @return The bytes for message.
-     */
-    com.google.protobuf.ByteString
-        getMessageBytes();
   }
   /**
    * Protobuf type {@code oven.OvenControlResponse}
@@ -2150,8 +1677,6 @@ public final class OvenProto {
       super(builder);
     }
     private OvenControlResponse() {
-      ovenId_ = "";
-      message_ = "";
     }
 
     @java.lang.Override
@@ -2174,84 +1699,6 @@ public final class OvenProto {
               OvenProto.OvenControlResponse.class, OvenProto.OvenControlResponse.Builder.class);
     }
 
-    public static final int OVENID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object ovenId_ = "";
-    /**
-     * <code>string ovenId = 1;</code>
-     * @return The ovenId.
-     */
-    @java.lang.Override
-    public java.lang.String getOvenId() {
-      java.lang.Object ref = ovenId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        ovenId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string ovenId = 1;</code>
-     * @return The bytes for ovenId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getOvenIdBytes() {
-      java.lang.Object ref = ovenId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        ovenId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int MESSAGE_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object message_ = "";
-    /**
-     * <code>string message = 2;</code>
-     * @return The message.
-     */
-    @java.lang.Override
-    public java.lang.String getMessage() {
-      java.lang.Object ref = message_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        message_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string message = 2;</code>
-     * @return The bytes for message.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getMessageBytes() {
-      java.lang.Object ref = message_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        message_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2266,12 +1713,6 @@ public final class OvenProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ovenId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ovenId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
-      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2281,12 +1722,6 @@ public final class OvenProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ovenId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ovenId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
-      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2302,10 +1737,6 @@ public final class OvenProto {
       }
       OvenProto.OvenControlResponse other = (OvenProto.OvenControlResponse) obj;
 
-      if (!getOvenId()
-          .equals(other.getOvenId())) return false;
-      if (!getMessage()
-          .equals(other.getMessage())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2317,10 +1748,6 @@ public final class OvenProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + OVENID_FIELD_NUMBER;
-      hash = (53 * hash) + getOvenId().hashCode();
-      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getMessage().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2438,7 +1865,7 @@ public final class OvenProto {
                 OvenProto.OvenControlResponse.class, OvenProto.OvenControlResponse.Builder.class);
       }
 
-      // Construct using com.smartretail.OvenProto.OvenControlResponse.newBuilder()
+      // Construct using oven.OvenProto.OvenControlResponse.newBuilder()
       private Builder() {
 
       }
@@ -2451,9 +1878,6 @@ public final class OvenProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        ovenId_ = "";
-        message_ = "";
         return this;
       }
 
@@ -2480,19 +1904,8 @@ public final class OvenProto {
       @java.lang.Override
       public OvenProto.OvenControlResponse buildPartial() {
         OvenProto.OvenControlResponse result = new OvenProto.OvenControlResponse(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(OvenProto.OvenControlResponse result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.ovenId_ = ovenId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.message_ = message_;
-        }
       }
 
       @java.lang.Override
@@ -2539,16 +1952,6 @@ public final class OvenProto {
 
       public Builder mergeFrom(OvenProto.OvenControlResponse other) {
         if (other == OvenProto.OvenControlResponse.getDefaultInstance()) return this;
-        if (!other.getOvenId().isEmpty()) {
-          ovenId_ = other.ovenId_;
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
-        if (!other.getMessage().isEmpty()) {
-          message_ = other.message_;
-          bitField0_ |= 0x00000002;
-          onChanged();
-        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2575,16 +1978,6 @@ public final class OvenProto {
               case 0:
                 done = true;
                 break;
-              case 10: {
-                ovenId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                message_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -2598,151 +1991,6 @@ public final class OvenProto {
         } finally {
           onChanged();
         } // finally
-        return this;
-      }
-      private int bitField0_;
-
-      private java.lang.Object ovenId_ = "";
-      /**
-       * <code>string ovenId = 1;</code>
-       * @return The ovenId.
-       */
-      public java.lang.String getOvenId() {
-        java.lang.Object ref = ovenId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          ovenId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string ovenId = 1;</code>
-       * @return The bytes for ovenId.
-       */
-      public com.google.protobuf.ByteString
-          getOvenIdBytes() {
-        java.lang.Object ref = ovenId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          ovenId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string ovenId = 1;</code>
-       * @param value The ovenId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOvenId(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ovenId_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string ovenId = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOvenId() {
-        ovenId_ = getDefaultInstance().getOvenId();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string ovenId = 1;</code>
-       * @param value The bytes for ovenId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOvenIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        ovenId_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object message_ = "";
-      /**
-       * <code>string message = 2;</code>
-       * @return The message.
-       */
-      public java.lang.String getMessage() {
-        java.lang.Object ref = message_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          message_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string message = 2;</code>
-       * @return The bytes for message.
-       */
-      public com.google.protobuf.ByteString
-          getMessageBytes() {
-        java.lang.Object ref = message_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          message_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string message = 2;</code>
-       * @param value The message to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMessage(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        message_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string message = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMessage() {
-        message_ = getDefaultInstance().getMessage();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string message = 2;</code>
-       * @param value The bytes for message to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMessageBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        message_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       @java.lang.Override
@@ -2812,18 +2060,6 @@ public final class OvenProto {
   public interface OvenMonitorRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:oven.OvenMonitorRequest)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string ovenId = 1;</code>
-     * @return The ovenId.
-     */
-    java.lang.String getOvenId();
-    /**
-     * <code>string ovenId = 1;</code>
-     * @return The bytes for ovenId.
-     */
-    com.google.protobuf.ByteString
-        getOvenIdBytes();
   }
   /**
    * Protobuf type {@code oven.OvenMonitorRequest}
@@ -2838,7 +2074,6 @@ public final class OvenProto {
       super(builder);
     }
     private OvenMonitorRequest() {
-      ovenId_ = "";
     }
 
     @java.lang.Override
@@ -2861,45 +2096,6 @@ public final class OvenProto {
               OvenProto.OvenMonitorRequest.class, OvenProto.OvenMonitorRequest.Builder.class);
     }
 
-    public static final int OVENID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object ovenId_ = "";
-    /**
-     * <code>string ovenId = 1;</code>
-     * @return The ovenId.
-     */
-    @java.lang.Override
-    public java.lang.String getOvenId() {
-      java.lang.Object ref = ovenId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        ovenId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string ovenId = 1;</code>
-     * @return The bytes for ovenId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getOvenIdBytes() {
-      java.lang.Object ref = ovenId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        ovenId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2914,9 +2110,6 @@ public final class OvenProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ovenId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ovenId_);
-      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2926,9 +2119,6 @@ public final class OvenProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ovenId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ovenId_);
-      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2944,8 +2134,6 @@ public final class OvenProto {
       }
       OvenProto.OvenMonitorRequest other = (OvenProto.OvenMonitorRequest) obj;
 
-      if (!getOvenId()
-          .equals(other.getOvenId())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2957,8 +2145,6 @@ public final class OvenProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + OVENID_FIELD_NUMBER;
-      hash = (53 * hash) + getOvenId().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3076,7 +2262,7 @@ public final class OvenProto {
                 OvenProto.OvenMonitorRequest.class, OvenProto.OvenMonitorRequest.Builder.class);
       }
 
-      // Construct using com.smartretail.OvenProto.OvenMonitorRequest.newBuilder()
+      // Construct using oven.OvenProto.OvenMonitorRequest.newBuilder()
       private Builder() {
 
       }
@@ -3089,8 +2275,6 @@ public final class OvenProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        ovenId_ = "";
         return this;
       }
 
@@ -3117,16 +2301,8 @@ public final class OvenProto {
       @java.lang.Override
       public OvenProto.OvenMonitorRequest buildPartial() {
         OvenProto.OvenMonitorRequest result = new OvenProto.OvenMonitorRequest(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(OvenProto.OvenMonitorRequest result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.ovenId_ = ovenId_;
-        }
       }
 
       @java.lang.Override
@@ -3173,11 +2349,6 @@ public final class OvenProto {
 
       public Builder mergeFrom(OvenProto.OvenMonitorRequest other) {
         if (other == OvenProto.OvenMonitorRequest.getDefaultInstance()) return this;
-        if (!other.getOvenId().isEmpty()) {
-          ovenId_ = other.ovenId_;
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -3204,11 +2375,6 @@ public final class OvenProto {
               case 0:
                 done = true;
                 break;
-              case 10: {
-                ovenId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -3222,79 +2388,6 @@ public final class OvenProto {
         } finally {
           onChanged();
         } // finally
-        return this;
-      }
-      private int bitField0_;
-
-      private java.lang.Object ovenId_ = "";
-      /**
-       * <code>string ovenId = 1;</code>
-       * @return The ovenId.
-       */
-      public java.lang.String getOvenId() {
-        java.lang.Object ref = ovenId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          ovenId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string ovenId = 1;</code>
-       * @return The bytes for ovenId.
-       */
-      public com.google.protobuf.ByteString
-          getOvenIdBytes() {
-        java.lang.Object ref = ovenId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          ovenId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string ovenId = 1;</code>
-       * @param value The ovenId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOvenId(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ovenId_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string ovenId = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOvenId() {
-        ovenId_ = getDefaultInstance().getOvenId();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string ovenId = 1;</code>
-       * @param value The bytes for ovenId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOvenIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        ovenId_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       @java.lang.Override
@@ -3719,7 +2812,7 @@ public final class OvenProto {
                 OvenProto.HealthCheckRequest.class, OvenProto.HealthCheckRequest.Builder.class);
       }
 
-      // Construct using com.smartretail.OvenProto.HealthCheckRequest.newBuilder()
+      // Construct using oven.OvenProto.HealthCheckRequest.newBuilder()
       private Builder() {
 
       }
@@ -4429,7 +3522,7 @@ public final class OvenProto {
                 OvenProto.HealthCheckResponse.class, OvenProto.HealthCheckResponse.Builder.class);
       }
 
-      // Construct using com.smartretail.OvenProto.HealthCheckResponse.newBuilder()
+      // Construct using oven.OvenProto.HealthCheckResponse.newBuilder()
       private Builder() {
 
       }
@@ -4802,29 +3895,26 @@ public final class OvenProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\noven.proto\022\004oven\"#\n\021OvenStatusRequest\022" +
-      "\016\n\006ovenId\030\001 \001(\t\"y\n\022OvenStatusResponse\022\016\n" +
-      "\006ovenId\030\001 \001(\t\022\014\n\004isOn\030\002 \001(\010\022\023\n\013currentTa" +
-      "sk\030\003 \001(\t\022\023\n\013temperature\030\004 \001(\005\022\033\n\023bakingT" +
-      "imeRemaining\030\005 \001(\005\"4\n\022OvenControlRequest" +
-      "\022\016\n\006ovenId\030\001 \001(\t\022\016\n\006turnOn\030\002 \001(\010\"6\n\023Oven" +
-      "ControlResponse\022\016\n\006ovenId\030\001 \001(\t\022\017\n\007messa" +
-      "ge\030\002 \001(\t\"$\n\022OvenMonitorRequest\022\016\n\006ovenId" +
-      "\030\001 \001(\t\"T\n\022HealthCheckRequest\022\023\n\013serviceN" +
-      "ame\030\001 \001(\t\022\026\n\016serviceVersion\030\002 \001(\t\022\021\n\ttim" +
-      "estamp\030\003 \001(\003\"6\n\023HealthCheckResponse\022\016\n\006s" +
-      "tatus\030\001 \001(\005\022\017\n\007message\030\002 \001(\t2\362\002\n\013OvenSer" +
-      "vice\022D\n\rgetOvenStatus\022\027.oven.OvenStatusR" +
-      "equest\032\030.oven.OvenStatusResponse\"\000\022D\n\013Co" +
-      "ntrolOven\022\030.oven.OvenControlRequest\032\031.ov" +
-      "en.OvenControlResponse\"\000\022E\n\013MonitorOven\022" +
-      "\030.oven.OvenMonitorRequest\032\030.oven.OvenSta" +
-      "tusResponse\"\0000\001\022H\n\014OptimizeOven\022\030.oven.O" +
-      "venStatusResponse\032\030.oven.OvenControlRequ" +
-      "est\"\000(\0010\001\022F\n\013HealthCheck\022\030.oven.HealthCh" +
-      "eckRequest\032\031.oven.HealthCheckResponse\"\0000" +
-      "\001B\036\n\017com.smartretailB\tOvenProtoP\000b\006proto" +
-      "3"
+      "\n\noven.proto\022\004oven\"\023\n\021OvenStatusRequest\"" +
+      "f\n\022OvenStatusResponse\022\020\n\010isOvenOn\030\001 \001(\010\022" +
+      "\023\n\013temperature\030\002 \001(\002\022\022\n\nbakingTask\030\003 \001(\t" +
+      "\022\025\n\rremainingTime\030\004 \001(\005\"$\n\022OvenControlRe" +
+      "quest\022\016\n\006turnOn\030\001 \001(\010\"\025\n\023OvenControlResp" +
+      "onse\"\024\n\022OvenMonitorRequest\"T\n\022HealthChec" +
+      "kRequest\022\023\n\013serviceName\030\001 \001(\t\022\026\n\016service" +
+      "Version\030\002 \001(\t\022\021\n\ttimestamp\030\003 \001(\003\"6\n\023Heal" +
+      "thCheckResponse\022\016\n\006status\030\001 \001(\005\022\017\n\007messa" +
+      "ge\030\002 \001(\t2\372\002\n\013OvenService\022D\n\rGetOvenStatu" +
+      "s\022\027.oven.OvenStatusRequest\032\030.oven.OvenSt" +
+      "atusResponse\"\000\022D\n\013ControlOven\022\030.oven.Ove" +
+      "nControlRequest\032\031.oven.OvenControlRespon" +
+      "se\"\000\022K\n\021MonitorOvenStatus\022\030.oven.OvenMon" +
+      "itorRequest\032\030.oven.OvenStatusResponse\"\0000" +
+      "\001\022J\n\016OptimizeEnergy\022\030.oven.OvenStatusRes" +
+      "ponse\032\030.oven.OvenControlRequest\"\000(\0010\001\022F\n" +
+      "\013HealthCheck\022\030.oven.HealthCheckRequest\032\031" +
+      ".oven.HealthCheckResponse\"\0000\001B\rB\tOvenPro" +
+      "toP\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4835,31 +3925,31 @@ public final class OvenProto {
     internal_static_oven_OvenStatusRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_oven_OvenStatusRequest_descriptor,
-        new java.lang.String[] { "OvenId", });
+        new java.lang.String[] { });
     internal_static_oven_OvenStatusResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_oven_OvenStatusResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_oven_OvenStatusResponse_descriptor,
-        new java.lang.String[] { "OvenId", "IsOn", "CurrentTask", "Temperature", "BakingTimeRemaining", });
+        new java.lang.String[] { "IsOvenOn", "Temperature", "BakingTask", "RemainingTime", });
     internal_static_oven_OvenControlRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_oven_OvenControlRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_oven_OvenControlRequest_descriptor,
-        new java.lang.String[] { "OvenId", "TurnOn", });
+        new java.lang.String[] { "TurnOn", });
     internal_static_oven_OvenControlResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_oven_OvenControlResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_oven_OvenControlResponse_descriptor,
-        new java.lang.String[] { "OvenId", "Message", });
+        new java.lang.String[] { });
     internal_static_oven_OvenMonitorRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_oven_OvenMonitorRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_oven_OvenMonitorRequest_descriptor,
-        new java.lang.String[] { "OvenId", });
+        new java.lang.String[] { });
     internal_static_oven_HealthCheckRequest_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_oven_HealthCheckRequest_fieldAccessorTable = new

@@ -1,0 +1,6 @@
+isOvenOn,temperature,bakingTask,remainingTime
+true,180,Cake,30
+false,0,No task,0
+true,200,Pizza,20
+true,160,Cookies,15
+false,0,No task,0

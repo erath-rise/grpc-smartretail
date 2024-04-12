@@ -46,29 +46,29 @@ public final class FridgeServiceGrpc {
     return getGetFridgeStatusMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<FridgeProto.ControlFridgeRequest,
-      FridgeProto.ControlFridgeResponse> getControlFridgeMethod;
+  private static volatile io.grpc.MethodDescriptor<FridgeProto.FridgeControlRequest,
+      FridgeProto.FridgeControlResponse> getControlFridgeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "ControlFridge",
-      requestType = FridgeProto.ControlFridgeRequest.class,
-      responseType = FridgeProto.ControlFridgeResponse.class,
+      requestType = FridgeProto.FridgeControlRequest.class,
+      responseType = FridgeProto.FridgeControlResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<FridgeProto.ControlFridgeRequest,
-      FridgeProto.ControlFridgeResponse> getControlFridgeMethod() {
-    io.grpc.MethodDescriptor<FridgeProto.ControlFridgeRequest, FridgeProto.ControlFridgeResponse> getControlFridgeMethod;
+  public static io.grpc.MethodDescriptor<FridgeProto.FridgeControlRequest,
+      FridgeProto.FridgeControlResponse> getControlFridgeMethod() {
+    io.grpc.MethodDescriptor<FridgeProto.FridgeControlRequest, FridgeProto.FridgeControlResponse> getControlFridgeMethod;
     if ((getControlFridgeMethod = FridgeServiceGrpc.getControlFridgeMethod) == null) {
       synchronized (FridgeServiceGrpc.class) {
         if ((getControlFridgeMethod = FridgeServiceGrpc.getControlFridgeMethod) == null) {
           FridgeServiceGrpc.getControlFridgeMethod = getControlFridgeMethod =
-              io.grpc.MethodDescriptor.<FridgeProto.ControlFridgeRequest, FridgeProto.ControlFridgeResponse>newBuilder()
+              io.grpc.MethodDescriptor.<FridgeProto.FridgeControlRequest, FridgeProto.FridgeControlResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ControlFridge"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  FridgeProto.ControlFridgeRequest.getDefaultInstance()))
+                  FridgeProto.FridgeControlRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  FridgeProto.ControlFridgeResponse.getDefaultInstance()))
+                  FridgeProto.FridgeControlResponse.getDefaultInstance()))
               .setSchemaDescriptor(new FridgeServiceMethodDescriptorSupplier("ControlFridge"))
               .build();
         }
@@ -77,35 +77,35 @@ public final class FridgeServiceGrpc {
     return getControlFridgeMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<FridgeProto.MonitorFridgeRequest,
-      FridgeProto.FridgeStatusResponse> getMonitorFridgeMethod;
+  private static volatile io.grpc.MethodDescriptor<FridgeProto.FridgeStatusResponse,
+      FridgeProto.FridgeControlRequest> getReportFridgeStatusMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "MonitorFridge",
-      requestType = FridgeProto.MonitorFridgeRequest.class,
-      responseType = FridgeProto.FridgeStatusResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-  public static io.grpc.MethodDescriptor<FridgeProto.MonitorFridgeRequest,
-      FridgeProto.FridgeStatusResponse> getMonitorFridgeMethod() {
-    io.grpc.MethodDescriptor<FridgeProto.MonitorFridgeRequest, FridgeProto.FridgeStatusResponse> getMonitorFridgeMethod;
-    if ((getMonitorFridgeMethod = FridgeServiceGrpc.getMonitorFridgeMethod) == null) {
+      fullMethodName = SERVICE_NAME + '/' + "ReportFridgeStatus",
+      requestType = FridgeProto.FridgeStatusResponse.class,
+      responseType = FridgeProto.FridgeControlRequest.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<FridgeProto.FridgeStatusResponse,
+      FridgeProto.FridgeControlRequest> getReportFridgeStatusMethod() {
+    io.grpc.MethodDescriptor<FridgeProto.FridgeStatusResponse, FridgeProto.FridgeControlRequest> getReportFridgeStatusMethod;
+    if ((getReportFridgeStatusMethod = FridgeServiceGrpc.getReportFridgeStatusMethod) == null) {
       synchronized (FridgeServiceGrpc.class) {
-        if ((getMonitorFridgeMethod = FridgeServiceGrpc.getMonitorFridgeMethod) == null) {
-          FridgeServiceGrpc.getMonitorFridgeMethod = getMonitorFridgeMethod =
-              io.grpc.MethodDescriptor.<FridgeProto.MonitorFridgeRequest, FridgeProto.FridgeStatusResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MonitorFridge"))
+        if ((getReportFridgeStatusMethod = FridgeServiceGrpc.getReportFridgeStatusMethod) == null) {
+          FridgeServiceGrpc.getReportFridgeStatusMethod = getReportFridgeStatusMethod =
+              io.grpc.MethodDescriptor.<FridgeProto.FridgeStatusResponse, FridgeProto.FridgeControlRequest>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ReportFridgeStatus"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  FridgeProto.MonitorFridgeRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   FridgeProto.FridgeStatusResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new FridgeServiceMethodDescriptorSupplier("MonitorFridge"))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  FridgeProto.FridgeControlRequest.getDefaultInstance()))
+              .setSchemaDescriptor(new FridgeServiceMethodDescriptorSupplier("ReportFridgeStatus"))
               .build();
         }
       }
     }
-    return getMonitorFridgeMethod;
+    return getReportFridgeStatusMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<FridgeProto.HealthCheckRequest,
@@ -188,6 +188,9 @@ public final class FridgeServiceGrpc {
   public interface AsyncService {
 
     /**
+     * <pre>
+     * Unary RPC for getting fridge status
+     * </pre>
      */
     default void getFridgeStatus(FridgeProto.FridgeStatusRequest request,
                                  io.grpc.stub.StreamObserver<FridgeProto.FridgeStatusResponse> responseObserver) {
@@ -196,25 +199,28 @@ public final class FridgeServiceGrpc {
 
     /**
      * <pre>
-     * control the fridge ON/OFF
+     * Unary RPC for controlling the fridge
      * </pre>
      */
-    default void controlFridge(FridgeProto.ControlFridgeRequest request,
-                               io.grpc.stub.StreamObserver<FridgeProto.ControlFridgeResponse> responseObserver) {
+    default void controlFridge(FridgeProto.FridgeControlRequest request,
+                               io.grpc.stub.StreamObserver<FridgeProto.FridgeControlResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getControlFridgeMethod(), responseObserver);
     }
 
     /**
      * <pre>
-     * Stream for real-time monitoring of the fridge's status
+     * Client Streaming RPC for reporting fridge status every 15 minutes
      * </pre>
      */
-    default void monitorFridge(FridgeProto.MonitorFridgeRequest request,
-                               io.grpc.stub.StreamObserver<FridgeProto.FridgeStatusResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMonitorFridgeMethod(), responseObserver);
+    default io.grpc.stub.StreamObserver<FridgeProto.FridgeStatusResponse> reportFridgeStatus(
+        io.grpc.stub.StreamObserver<FridgeProto.FridgeControlRequest> responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getReportFridgeStatusMethod(), responseObserver);
     }
 
     /**
+     * <pre>
+     * Server-side streaming RPC for health check
+     * </pre>
      */
     default void healthCheck(FridgeProto.HealthCheckRequest request,
                              io.grpc.stub.StreamObserver<FridgeProto.HealthCheckResponse> responseObserver) {
@@ -250,6 +256,9 @@ public final class FridgeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Unary RPC for getting fridge status
+     * </pre>
      */
     public void getFridgeStatus(FridgeProto.FridgeStatusRequest request,
                                 io.grpc.stub.StreamObserver<FridgeProto.FridgeStatusResponse> responseObserver) {
@@ -259,27 +268,30 @@ public final class FridgeServiceGrpc {
 
     /**
      * <pre>
-     * control the fridge ON/OFF
+     * Unary RPC for controlling the fridge
      * </pre>
      */
-    public void controlFridge(FridgeProto.ControlFridgeRequest request,
-                              io.grpc.stub.StreamObserver<FridgeProto.ControlFridgeResponse> responseObserver) {
+    public void controlFridge(FridgeProto.FridgeControlRequest request,
+                              io.grpc.stub.StreamObserver<FridgeProto.FridgeControlResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getControlFridgeMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      * <pre>
-     * Stream for real-time monitoring of the fridge's status
+     * Client Streaming RPC for reporting fridge status every 15 minutes
      * </pre>
      */
-    public void monitorFridge(FridgeProto.MonitorFridgeRequest request,
-                              io.grpc.stub.StreamObserver<FridgeProto.FridgeStatusResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
-          getChannel().newCall(getMonitorFridgeMethod(), getCallOptions()), request, responseObserver);
+    public io.grpc.stub.StreamObserver<FridgeProto.FridgeStatusResponse> reportFridgeStatus(
+        io.grpc.stub.StreamObserver<FridgeProto.FridgeControlRequest> responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncClientStreamingCall(
+          getChannel().newCall(getReportFridgeStatusMethod(), getCallOptions()), responseObserver);
     }
 
     /**
+     * <pre>
+     * Server-side streaming RPC for health check
+     * </pre>
      */
     public void healthCheck(FridgeProto.HealthCheckRequest request,
                             io.grpc.stub.StreamObserver<FridgeProto.HealthCheckResponse> responseObserver) {
@@ -305,6 +317,9 @@ public final class FridgeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Unary RPC for getting fridge status
+     * </pre>
      */
     public FridgeProto.FridgeStatusResponse getFridgeStatus(FridgeProto.FridgeStatusRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -313,26 +328,18 @@ public final class FridgeServiceGrpc {
 
     /**
      * <pre>
-     * control the fridge ON/OFF
+     * Unary RPC for controlling the fridge
      * </pre>
      */
-    public FridgeProto.ControlFridgeResponse controlFridge(FridgeProto.ControlFridgeRequest request) {
+    public FridgeProto.FridgeControlResponse controlFridge(FridgeProto.FridgeControlRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getControlFridgeMethod(), getCallOptions(), request);
     }
 
     /**
      * <pre>
-     * Stream for real-time monitoring of the fridge's status
+     * Server-side streaming RPC for health check
      * </pre>
-     */
-    public java.util.Iterator<FridgeProto.FridgeStatusResponse> monitorFridge(
-        FridgeProto.MonitorFridgeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
-          getChannel(), getMonitorFridgeMethod(), getCallOptions(), request);
-    }
-
-    /**
      */
     public java.util.Iterator<FridgeProto.HealthCheckResponse> healthCheck(
         FridgeProto.HealthCheckRequest request) {
@@ -358,6 +365,9 @@ public final class FridgeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Unary RPC for getting fridge status
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<FridgeProto.FridgeStatusResponse> getFridgeStatus(
         FridgeProto.FridgeStatusRequest request) {
@@ -367,11 +377,11 @@ public final class FridgeServiceGrpc {
 
     /**
      * <pre>
-     * control the fridge ON/OFF
+     * Unary RPC for controlling the fridge
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<FridgeProto.ControlFridgeResponse> controlFridge(
-        FridgeProto.ControlFridgeRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<FridgeProto.FridgeControlResponse> controlFridge(
+        FridgeProto.FridgeControlRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getControlFridgeMethod(), getCallOptions()), request);
     }
@@ -379,8 +389,8 @@ public final class FridgeServiceGrpc {
 
   private static final int METHODID_GET_FRIDGE_STATUS = 0;
   private static final int METHODID_CONTROL_FRIDGE = 1;
-  private static final int METHODID_MONITOR_FRIDGE = 2;
-  private static final int METHODID_HEALTH_CHECK = 3;
+  private static final int METHODID_HEALTH_CHECK = 2;
+  private static final int METHODID_REPORT_FRIDGE_STATUS = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -404,12 +414,8 @@ public final class FridgeServiceGrpc {
               (io.grpc.stub.StreamObserver<FridgeProto.FridgeStatusResponse>) responseObserver);
           break;
         case METHODID_CONTROL_FRIDGE:
-          serviceImpl.controlFridge((FridgeProto.ControlFridgeRequest) request,
-              (io.grpc.stub.StreamObserver<FridgeProto.ControlFridgeResponse>) responseObserver);
-          break;
-        case METHODID_MONITOR_FRIDGE:
-          serviceImpl.monitorFridge((FridgeProto.MonitorFridgeRequest) request,
-              (io.grpc.stub.StreamObserver<FridgeProto.FridgeStatusResponse>) responseObserver);
+          serviceImpl.controlFridge((FridgeProto.FridgeControlRequest) request,
+              (io.grpc.stub.StreamObserver<FridgeProto.FridgeControlResponse>) responseObserver);
           break;
         case METHODID_HEALTH_CHECK:
           serviceImpl.healthCheck((FridgeProto.HealthCheckRequest) request,
@@ -425,6 +431,9 @@ public final class FridgeServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_REPORT_FRIDGE_STATUS:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.reportFridgeStatus(
+              (io.grpc.stub.StreamObserver<FridgeProto.FridgeControlRequest>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -444,16 +453,16 @@ public final class FridgeServiceGrpc {
           getControlFridgeMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              FridgeProto.ControlFridgeRequest,
-              FridgeProto.ControlFridgeResponse>(
+              FridgeProto.FridgeControlRequest,
+              FridgeProto.FridgeControlResponse>(
                 service, METHODID_CONTROL_FRIDGE)))
         .addMethod(
-          getMonitorFridgeMethod(),
-          io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+          getReportFridgeStatusMethod(),
+          io.grpc.stub.ServerCalls.asyncClientStreamingCall(
             new MethodHandlers<
-              FridgeProto.MonitorFridgeRequest,
-              FridgeProto.FridgeStatusResponse>(
-                service, METHODID_MONITOR_FRIDGE)))
+              FridgeProto.FridgeStatusResponse,
+              FridgeProto.FridgeControlRequest>(
+                service, METHODID_REPORT_FRIDGE_STATUS)))
         .addMethod(
           getHealthCheckMethod(),
           io.grpc.stub.ServerCalls.asyncServerStreamingCall(
@@ -511,7 +520,7 @@ public final class FridgeServiceGrpc {
               .setSchemaDescriptor(new FridgeServiceFileDescriptorSupplier())
               .addMethod(getGetFridgeStatusMethod())
               .addMethod(getControlFridgeMethod())
-              .addMethod(getMonitorFridgeMethod())
+              .addMethod(getReportFridgeStatusMethod())
               .addMethod(getHealthCheckMethod())
               .build();
         }

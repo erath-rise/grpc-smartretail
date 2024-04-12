@@ -1,44 +1,36 @@
 syntax = "proto3";
 
 option java_multiple_files = false;
-option java_package = "com.smartretail";
 option java_outer_classname = "FridgeProto";
 
 package fridge;
 
 service FridgeService {
-  rpc GetFridgeStatus (FridgeStatusRequest) returns (FridgeStatusResponse) {}
-  // control the fridge ON/OFF
-  rpc ControlFridge (ControlFridgeRequest) returns (ControlFridgeResponse) {}
-  // Stream for real-time monitoring of the fridge's status
-  rpc MonitorFridge (MonitorFridgeRequest) returns (stream FridgeStatusResponse) {}
+  // Unary RPC for getting fridge status
+  rpc GetFridgeStatus(FridgeStatusRequest) returns (FridgeStatusResponse) {}
+
+  // Unary RPC for controlling the fridge
+  rpc ControlFridge(FridgeControlRequest) returns (FridgeControlResponse) {}
+
+  // Client Streaming RPC for reporting fridge status every 15 minutes
+  rpc ReportFridgeStatus(stream FridgeStatusResponse) returns (FridgeControlRequest) {}
+
+  // Server-side streaming RPC for health check
   rpc HealthCheck(HealthCheckRequest) returns (stream HealthCheckResponse) {}
-
 }
 
-message FridgeStatusRequest {
-  string fridgeId = 1;
-}
+message FridgeStatusRequest {}
 
 message FridgeStatusResponse {
-  string fridgeId = 1;
-  bool isOn = 2;
-  string temperature = 3;
+  bool isFridgeOn = 2;
+  float temperature = 3;
 }
 
-message ControlFridgeRequest {
-  string fridgeId = 1;
-  bool turnOn = 2;
+message FridgeControlRequest {
+  bool turnOn = 1;
 }
 
-message ControlFridgeResponse {
-  string success = 1;
-  string message = 2;
-}
-
-message MonitorFridgeRequest {
-  string fridgeId = 1;
-}
+message FridgeControlResponse {}
 
 message HealthCheckRequest {
   string serviceName = 1;

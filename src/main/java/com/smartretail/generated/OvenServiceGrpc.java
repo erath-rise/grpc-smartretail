@@ -19,7 +19,7 @@ public final class OvenServiceGrpc {
       OvenProto.OvenStatusResponse> getGetOvenStatusMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "getOvenStatus",
+      fullMethodName = SERVICE_NAME + '/' + "GetOvenStatus",
       requestType = OvenProto.OvenStatusRequest.class,
       responseType = OvenProto.OvenStatusResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -32,13 +32,13 @@ public final class OvenServiceGrpc {
           OvenServiceGrpc.getGetOvenStatusMethod = getGetOvenStatusMethod =
               io.grpc.MethodDescriptor.<OvenProto.OvenStatusRequest, OvenProto.OvenStatusResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getOvenStatus"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetOvenStatus"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   OvenProto.OvenStatusRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   OvenProto.OvenStatusResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new OvenServiceMethodDescriptorSupplier("getOvenStatus"))
+              .setSchemaDescriptor(new OvenServiceMethodDescriptorSupplier("GetOvenStatus"))
               .build();
         }
       }
@@ -78,65 +78,65 @@ public final class OvenServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<OvenProto.OvenMonitorRequest,
-      OvenProto.OvenStatusResponse> getMonitorOvenMethod;
+      OvenProto.OvenStatusResponse> getMonitorOvenStatusMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "MonitorOven",
+      fullMethodName = SERVICE_NAME + '/' + "MonitorOvenStatus",
       requestType = OvenProto.OvenMonitorRequest.class,
       responseType = OvenProto.OvenStatusResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<OvenProto.OvenMonitorRequest,
-      OvenProto.OvenStatusResponse> getMonitorOvenMethod() {
-    io.grpc.MethodDescriptor<OvenProto.OvenMonitorRequest, OvenProto.OvenStatusResponse> getMonitorOvenMethod;
-    if ((getMonitorOvenMethod = OvenServiceGrpc.getMonitorOvenMethod) == null) {
+      OvenProto.OvenStatusResponse> getMonitorOvenStatusMethod() {
+    io.grpc.MethodDescriptor<OvenProto.OvenMonitorRequest, OvenProto.OvenStatusResponse> getMonitorOvenStatusMethod;
+    if ((getMonitorOvenStatusMethod = OvenServiceGrpc.getMonitorOvenStatusMethod) == null) {
       synchronized (OvenServiceGrpc.class) {
-        if ((getMonitorOvenMethod = OvenServiceGrpc.getMonitorOvenMethod) == null) {
-          OvenServiceGrpc.getMonitorOvenMethod = getMonitorOvenMethod =
+        if ((getMonitorOvenStatusMethod = OvenServiceGrpc.getMonitorOvenStatusMethod) == null) {
+          OvenServiceGrpc.getMonitorOvenStatusMethod = getMonitorOvenStatusMethod =
               io.grpc.MethodDescriptor.<OvenProto.OvenMonitorRequest, OvenProto.OvenStatusResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MonitorOven"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MonitorOvenStatus"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   OvenProto.OvenMonitorRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   OvenProto.OvenStatusResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new OvenServiceMethodDescriptorSupplier("MonitorOven"))
+              .setSchemaDescriptor(new OvenServiceMethodDescriptorSupplier("MonitorOvenStatus"))
               .build();
         }
       }
     }
-    return getMonitorOvenMethod;
+    return getMonitorOvenStatusMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<OvenProto.OvenStatusResponse,
-      OvenProto.OvenControlRequest> getOptimizeOvenMethod;
+      OvenProto.OvenControlRequest> getOptimizeEnergyMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "OptimizeOven",
+      fullMethodName = SERVICE_NAME + '/' + "OptimizeEnergy",
       requestType = OvenProto.OvenStatusResponse.class,
       responseType = OvenProto.OvenControlRequest.class,
       methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
   public static io.grpc.MethodDescriptor<OvenProto.OvenStatusResponse,
-      OvenProto.OvenControlRequest> getOptimizeOvenMethod() {
-    io.grpc.MethodDescriptor<OvenProto.OvenStatusResponse, OvenProto.OvenControlRequest> getOptimizeOvenMethod;
-    if ((getOptimizeOvenMethod = OvenServiceGrpc.getOptimizeOvenMethod) == null) {
+      OvenProto.OvenControlRequest> getOptimizeEnergyMethod() {
+    io.grpc.MethodDescriptor<OvenProto.OvenStatusResponse, OvenProto.OvenControlRequest> getOptimizeEnergyMethod;
+    if ((getOptimizeEnergyMethod = OvenServiceGrpc.getOptimizeEnergyMethod) == null) {
       synchronized (OvenServiceGrpc.class) {
-        if ((getOptimizeOvenMethod = OvenServiceGrpc.getOptimizeOvenMethod) == null) {
-          OvenServiceGrpc.getOptimizeOvenMethod = getOptimizeOvenMethod =
+        if ((getOptimizeEnergyMethod = OvenServiceGrpc.getOptimizeEnergyMethod) == null) {
+          OvenServiceGrpc.getOptimizeEnergyMethod = getOptimizeEnergyMethod =
               io.grpc.MethodDescriptor.<OvenProto.OvenStatusResponse, OvenProto.OvenControlRequest>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "OptimizeOven"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "OptimizeEnergy"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   OvenProto.OvenStatusResponse.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   OvenProto.OvenControlRequest.getDefaultInstance()))
-              .setSchemaDescriptor(new OvenServiceMethodDescriptorSupplier("OptimizeOven"))
+              .setSchemaDescriptor(new OvenServiceMethodDescriptorSupplier("OptimizeEnergy"))
               .build();
         }
       }
     }
-    return getOptimizeOvenMethod;
+    return getOptimizeEnergyMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<OvenProto.HealthCheckRequest,
@@ -219,6 +219,9 @@ public final class OvenServiceGrpc {
   public interface AsyncService {
 
     /**
+     * <pre>
+     * Unary RPC for getting oven status
+     * </pre>
      */
     default void getOvenStatus(OvenProto.OvenStatusRequest request,
                                io.grpc.stub.StreamObserver<OvenProto.OvenStatusResponse> responseObserver) {
@@ -226,6 +229,9 @@ public final class OvenServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Unary RPC for controlling the oven
+     * </pre>
      */
     default void controlOven(OvenProto.OvenControlRequest request,
                              io.grpc.stub.StreamObserver<OvenProto.OvenControlResponse> responseObserver) {
@@ -233,17 +239,23 @@ public final class OvenServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Server Streaming RPC for real-time monitoring of oven status
+     * </pre>
      */
-    default void monitorOven(OvenProto.OvenMonitorRequest request,
-                             io.grpc.stub.StreamObserver<OvenProto.OvenStatusResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMonitorOvenMethod(), responseObserver);
+    default void monitorOvenStatus(OvenProto.OvenMonitorRequest request,
+                                   io.grpc.stub.StreamObserver<OvenProto.OvenStatusResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMonitorOvenStatusMethod(), responseObserver);
     }
 
     /**
+     * <pre>
+     * Bidirectional Streaming RPC for energy optimization
+     * </pre>
      */
-    default io.grpc.stub.StreamObserver<OvenProto.OvenStatusResponse> optimizeOven(
+    default io.grpc.stub.StreamObserver<OvenProto.OvenStatusResponse> optimizeEnergy(
         io.grpc.stub.StreamObserver<OvenProto.OvenControlRequest> responseObserver) {
-      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getOptimizeOvenMethod(), responseObserver);
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getOptimizeEnergyMethod(), responseObserver);
     }
 
     /**
@@ -285,6 +297,9 @@ public final class OvenServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Unary RPC for getting oven status
+     * </pre>
      */
     public void getOvenStatus(OvenProto.OvenStatusRequest request,
                               io.grpc.stub.StreamObserver<OvenProto.OvenStatusResponse> responseObserver) {
@@ -293,6 +308,9 @@ public final class OvenServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Unary RPC for controlling the oven
+     * </pre>
      */
     public void controlOven(OvenProto.OvenControlRequest request,
                             io.grpc.stub.StreamObserver<OvenProto.OvenControlResponse> responseObserver) {
@@ -301,19 +319,25 @@ public final class OvenServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Server Streaming RPC for real-time monitoring of oven status
+     * </pre>
      */
-    public void monitorOven(OvenProto.OvenMonitorRequest request,
-                            io.grpc.stub.StreamObserver<OvenProto.OvenStatusResponse> responseObserver) {
+    public void monitorOvenStatus(OvenProto.OvenMonitorRequest request,
+                                  io.grpc.stub.StreamObserver<OvenProto.OvenStatusResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncServerStreamingCall(
-          getChannel().newCall(getMonitorOvenMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getMonitorOvenStatusMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
+     * <pre>
+     * Bidirectional Streaming RPC for energy optimization
+     * </pre>
      */
-    public io.grpc.stub.StreamObserver<OvenProto.OvenStatusResponse> optimizeOven(
+    public io.grpc.stub.StreamObserver<OvenProto.OvenStatusResponse> optimizeEnergy(
         io.grpc.stub.StreamObserver<OvenProto.OvenControlRequest> responseObserver) {
       return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
-          getChannel().newCall(getOptimizeOvenMethod(), getCallOptions()), responseObserver);
+          getChannel().newCall(getOptimizeEnergyMethod(), getCallOptions()), responseObserver);
     }
 
     /**
@@ -345,6 +369,9 @@ public final class OvenServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Unary RPC for getting oven status
+     * </pre>
      */
     public OvenProto.OvenStatusResponse getOvenStatus(OvenProto.OvenStatusRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -352,6 +379,9 @@ public final class OvenServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Unary RPC for controlling the oven
+     * </pre>
      */
     public OvenProto.OvenControlResponse controlOven(OvenProto.OvenControlRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -359,11 +389,14 @@ public final class OvenServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Server Streaming RPC for real-time monitoring of oven status
+     * </pre>
      */
-    public java.util.Iterator<OvenProto.OvenStatusResponse> monitorOven(
+    public java.util.Iterator<OvenProto.OvenStatusResponse> monitorOvenStatus(
         OvenProto.OvenMonitorRequest request) {
       return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
-          getChannel(), getMonitorOvenMethod(), getCallOptions(), request);
+          getChannel(), getMonitorOvenStatusMethod(), getCallOptions(), request);
     }
 
     /**
@@ -395,6 +428,9 @@ public final class OvenServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Unary RPC for getting oven status
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<OvenProto.OvenStatusResponse> getOvenStatus(
         OvenProto.OvenStatusRequest request) {
@@ -403,6 +439,9 @@ public final class OvenServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Unary RPC for controlling the oven
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<OvenProto.OvenControlResponse> controlOven(
         OvenProto.OvenControlRequest request) {
@@ -413,9 +452,9 @@ public final class OvenServiceGrpc {
 
   private static final int METHODID_GET_OVEN_STATUS = 0;
   private static final int METHODID_CONTROL_OVEN = 1;
-  private static final int METHODID_MONITOR_OVEN = 2;
+  private static final int METHODID_MONITOR_OVEN_STATUS = 2;
   private static final int METHODID_HEALTH_CHECK = 3;
-  private static final int METHODID_OPTIMIZE_OVEN = 4;
+  private static final int METHODID_OPTIMIZE_ENERGY = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -442,8 +481,8 @@ public final class OvenServiceGrpc {
           serviceImpl.controlOven((OvenProto.OvenControlRequest) request,
               (io.grpc.stub.StreamObserver<OvenProto.OvenControlResponse>) responseObserver);
           break;
-        case METHODID_MONITOR_OVEN:
-          serviceImpl.monitorOven((OvenProto.OvenMonitorRequest) request,
+        case METHODID_MONITOR_OVEN_STATUS:
+          serviceImpl.monitorOvenStatus((OvenProto.OvenMonitorRequest) request,
               (io.grpc.stub.StreamObserver<OvenProto.OvenStatusResponse>) responseObserver);
           break;
         case METHODID_HEALTH_CHECK:
@@ -460,8 +499,8 @@ public final class OvenServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_OPTIMIZE_OVEN:
-          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.optimizeOven(
+        case METHODID_OPTIMIZE_ENERGY:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.optimizeEnergy(
               (io.grpc.stub.StreamObserver<OvenProto.OvenControlRequest>) responseObserver);
         default:
           throw new AssertionError();
@@ -486,19 +525,19 @@ public final class OvenServiceGrpc {
               OvenProto.OvenControlResponse>(
                 service, METHODID_CONTROL_OVEN)))
         .addMethod(
-          getMonitorOvenMethod(),
+          getMonitorOvenStatusMethod(),
           io.grpc.stub.ServerCalls.asyncServerStreamingCall(
             new MethodHandlers<
               OvenProto.OvenMonitorRequest,
               OvenProto.OvenStatusResponse>(
-                service, METHODID_MONITOR_OVEN)))
+                service, METHODID_MONITOR_OVEN_STATUS)))
         .addMethod(
-          getOptimizeOvenMethod(),
+          getOptimizeEnergyMethod(),
           io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
             new MethodHandlers<
               OvenProto.OvenStatusResponse,
               OvenProto.OvenControlRequest>(
-                service, METHODID_OPTIMIZE_OVEN)))
+                service, METHODID_OPTIMIZE_ENERGY)))
         .addMethod(
           getHealthCheckMethod(),
           io.grpc.stub.ServerCalls.asyncServerStreamingCall(
@@ -556,8 +595,8 @@ public final class OvenServiceGrpc {
               .setSchemaDescriptor(new OvenServiceFileDescriptorSupplier())
               .addMethod(getGetOvenStatusMethod())
               .addMethod(getControlOvenMethod())
-              .addMethod(getMonitorOvenMethod())
-              .addMethod(getOptimizeOvenMethod())
+              .addMethod(getMonitorOvenStatusMethod())
+              .addMethod(getOptimizeEnergyMethod())
               .addMethod(getHealthCheckMethod())
               .build();
         }

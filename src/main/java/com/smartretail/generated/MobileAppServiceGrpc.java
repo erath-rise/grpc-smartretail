@@ -15,37 +15,6 @@ public final class MobileAppServiceGrpc {
   public static final java.lang.String SERVICE_NAME = "MobileAppService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<OvenProto.OvenStatusRequest,
-      OvenProto.OvenStatusResponse> getGetOvenStatusMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetOvenStatus",
-      requestType = OvenProto.OvenStatusRequest.class,
-      responseType = OvenProto.OvenStatusResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<OvenProto.OvenStatusRequest,
-      OvenProto.OvenStatusResponse> getGetOvenStatusMethod() {
-    io.grpc.MethodDescriptor<OvenProto.OvenStatusRequest, OvenProto.OvenStatusResponse> getGetOvenStatusMethod;
-    if ((getGetOvenStatusMethod = MobileAppServiceGrpc.getGetOvenStatusMethod) == null) {
-      synchronized (MobileAppServiceGrpc.class) {
-        if ((getGetOvenStatusMethod = MobileAppServiceGrpc.getGetOvenStatusMethod) == null) {
-          MobileAppServiceGrpc.getGetOvenStatusMethod = getGetOvenStatusMethod =
-              io.grpc.MethodDescriptor.<OvenProto.OvenStatusRequest, OvenProto.OvenStatusResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetOvenStatus"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  OvenProto.OvenStatusRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  OvenProto.OvenStatusResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new MobileAppServiceMethodDescriptorSupplier("GetOvenStatus"))
-              .build();
-        }
-      }
-    }
-    return getGetOvenStatusMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<OvenProto.OvenControlRequest,
       OvenProto.OvenControlResponse> getControlOvenMethod;
 
@@ -77,91 +46,29 @@ public final class MobileAppServiceGrpc {
     return getControlOvenMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<OvenProto.OvenMonitorRequest,
-      OvenProto.OvenStatusResponse> getMonitorOvenMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "MonitorOven",
-      requestType = OvenProto.OvenMonitorRequest.class,
-      responseType = OvenProto.OvenStatusResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-  public static io.grpc.MethodDescriptor<OvenProto.OvenMonitorRequest,
-      OvenProto.OvenStatusResponse> getMonitorOvenMethod() {
-    io.grpc.MethodDescriptor<OvenProto.OvenMonitorRequest, OvenProto.OvenStatusResponse> getMonitorOvenMethod;
-    if ((getMonitorOvenMethod = MobileAppServiceGrpc.getMonitorOvenMethod) == null) {
-      synchronized (MobileAppServiceGrpc.class) {
-        if ((getMonitorOvenMethod = MobileAppServiceGrpc.getMonitorOvenMethod) == null) {
-          MobileAppServiceGrpc.getMonitorOvenMethod = getMonitorOvenMethod =
-              io.grpc.MethodDescriptor.<OvenProto.OvenMonitorRequest, OvenProto.OvenStatusResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MonitorOven"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  OvenProto.OvenMonitorRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  OvenProto.OvenStatusResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new MobileAppServiceMethodDescriptorSupplier("MonitorOven"))
-              .build();
-        }
-      }
-    }
-    return getMonitorOvenMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<FridgeProto.FridgeStatusRequest,
-      FridgeProto.FridgeStatusResponse> getGetFridgeStatusMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetFridgeStatus",
-      requestType = FridgeProto.FridgeStatusRequest.class,
-      responseType = FridgeProto.FridgeStatusResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<FridgeProto.FridgeStatusRequest,
-      FridgeProto.FridgeStatusResponse> getGetFridgeStatusMethod() {
-    io.grpc.MethodDescriptor<FridgeProto.FridgeStatusRequest, FridgeProto.FridgeStatusResponse> getGetFridgeStatusMethod;
-    if ((getGetFridgeStatusMethod = MobileAppServiceGrpc.getGetFridgeStatusMethod) == null) {
-      synchronized (MobileAppServiceGrpc.class) {
-        if ((getGetFridgeStatusMethod = MobileAppServiceGrpc.getGetFridgeStatusMethod) == null) {
-          MobileAppServiceGrpc.getGetFridgeStatusMethod = getGetFridgeStatusMethod =
-              io.grpc.MethodDescriptor.<FridgeProto.FridgeStatusRequest, FridgeProto.FridgeStatusResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetFridgeStatus"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  FridgeProto.FridgeStatusRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  FridgeProto.FridgeStatusResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new MobileAppServiceMethodDescriptorSupplier("GetFridgeStatus"))
-              .build();
-        }
-      }
-    }
-    return getGetFridgeStatusMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<FridgeProto.ControlFridgeRequest,
-      FridgeProto.ControlFridgeResponse> getControlFridgeMethod;
+  private static volatile io.grpc.MethodDescriptor<FridgeProto.FridgeControlRequest,
+      FridgeProto.FridgeControlResponse> getControlFridgeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "ControlFridge",
-      requestType = FridgeProto.ControlFridgeRequest.class,
-      responseType = FridgeProto.ControlFridgeResponse.class,
+      requestType = FridgeProto.FridgeControlRequest.class,
+      responseType = FridgeProto.FridgeControlResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<FridgeProto.ControlFridgeRequest,
-      FridgeProto.ControlFridgeResponse> getControlFridgeMethod() {
-    io.grpc.MethodDescriptor<FridgeProto.ControlFridgeRequest, FridgeProto.ControlFridgeResponse> getControlFridgeMethod;
+  public static io.grpc.MethodDescriptor<FridgeProto.FridgeControlRequest,
+      FridgeProto.FridgeControlResponse> getControlFridgeMethod() {
+    io.grpc.MethodDescriptor<FridgeProto.FridgeControlRequest, FridgeProto.FridgeControlResponse> getControlFridgeMethod;
     if ((getControlFridgeMethod = MobileAppServiceGrpc.getControlFridgeMethod) == null) {
       synchronized (MobileAppServiceGrpc.class) {
         if ((getControlFridgeMethod = MobileAppServiceGrpc.getControlFridgeMethod) == null) {
           MobileAppServiceGrpc.getControlFridgeMethod = getControlFridgeMethod =
-              io.grpc.MethodDescriptor.<FridgeProto.ControlFridgeRequest, FridgeProto.ControlFridgeResponse>newBuilder()
+              io.grpc.MethodDescriptor.<FridgeProto.FridgeControlRequest, FridgeProto.FridgeControlResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ControlFridge"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  FridgeProto.ControlFridgeRequest.getDefaultInstance()))
+                  FridgeProto.FridgeControlRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  FridgeProto.ControlFridgeResponse.getDefaultInstance()))
+                  FridgeProto.FridgeControlResponse.getDefaultInstance()))
               .setSchemaDescriptor(new MobileAppServiceMethodDescriptorSupplier("ControlFridge"))
               .build();
         }
@@ -170,66 +77,66 @@ public final class MobileAppServiceGrpc {
     return getControlFridgeMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<FridgeProto.MonitorFridgeRequest,
-      FridgeProto.FridgeStatusResponse> getMonitorFridgeMethod;
+  private static volatile io.grpc.MethodDescriptor<MobileAppProto.OvenMonitorRequest,
+      OvenProto.OvenStatusResponse> getMonitorOvenStatusMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "MonitorFridge",
-      requestType = FridgeProto.MonitorFridgeRequest.class,
-      responseType = FridgeProto.FridgeStatusResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "MonitorOvenStatus",
+      requestType = MobileAppProto.OvenMonitorRequest.class,
+      responseType = OvenProto.OvenStatusResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-  public static io.grpc.MethodDescriptor<FridgeProto.MonitorFridgeRequest,
-      FridgeProto.FridgeStatusResponse> getMonitorFridgeMethod() {
-    io.grpc.MethodDescriptor<FridgeProto.MonitorFridgeRequest, FridgeProto.FridgeStatusResponse> getMonitorFridgeMethod;
-    if ((getMonitorFridgeMethod = MobileAppServiceGrpc.getMonitorFridgeMethod) == null) {
+  public static io.grpc.MethodDescriptor<MobileAppProto.OvenMonitorRequest,
+      OvenProto.OvenStatusResponse> getMonitorOvenStatusMethod() {
+    io.grpc.MethodDescriptor<MobileAppProto.OvenMonitorRequest, OvenProto.OvenStatusResponse> getMonitorOvenStatusMethod;
+    if ((getMonitorOvenStatusMethod = MobileAppServiceGrpc.getMonitorOvenStatusMethod) == null) {
       synchronized (MobileAppServiceGrpc.class) {
-        if ((getMonitorFridgeMethod = MobileAppServiceGrpc.getMonitorFridgeMethod) == null) {
-          MobileAppServiceGrpc.getMonitorFridgeMethod = getMonitorFridgeMethod =
-              io.grpc.MethodDescriptor.<FridgeProto.MonitorFridgeRequest, FridgeProto.FridgeStatusResponse>newBuilder()
+        if ((getMonitorOvenStatusMethod = MobileAppServiceGrpc.getMonitorOvenStatusMethod) == null) {
+          MobileAppServiceGrpc.getMonitorOvenStatusMethod = getMonitorOvenStatusMethod =
+              io.grpc.MethodDescriptor.<MobileAppProto.OvenMonitorRequest, OvenProto.OvenStatusResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MonitorFridge"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MonitorOvenStatus"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  FridgeProto.MonitorFridgeRequest.getDefaultInstance()))
+                  MobileAppProto.OvenMonitorRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  FridgeProto.FridgeStatusResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new MobileAppServiceMethodDescriptorSupplier("MonitorFridge"))
+                  OvenProto.OvenStatusResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MobileAppServiceMethodDescriptorSupplier("MonitorOvenStatus"))
               .build();
         }
       }
     }
-    return getMonitorFridgeMethod;
+    return getMonitorOvenStatusMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<MobileAppProto.NotificationRequest,
-      MobileAppProto.NotificationResponse> getReceiveNotificationMethod;
+  private static volatile io.grpc.MethodDescriptor<MobileAppProto.FridgeMonitorRequest,
+      FridgeProto.FridgeStatusResponse> getMonitorFridgeStatusMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ReceiveNotification",
-      requestType = MobileAppProto.NotificationRequest.class,
-      responseType = MobileAppProto.NotificationResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<MobileAppProto.NotificationRequest,
-      MobileAppProto.NotificationResponse> getReceiveNotificationMethod() {
-    io.grpc.MethodDescriptor<MobileAppProto.NotificationRequest, MobileAppProto.NotificationResponse> getReceiveNotificationMethod;
-    if ((getReceiveNotificationMethod = MobileAppServiceGrpc.getReceiveNotificationMethod) == null) {
+      fullMethodName = SERVICE_NAME + '/' + "MonitorFridgeStatus",
+      requestType = MobileAppProto.FridgeMonitorRequest.class,
+      responseType = FridgeProto.FridgeStatusResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<MobileAppProto.FridgeMonitorRequest,
+      FridgeProto.FridgeStatusResponse> getMonitorFridgeStatusMethod() {
+    io.grpc.MethodDescriptor<MobileAppProto.FridgeMonitorRequest, FridgeProto.FridgeStatusResponse> getMonitorFridgeStatusMethod;
+    if ((getMonitorFridgeStatusMethod = MobileAppServiceGrpc.getMonitorFridgeStatusMethod) == null) {
       synchronized (MobileAppServiceGrpc.class) {
-        if ((getReceiveNotificationMethod = MobileAppServiceGrpc.getReceiveNotificationMethod) == null) {
-          MobileAppServiceGrpc.getReceiveNotificationMethod = getReceiveNotificationMethod =
-              io.grpc.MethodDescriptor.<MobileAppProto.NotificationRequest, MobileAppProto.NotificationResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ReceiveNotification"))
+        if ((getMonitorFridgeStatusMethod = MobileAppServiceGrpc.getMonitorFridgeStatusMethod) == null) {
+          MobileAppServiceGrpc.getMonitorFridgeStatusMethod = getMonitorFridgeStatusMethod =
+              io.grpc.MethodDescriptor.<MobileAppProto.FridgeMonitorRequest, FridgeProto.FridgeStatusResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MonitorFridgeStatus"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  MobileAppProto.NotificationRequest.getDefaultInstance()))
+                  MobileAppProto.FridgeMonitorRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  MobileAppProto.NotificationResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new MobileAppServiceMethodDescriptorSupplier("ReceiveNotification"))
+                  FridgeProto.FridgeStatusResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MobileAppServiceMethodDescriptorSupplier("MonitorFridgeStatus"))
               .build();
         }
       }
     }
-    return getReceiveNotificationMethod;
+    return getMonitorFridgeStatusMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<MobileAppProto.HealthCheckRequest,
@@ -312,13 +219,9 @@ public final class MobileAppServiceGrpc {
   public interface AsyncService {
 
     /**
-     */
-    default void getOvenStatus(OvenProto.OvenStatusRequest request,
-                               io.grpc.stub.StreamObserver<OvenProto.OvenStatusResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetOvenStatusMethod(), responseObserver);
-    }
-
-    /**
+     * <pre>
+     * Unary RPC for controlling the oven
+     * </pre>
      */
     default void controlOven(OvenProto.OvenControlRequest request,
                              io.grpc.stub.StreamObserver<OvenProto.OvenControlResponse> responseObserver) {
@@ -326,38 +229,33 @@ public final class MobileAppServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Unary RPC for controlling the fridge
+     * </pre>
      */
-    default void monitorOven(OvenProto.OvenMonitorRequest request,
-                             io.grpc.stub.StreamObserver<OvenProto.OvenStatusResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMonitorOvenMethod(), responseObserver);
-    }
-
-    /**
-     */
-    default void getFridgeStatus(FridgeProto.FridgeStatusRequest request,
-                                 io.grpc.stub.StreamObserver<FridgeProto.FridgeStatusResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetFridgeStatusMethod(), responseObserver);
-    }
-
-    /**
-     */
-    default void controlFridge(FridgeProto.ControlFridgeRequest request,
-                               io.grpc.stub.StreamObserver<FridgeProto.ControlFridgeResponse> responseObserver) {
+    default void controlFridge(FridgeProto.FridgeControlRequest request,
+                               io.grpc.stub.StreamObserver<FridgeProto.FridgeControlResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getControlFridgeMethod(), responseObserver);
     }
 
     /**
+     * <pre>
+     * Server Streaming RPC for displaying real-time status of oven
+     * </pre>
      */
-    default void monitorFridge(FridgeProto.MonitorFridgeRequest request,
-                               io.grpc.stub.StreamObserver<FridgeProto.FridgeStatusResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMonitorFridgeMethod(), responseObserver);
+    default void monitorOvenStatus(MobileAppProto.OvenMonitorRequest request,
+        io.grpc.stub.StreamObserver<OvenProto.OvenStatusResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMonitorOvenStatusMethod(), responseObserver);
     }
 
     /**
+     * <pre>
+     * Server Streaming RPC for displaying real-time status of fridge
+     * </pre>
      */
-    default void receiveNotification(MobileAppProto.NotificationRequest request,
-                                     io.grpc.stub.StreamObserver<MobileAppProto.NotificationResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReceiveNotificationMethod(), responseObserver);
+    default void monitorFridgeStatus(MobileAppProto.FridgeMonitorRequest request,
+        io.grpc.stub.StreamObserver<FridgeProto.FridgeStatusResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMonitorFridgeStatusMethod(), responseObserver);
     }
 
     /**
@@ -366,7 +264,7 @@ public final class MobileAppServiceGrpc {
      * </pre>
      */
     default void healthCheck(MobileAppProto.HealthCheckRequest request,
-                             io.grpc.stub.StreamObserver<MobileAppProto.HealthCheckResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<MobileAppProto.HealthCheckResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getHealthCheckMethod(), responseObserver);
     }
   }
@@ -399,14 +297,9 @@ public final class MobileAppServiceGrpc {
     }
 
     /**
-     */
-    public void getOvenStatus(OvenProto.OvenStatusRequest request,
-                              io.grpc.stub.StreamObserver<OvenProto.OvenStatusResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetOvenStatusMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
+     * <pre>
+     * Unary RPC for controlling the oven
+     * </pre>
      */
     public void controlOven(OvenProto.OvenControlRequest request,
                             io.grpc.stub.StreamObserver<OvenProto.OvenControlResponse> responseObserver) {
@@ -415,43 +308,36 @@ public final class MobileAppServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Unary RPC for controlling the fridge
+     * </pre>
      */
-    public void monitorOven(OvenProto.OvenMonitorRequest request,
-                            io.grpc.stub.StreamObserver<OvenProto.OvenStatusResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
-          getChannel().newCall(getMonitorOvenMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void getFridgeStatus(FridgeProto.FridgeStatusRequest request,
-                                io.grpc.stub.StreamObserver<FridgeProto.FridgeStatusResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetFridgeStatusMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void controlFridge(FridgeProto.ControlFridgeRequest request,
-                              io.grpc.stub.StreamObserver<FridgeProto.ControlFridgeResponse> responseObserver) {
+    public void controlFridge(FridgeProto.FridgeControlRequest request,
+                              io.grpc.stub.StreamObserver<FridgeProto.FridgeControlResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getControlFridgeMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
+     * <pre>
+     * Server Streaming RPC for displaying real-time status of oven
+     * </pre>
      */
-    public void monitorFridge(FridgeProto.MonitorFridgeRequest request,
-                              io.grpc.stub.StreamObserver<FridgeProto.FridgeStatusResponse> responseObserver) {
+    public void monitorOvenStatus(MobileAppProto.OvenMonitorRequest request,
+        io.grpc.stub.StreamObserver<OvenProto.OvenStatusResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncServerStreamingCall(
-          getChannel().newCall(getMonitorFridgeMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getMonitorOvenStatusMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
+     * <pre>
+     * Server Streaming RPC for displaying real-time status of fridge
+     * </pre>
      */
-    public void receiveNotification(MobileAppProto.NotificationRequest request,
-                                    io.grpc.stub.StreamObserver<MobileAppProto.NotificationResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getReceiveNotificationMethod(), getCallOptions()), request, responseObserver);
+    public void monitorFridgeStatus(MobileAppProto.FridgeMonitorRequest request,
+        io.grpc.stub.StreamObserver<FridgeProto.FridgeStatusResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
+          getChannel().newCall(getMonitorFridgeStatusMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -460,7 +346,7 @@ public final class MobileAppServiceGrpc {
      * </pre>
      */
     public void healthCheck(MobileAppProto.HealthCheckRequest request,
-                            io.grpc.stub.StreamObserver<MobileAppProto.HealthCheckResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<MobileAppProto.HealthCheckResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getHealthCheckMethod(), getCallOptions()), request, responseObserver);
     }
@@ -483,13 +369,9 @@ public final class MobileAppServiceGrpc {
     }
 
     /**
-     */
-    public OvenProto.OvenStatusResponse getOvenStatus(OvenProto.OvenStatusRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetOvenStatusMethod(), getCallOptions(), request);
-    }
-
-    /**
+     * <pre>
+     * Unary RPC for controlling the oven
+     * </pre>
      */
     public OvenProto.OvenControlResponse controlOven(OvenProto.OvenControlRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -497,40 +379,35 @@ public final class MobileAppServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Unary RPC for controlling the fridge
+     * </pre>
      */
-    public java.util.Iterator<OvenProto.OvenStatusResponse> monitorOven(
-        OvenProto.OvenMonitorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
-          getChannel(), getMonitorOvenMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public FridgeProto.FridgeStatusResponse getFridgeStatus(FridgeProto.FridgeStatusRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetFridgeStatusMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public FridgeProto.ControlFridgeResponse controlFridge(FridgeProto.ControlFridgeRequest request) {
+    public FridgeProto.FridgeControlResponse controlFridge(FridgeProto.FridgeControlRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getControlFridgeMethod(), getCallOptions(), request);
     }
 
     /**
+     * <pre>
+     * Server Streaming RPC for displaying real-time status of oven
+     * </pre>
      */
-    public java.util.Iterator<FridgeProto.FridgeStatusResponse> monitorFridge(
-        FridgeProto.MonitorFridgeRequest request) {
+    public java.util.Iterator<OvenProto.OvenStatusResponse> monitorOvenStatus(
+        MobileAppProto.OvenMonitorRequest request) {
       return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
-          getChannel(), getMonitorFridgeMethod(), getCallOptions(), request);
+          getChannel(), getMonitorOvenStatusMethod(), getCallOptions(), request);
     }
 
     /**
+     * <pre>
+     * Server Streaming RPC for displaying real-time status of fridge
+     * </pre>
      */
-    public MobileAppProto.NotificationResponse receiveNotification(MobileAppProto.NotificationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getReceiveNotificationMethod(), getCallOptions(), request);
+    public java.util.Iterator<FridgeProto.FridgeStatusResponse> monitorFridgeStatus(
+        MobileAppProto.FridgeMonitorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
+          getChannel(), getMonitorFridgeStatusMethod(), getCallOptions(), request);
     }
 
     /**
@@ -562,14 +439,9 @@ public final class MobileAppServiceGrpc {
     }
 
     /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<OvenProto.OvenStatusResponse> getOvenStatus(
-        OvenProto.OvenStatusRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetOvenStatusMethod(), getCallOptions()), request);
-    }
-
-    /**
+     * <pre>
+     * Unary RPC for controlling the oven
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<OvenProto.OvenControlResponse> controlOven(
         OvenProto.OvenControlRequest request) {
@@ -578,38 +450,22 @@ public final class MobileAppServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Unary RPC for controlling the fridge
+     * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<FridgeProto.FridgeStatusResponse> getFridgeStatus(
-        FridgeProto.FridgeStatusRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetFridgeStatusMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<FridgeProto.ControlFridgeResponse> controlFridge(
-        FridgeProto.ControlFridgeRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<FridgeProto.FridgeControlResponse> controlFridge(
+        FridgeProto.FridgeControlRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getControlFridgeMethod(), getCallOptions()), request);
     }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<MobileAppProto.NotificationResponse> receiveNotification(
-        MobileAppProto.NotificationRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getReceiveNotificationMethod(), getCallOptions()), request);
-    }
   }
 
-  private static final int METHODID_GET_OVEN_STATUS = 0;
-  private static final int METHODID_CONTROL_OVEN = 1;
-  private static final int METHODID_MONITOR_OVEN = 2;
-  private static final int METHODID_GET_FRIDGE_STATUS = 3;
-  private static final int METHODID_CONTROL_FRIDGE = 4;
-  private static final int METHODID_MONITOR_FRIDGE = 5;
-  private static final int METHODID_RECEIVE_NOTIFICATION = 6;
-  private static final int METHODID_HEALTH_CHECK = 7;
+  private static final int METHODID_CONTROL_OVEN = 0;
+  private static final int METHODID_CONTROL_FRIDGE = 1;
+  private static final int METHODID_MONITOR_OVEN_STATUS = 2;
+  private static final int METHODID_MONITOR_FRIDGE_STATUS = 3;
+  private static final int METHODID_HEALTH_CHECK = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -628,33 +484,21 @@ public final class MobileAppServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_GET_OVEN_STATUS:
-          serviceImpl.getOvenStatus((OvenProto.OvenStatusRequest) request,
-              (io.grpc.stub.StreamObserver<OvenProto.OvenStatusResponse>) responseObserver);
-          break;
         case METHODID_CONTROL_OVEN:
           serviceImpl.controlOven((OvenProto.OvenControlRequest) request,
               (io.grpc.stub.StreamObserver<OvenProto.OvenControlResponse>) responseObserver);
           break;
-        case METHODID_MONITOR_OVEN:
-          serviceImpl.monitorOven((OvenProto.OvenMonitorRequest) request,
+        case METHODID_CONTROL_FRIDGE:
+          serviceImpl.controlFridge((FridgeProto.FridgeControlRequest) request,
+              (io.grpc.stub.StreamObserver<FridgeProto.FridgeControlResponse>) responseObserver);
+          break;
+        case METHODID_MONITOR_OVEN_STATUS:
+          serviceImpl.monitorOvenStatus((MobileAppProto.OvenMonitorRequest) request,
               (io.grpc.stub.StreamObserver<OvenProto.OvenStatusResponse>) responseObserver);
           break;
-        case METHODID_GET_FRIDGE_STATUS:
-          serviceImpl.getFridgeStatus((FridgeProto.FridgeStatusRequest) request,
+        case METHODID_MONITOR_FRIDGE_STATUS:
+          serviceImpl.monitorFridgeStatus((MobileAppProto.FridgeMonitorRequest) request,
               (io.grpc.stub.StreamObserver<FridgeProto.FridgeStatusResponse>) responseObserver);
-          break;
-        case METHODID_CONTROL_FRIDGE:
-          serviceImpl.controlFridge((FridgeProto.ControlFridgeRequest) request,
-              (io.grpc.stub.StreamObserver<FridgeProto.ControlFridgeResponse>) responseObserver);
-          break;
-        case METHODID_MONITOR_FRIDGE:
-          serviceImpl.monitorFridge((FridgeProto.MonitorFridgeRequest) request,
-              (io.grpc.stub.StreamObserver<FridgeProto.FridgeStatusResponse>) responseObserver);
-          break;
-        case METHODID_RECEIVE_NOTIFICATION:
-          serviceImpl.receiveNotification((MobileAppProto.NotificationRequest) request,
-              (io.grpc.stub.StreamObserver<MobileAppProto.NotificationResponse>) responseObserver);
           break;
         case METHODID_HEALTH_CHECK:
           serviceImpl.healthCheck((MobileAppProto.HealthCheckRequest) request,
@@ -679,13 +523,6 @@ public final class MobileAppServiceGrpc {
   public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
     return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
         .addMethod(
-          getGetOvenStatusMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              OvenProto.OvenStatusRequest,
-              OvenProto.OvenStatusResponse>(
-                service, METHODID_GET_OVEN_STATUS)))
-        .addMethod(
           getControlOvenMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -693,40 +530,26 @@ public final class MobileAppServiceGrpc {
               OvenProto.OvenControlResponse>(
                 service, METHODID_CONTROL_OVEN)))
         .addMethod(
-          getMonitorOvenMethod(),
-          io.grpc.stub.ServerCalls.asyncServerStreamingCall(
-            new MethodHandlers<
-              OvenProto.OvenMonitorRequest,
-              OvenProto.OvenStatusResponse>(
-                service, METHODID_MONITOR_OVEN)))
-        .addMethod(
-          getGetFridgeStatusMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              FridgeProto.FridgeStatusRequest,
-              FridgeProto.FridgeStatusResponse>(
-                service, METHODID_GET_FRIDGE_STATUS)))
-        .addMethod(
           getControlFridgeMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              FridgeProto.ControlFridgeRequest,
-              FridgeProto.ControlFridgeResponse>(
+              FridgeProto.FridgeControlRequest,
+              FridgeProto.FridgeControlResponse>(
                 service, METHODID_CONTROL_FRIDGE)))
         .addMethod(
-          getMonitorFridgeMethod(),
+          getMonitorOvenStatusMethod(),
           io.grpc.stub.ServerCalls.asyncServerStreamingCall(
             new MethodHandlers<
-              FridgeProto.MonitorFridgeRequest,
-              FridgeProto.FridgeStatusResponse>(
-                service, METHODID_MONITOR_FRIDGE)))
+              MobileAppProto.OvenMonitorRequest,
+              OvenProto.OvenStatusResponse>(
+                service, METHODID_MONITOR_OVEN_STATUS)))
         .addMethod(
-          getReceiveNotificationMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
+          getMonitorFridgeStatusMethod(),
+          io.grpc.stub.ServerCalls.asyncServerStreamingCall(
             new MethodHandlers<
-              MobileAppProto.NotificationRequest,
-              MobileAppProto.NotificationResponse>(
-                service, METHODID_RECEIVE_NOTIFICATION)))
+              MobileAppProto.FridgeMonitorRequest,
+              FridgeProto.FridgeStatusResponse>(
+                service, METHODID_MONITOR_FRIDGE_STATUS)))
         .addMethod(
           getHealthCheckMethod(),
           io.grpc.stub.ServerCalls.asyncServerStreamingCall(
@@ -782,13 +605,10 @@ public final class MobileAppServiceGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new MobileAppServiceFileDescriptorSupplier())
-              .addMethod(getGetOvenStatusMethod())
               .addMethod(getControlOvenMethod())
-              .addMethod(getMonitorOvenMethod())
-              .addMethod(getGetFridgeStatusMethod())
               .addMethod(getControlFridgeMethod())
-              .addMethod(getMonitorFridgeMethod())
-              .addMethod(getReceiveNotificationMethod())
+              .addMethod(getMonitorOvenStatusMethod())
+              .addMethod(getMonitorFridgeStatusMethod())
               .addMethod(getHealthCheckMethod())
               .build();
         }
