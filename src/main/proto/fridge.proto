@@ -22,8 +22,8 @@ service FridgeService {
 message FridgeStatusRequest {}
 
 message FridgeStatusResponse {
-  bool isFridgeOn = 2;
-  float temperature = 3;
+  bool isFridgeOn = 1;
+  float temperature = 2;
 }
 
 message FridgeControlRequest {

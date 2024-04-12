@@ -417,13 +417,13 @@ public final class FridgeProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool isFridgeOn = 2;</code>
+     * <code>bool isFridgeOn = 1;</code>
      * @return The isFridgeOn.
      */
     boolean getIsFridgeOn();
 
     /**
-     * <code>float temperature = 3;</code>
+     * <code>float temperature = 2;</code>
      * @return The temperature.
      */
     float getTemperature();
@@ -463,10 +463,10 @@ public final class FridgeProto {
               FridgeProto.FridgeStatusResponse.class, FridgeProto.FridgeStatusResponse.Builder.class);
     }
 
-    public static final int ISFRIDGEON_FIELD_NUMBER = 2;
+    public static final int ISFRIDGEON_FIELD_NUMBER = 1;
     private boolean isFridgeOn_ = false;
     /**
-     * <code>bool isFridgeOn = 2;</code>
+     * <code>bool isFridgeOn = 1;</code>
      * @return The isFridgeOn.
      */
     @java.lang.Override
@@ -474,10 +474,10 @@ public final class FridgeProto {
       return isFridgeOn_;
     }
 
-    public static final int TEMPERATURE_FIELD_NUMBER = 3;
+    public static final int TEMPERATURE_FIELD_NUMBER = 2;
     private float temperature_ = 0F;
     /**
-     * <code>float temperature = 3;</code>
+     * <code>float temperature = 2;</code>
      * @return The temperature.
      */
     @java.lang.Override
@@ -500,10 +500,10 @@ public final class FridgeProto {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isFridgeOn_ != false) {
-        output.writeBool(2, isFridgeOn_);
+        output.writeBool(1, isFridgeOn_);
       }
       if (java.lang.Float.floatToRawIntBits(temperature_) != 0) {
-        output.writeFloat(3, temperature_);
+        output.writeFloat(2, temperature_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -516,11 +516,11 @@ public final class FridgeProto {
       size = 0;
       if (isFridgeOn_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, isFridgeOn_);
+          .computeBoolSize(1, isFridgeOn_);
       }
       if (java.lang.Float.floatToRawIntBits(temperature_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(3, temperature_);
+          .computeFloatSize(2, temperature_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -809,16 +809,16 @@ public final class FridgeProto {
               case 0:
                 done = true;
                 break;
-              case 16: {
+              case 8: {
                 isFridgeOn_ = input.readBool();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 16
-              case 29: {
+              } // case 8
+              case 21: {
                 temperature_ = input.readFloat();
                 bitField0_ |= 0x00000002;
                 break;
-              } // case 29
+              } // case 21
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -838,7 +838,7 @@ public final class FridgeProto {
 
       private boolean isFridgeOn_ ;
       /**
-       * <code>bool isFridgeOn = 2;</code>
+       * <code>bool isFridgeOn = 1;</code>
        * @return The isFridgeOn.
        */
       @java.lang.Override
@@ -846,7 +846,7 @@ public final class FridgeProto {
         return isFridgeOn_;
       }
       /**
-       * <code>bool isFridgeOn = 2;</code>
+       * <code>bool isFridgeOn = 1;</code>
        * @param value The isFridgeOn to set.
        * @return This builder for chaining.
        */
@@ -858,7 +858,7 @@ public final class FridgeProto {
         return this;
       }
       /**
-       * <code>bool isFridgeOn = 2;</code>
+       * <code>bool isFridgeOn = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsFridgeOn() {
@@ -870,7 +870,7 @@ public final class FridgeProto {
 
       private float temperature_ ;
       /**
-       * <code>float temperature = 3;</code>
+       * <code>float temperature = 2;</code>
        * @return The temperature.
        */
       @java.lang.Override
@@ -878,7 +878,7 @@ public final class FridgeProto {
         return temperature_;
       }
       /**
-       * <code>float temperature = 3;</code>
+       * <code>float temperature = 2;</code>
        * @param value The temperature to set.
        * @return This builder for chaining.
        */
@@ -890,7 +890,7 @@ public final class FridgeProto {
         return this;
       }
       /**
-       * <code>float temperature = 3;</code>
+       * <code>float temperature = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearTemperature() {
@@ -3275,7 +3275,7 @@ public final class FridgeProto {
     java.lang.String[] descriptorData = {
       "\n\014fridge.proto\022\006fridge\"\025\n\023FridgeStatusRe" +
       "quest\"?\n\024FridgeStatusResponse\022\022\n\nisFridg" +
-      "eOn\030\002 \001(\010\022\023\n\013temperature\030\003 \001(\002\"&\n\024Fridge" +
+      "eOn\030\001 \001(\010\022\023\n\013temperature\030\002 \001(\002\"&\n\024Fridge" +
       "ControlRequest\022\016\n\006turnOn\030\001 \001(\010\"\027\n\025Fridge" +
       "ControlResponse\"T\n\022HealthCheckRequest\022\023\n" +
       "\013serviceName\030\001 \001(\t\022\026\n\016serviceVersion\030\002 \001" +

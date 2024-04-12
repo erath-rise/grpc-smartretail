@@ -1,0 +1,7 @@
+isFridgeOn, temperature
+true,3.0
+true,2.9
+true,1.5
+true,0.5
+true,0.3
+false,-1.0
