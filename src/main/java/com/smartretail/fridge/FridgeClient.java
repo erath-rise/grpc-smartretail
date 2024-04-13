@@ -29,9 +29,14 @@ public class FridgeClient {
     public void getFridgeStatus() {
         FridgeProto.FridgeStatusRequest request = FridgeProto.FridgeStatusRequest.newBuilder().build();
         FridgeProto.FridgeStatusResponse response = blockingStub.getFridgeStatus(request);
-        System.out.println("Fridge Status: ");
-        System.out.println("  Is Fridge On: " + response.getIsFridgeOn());
-        System.out.println("  Temperature: " + response.getTemperature());
+
+        if (!response.equals(FridgeProto.FridgeStatusResponse.getDefaultInstance())) {
+            System.out.println("Fridge Status: ");
+            System.out.println("  Is Fridge On: " + response.getIsFridgeOn());
+            System.out.println("  Temperature: " + response.getTemperature());
+        } else {
+            System.out.println("No more fridge status available.");
+        }
     }
 
     public void controlFridge(boolean turnOn) {
@@ -45,10 +50,10 @@ public class FridgeClient {
     public void reportFridgeStatus(float temperature, boolean isFridgeOn) throws InterruptedException {
         CountDownLatch latch = new CountDownLatch(1);
 
-        StreamObserver<FridgeProto.FridgeStatusResponse> requestObserver = asyncStub.reportFridgeStatus(new StreamObserver<FridgeProto.FridgeControlRequest>() {
+        StreamObserver<FridgeProto.FridgeStatusResponse> responseObserver = asyncStub.reportFridgeStatus(new StreamObserver<FridgeProto.FridgeControlRequest>() {
             @Override
-            public void onNext(FridgeProto.FridgeControlRequest response) {
-                System.out.println("Received fridge control response: " + response);
+            public void onNext(FridgeProto.FridgeControlRequest request) {
+                System.out.println("Received fridge control response: " + request);
             }
 
             @Override
@@ -64,13 +69,7 @@ public class FridgeClient {
             }
         });
 
-        FridgeProto.FridgeStatusResponse statusUpdate = FridgeProto.FridgeStatusResponse.newBuilder()
-                .setTemperature(temperature)
-                .setIsFridgeOn(isFridgeOn)
-                .build();
-        requestObserver.onNext(statusUpdate);
-
-        latch.await();
+        StreamObserver<FridgeProto.FridgeStatusResponse> requestObserver = responseObserver;
 
 
         FridgeProto.FridgeStatusResponse response = FridgeProto.FridgeStatusResponse.newBuilder()
@@ -85,11 +84,18 @@ public class FridgeClient {
     public static void main(String[] args) throws InterruptedException {
         FridgeClient client = new FridgeClient("localhost", 50052);
 
-        client.getFridgeStatus();
-        client.controlFridge(true);
-        client.reportFridgeStatus(5, true);
+        try {
+            // Get Fridge Status
+            client.getFridgeStatus();
 
-        client.shutdown();
+            // Control Fridge
+            client.controlFridge(true);
 
+            // Report Fridge Status
+            client.reportFridgeStatus(-5.0f, true);
+
+        } finally {
+            client.shutdown();
+        }
     }
 }

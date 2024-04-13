@@ -1,7 +1,7 @@
-isFridgeOn, temperature
-true,3.0
-true,2.9
-true,1.5
-true,0.5
-true,0.3
-false,-1.0
+timestamp,temperature,isOn
+2023-06-08 10:00:00,4.5,true
+2023-06-08 10:15:00,4.0,true
+2023-06-08 10:30:00,3.5,true
+2023-06-08 10:45:00,3.0,true
+2023-06-08 11:00:00,2.0,true
+2023-06-08 11:15:00,-1.0,false

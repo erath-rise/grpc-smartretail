@@ -11,6 +11,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class FridgeGUI extends JFrame {
     private final FridgeServiceGrpc.FridgeServiceBlockingStub blockingStub;
@@ -24,6 +26,8 @@ public class FridgeGUI extends JFrame {
     private JButton turnOffButton;
 
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+    private Timer timer;
 
     public FridgeGUI(String host, int port) {
         super("Fridge Control Panel");
@@ -73,15 +77,6 @@ public class FridgeGUI extends JFrame {
 
         mainPanel.add(statusPanel);
 
-        refreshButton = new JButton("Refresh Status");
-        refreshButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                refreshStatus();
-            }
-        });
-        mainPanel.add(refreshButton);
-
         JPanel controlPanel = new JPanel();
         controlPanel.setLayout(new FlowLayout());
 
@@ -90,6 +85,7 @@ public class FridgeGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 controlFridge(true);
+                startFridgeStatusUpdater();
             }
         });
         controlPanel.add(turnOnButton);
@@ -99,6 +95,7 @@ public class FridgeGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 controlFridge(false);
+                stopFridgeStatusUpdater();
             }
         });
         controlPanel.add(turnOffButton);
@@ -110,12 +107,28 @@ public class FridgeGUI extends JFrame {
         setLocationRelativeTo(null);
     }
 
-    private void refreshStatus() {
+    private void updateFridgeStatus() {
         FridgeProto.FridgeStatusRequest request = FridgeProto.FridgeStatusRequest.newBuilder().build();
-        FridgeProto.FridgeStatusResponse response = blockingStub.getFridgeStatus(request);
-        fridgeStatusLabel.setText(response.getIsFridgeOn() ? "On" : "Off");
-        temperatureLabel.setText(String.format("%.1f°C", response.getTemperature()));
-        timestampLabel.setText(dateFormat.format(new Date()));
+        FridgeProto.FridgeStatusResponse response;
+
+        try {
+            response = blockingStub.getFridgeStatus(request);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return;
+        }
+
+        if (response != null && !response.equals(FridgeProto.FridgeStatusResponse.getDefaultInstance())) {
+            String status = response.getIsFridgeOn() ? "On" : "Off";
+            fridgeStatusLabel.setText(status);
+            temperatureLabel.setText(String.format("%.1f°C", response.getTemperature()));
+            timestampLabel.setText(dateFormat.format(new Date()));
+        } else {
+            fridgeStatusLabel.setText("N/A");
+            temperatureLabel.setText("N/A");
+            timestampLabel.setText("N/A");
+            stopFridgeStatusUpdater();
+        }
     }
 
     private void controlFridge(boolean turnOn) {
@@ -123,7 +136,32 @@ public class FridgeGUI extends JFrame {
                 .setTurnOn(turnOn)
                 .build();
         blockingStub.controlFridge(request);
-        refreshStatus();
+        updateFridgeStatus();
+    }
+
+    private void startFridgeStatusUpdater() {
+        if (timer != null) {
+            timer.cancel();
+        }
+        timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                SwingUtilities.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        updateFridgeStatus();
+                    }
+                });
+            }
+        }, 0, 15000); // Run every 15 seconds
+    }
+
+    private void stopFridgeStatusUpdater() {
+        if (timer != null) {
+            timer.cancel();
+            timer = null;
+        }
     }
 
     public static void main(String[] args) {

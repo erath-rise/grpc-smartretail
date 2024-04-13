@@ -7,27 +7,38 @@ import io.grpc.stub.StreamObserver;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class FridgeServiceImpl extends FridgeServiceGrpc.FridgeServiceImplBase {
     private static final String fridgeDataFile = "src/main/resources/fridge_data.csv";
-    private boolean isFridgeOn = true;
+    private List<FridgeProto.FridgeStatusResponse> fridgeStatusList = new ArrayList<>();
+    private int currentIndex = 0;
+
+    public FridgeServiceImpl() {
+        loadFridgeData();
+        scheduleTimer();
+    }
 
 
     @Override
     public void getFridgeStatus(FridgeProto.FridgeStatusRequest request, StreamObserver<FridgeProto.FridgeStatusResponse> responseObserver) {
-        FridgeProto.FridgeStatusResponse response = FridgeProto.FridgeStatusResponse.newBuilder()
-                .setIsFridgeOn(isFridgeOn)
-                .setTemperature(getCurrentTemperature())
-                .build();
-        responseObserver.onNext(response);
+        if (currentIndex < fridgeStatusList.size()) {
+            FridgeProto.FridgeStatusResponse response = fridgeStatusList.get(currentIndex);
+            responseObserver.onNext(response);
+            currentIndex++;
+        } else {
+            responseObserver.onNext(FridgeProto.FridgeStatusResponse.getDefaultInstance());
+        }
         responseObserver.onCompleted();
     }
 
     @Override
     public void controlFridge(FridgeProto.FridgeControlRequest request, StreamObserver<FridgeProto.FridgeControlResponse> responseObserver) {
-        isFridgeOn = request.getTurnOn();
-        System.out.println("Fridge is now " + (isFridgeOn ? "on" : "off"));
+        boolean turnOn = request.getTurnOn();
+        System.out.println("Fridge is now " + (turnOn ? "on" : "off"));
 
         FridgeProto.FridgeControlResponse response = FridgeProto.FridgeControlResponse.newBuilder().build();
         responseObserver.onNext(response);
@@ -40,14 +51,13 @@ public class FridgeServiceImpl extends FridgeServiceGrpc.FridgeServiceImplBase {
             @Override
             public void onNext(FridgeProto.FridgeStatusResponse response) {
                 float temperature = response.getTemperature();
+                boolean isFridgeOn = response.getIsFridgeOn();
 
                 if (temperature > 0 && !isFridgeOn) {
-                    isFridgeOn = true;
                     FridgeProto.FridgeControlRequest controlRequest = FridgeProto.FridgeControlRequest.newBuilder().setTurnOn(true).build();
                     responseObserver.onNext(controlRequest);
                     System.out.println("Fridge temperature is above 0°C. Turning fridge on.");
                 } else if (temperature <= 0 && isFridgeOn) {
-                    isFridgeOn = false;
                     FridgeProto.FridgeControlRequest controlRequest = FridgeProto.FridgeControlRequest.newBuilder().setTurnOn(false).build();
                     responseObserver.onNext(controlRequest);
                     System.out.println("Fridge temperature is at or below 0°C. Turning fridge off.");
@@ -66,24 +76,40 @@ public class FridgeServiceImpl extends FridgeServiceGrpc.FridgeServiceImplBase {
         };
     }
 
-    private float getCurrentTemperature() {
-        // Simulating reading temperature from CSV file every 15 seconds
+    private void loadFridgeData() {
         try (BufferedReader br = new BufferedReader(new FileReader(fridgeDataFile))) {
             String line;
+            br.readLine(); // Skip header line
+
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
-                float temperature = Float.parseFloat(data[0]);
-                boolean isOn = Boolean.parseBoolean(data[1]);
-                isFridgeOn = isOn;
+                String timestamp = data[0];
+                float temperature = Float.parseFloat(data[1]);
+                boolean isFridgeOn = Boolean.parseBoolean(data[2]);
 
-                System.out.println("Current temperature: " + temperature + "°C, Fridge is " + (isOn ? "on" : "off"));
+                FridgeProto.FridgeStatusResponse status = FridgeProto.FridgeStatusResponse.newBuilder()
+                        .setTemperature(temperature)
+                        .setIsFridgeOn(isFridgeOn)
+                        .build();
 
-                TimeUnit.SECONDS.sleep(15);
-                return temperature;
+                fridgeStatusList.add(status);
             }
-        } catch (IOException | InterruptedException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        return 0;
+    }
+
+    private void scheduleTimer() {
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                if (currentIndex < fridgeStatusList.size()) {
+                    FridgeProto.FridgeStatusResponse status = fridgeStatusList.get(currentIndex);
+                    System.out.println("Fridge Status: " + status);
+                    currentIndex++;
+                }
+            }
+        }, 0, 15000);
     }
 }

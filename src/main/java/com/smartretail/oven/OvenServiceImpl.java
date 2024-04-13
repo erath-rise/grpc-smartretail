@@ -148,7 +148,7 @@ public class OvenServiceImpl extends OvenServiceGrpc.OvenServiceImplBase {
         timer.scheduleAtFixedRate(new Task(), 0, 15000); // Schedule the task to run every 15 seconds
     } // Schedule the task to run every 15 seconds
 
-    static class Task extends TimerTask {
+    public static class Task extends TimerTask {
         private int index = 0;
 
         @Override
