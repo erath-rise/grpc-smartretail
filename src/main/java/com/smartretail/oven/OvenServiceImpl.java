@@ -100,6 +100,15 @@ public class OvenServiceImpl extends OvenServiceGrpc.OvenServiceImplBase {
         };
     }
 
+    @Override
+    public void healthCheck(OvenProto.HealthCheckRequest request, StreamObserver<OvenProto.HealthCheckResponse> responseObserver) {
+        OvenProto.HealthCheckResponse response = OvenProto.HealthCheckResponse.newBuilder()
+                .setStatus(200)
+                .build();
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
+    }
+
     private OvenProto.OvenStatusResponse getRandomOvenStatusFromList() {
         if (!ovenStatusList.isEmpty()) {
             Random random = new Random();
