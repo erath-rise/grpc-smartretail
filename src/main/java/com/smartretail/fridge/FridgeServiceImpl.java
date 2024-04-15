@@ -25,10 +25,10 @@ public class FridgeServiceImpl extends FridgeServiceGrpc.FridgeServiceImplBase {
 
     @Override
     public void getFridgeStatus(FridgeProto.FridgeStatusRequest request, StreamObserver<FridgeProto.FridgeStatusResponse> responseObserver) {
-        if (currentIndex < fridgeStatusList.size()) {
+        if (!fridgeStatusList.isEmpty()) {
             FridgeProto.FridgeStatusResponse response = fridgeStatusList.get(currentIndex);
             responseObserver.onNext(response);
-            currentIndex++;
+            currentIndex = (currentIndex + 1) % fridgeStatusList.size();
         } else {
             responseObserver.onNext(FridgeProto.FridgeStatusResponse.getDefaultInstance());
         }
@@ -104,10 +104,10 @@ public class FridgeServiceImpl extends FridgeServiceGrpc.FridgeServiceImplBase {
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                if (currentIndex < fridgeStatusList.size()) {
+                if (!fridgeStatusList.isEmpty()) {
                     FridgeProto.FridgeStatusResponse status = fridgeStatusList.get(currentIndex);
                     System.out.println("Fridge Status: " + status);
-                    currentIndex++;
+                    currentIndex = (currentIndex + 1) % fridgeStatusList.size();
                 }
             }
         }, 0, 15000);

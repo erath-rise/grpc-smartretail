@@ -21,9 +21,7 @@ public class FridgeGUI extends JFrame {
     private JLabel fridgeStatusLabel;
     private JLabel temperatureLabel;
     private JLabel timestampLabel;
-    private JButton refreshButton;
-    private JButton turnOnButton;
-    private JButton turnOffButton;
+    private JButton controlButton;
 
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
@@ -77,30 +75,14 @@ public class FridgeGUI extends JFrame {
 
         mainPanel.add(statusPanel);
 
-        JPanel controlPanel = new JPanel();
-        controlPanel.setLayout(new FlowLayout());
-
-        turnOnButton = new JButton("Turn On");
-        turnOnButton.addActionListener(new ActionListener() {
+        controlButton = new JButton("Turn On");
+        controlButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                controlFridge(true);
-                startFridgeStatusUpdater();
+                toggleFridgeControl();
             }
         });
-        controlPanel.add(turnOnButton);
-
-        turnOffButton = new JButton("Turn Off");
-        turnOffButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                controlFridge(false);
-                stopFridgeStatusUpdater();
-            }
-        });
-        controlPanel.add(turnOffButton);
-
-        mainPanel.add(controlPanel);
+        mainPanel.add(controlButton);
 
         add(mainPanel);
         pack();
@@ -136,7 +118,18 @@ public class FridgeGUI extends JFrame {
                 .setTurnOn(turnOn)
                 .build();
         blockingStub.controlFridge(request);
-        updateFridgeStatus();
+
+        if (turnOn) {
+            startFridgeStatusUpdater();
+        } else {
+            stopFridgeStatusUpdater();
+        }
+    }
+
+    private void toggleFridgeControl() {
+        boolean isFridgeOn = controlButton.getText().equals("Turn Off");
+        controlButton.setText(isFridgeOn ? "Turn On" : "Turn Off");
+        controlFridge(!isFridgeOn);
     }
 
     private void startFridgeStatusUpdater() {

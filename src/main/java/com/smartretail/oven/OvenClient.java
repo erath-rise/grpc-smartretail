@@ -48,16 +48,16 @@ public class OvenClient {
         });
 
         // Send oven status updates to the server
-        for (int i = 0; i < 3; i++) {
-            OvenProto.OvenStatusResponse statusUpdate = OvenProto.OvenStatusResponse.newBuilder()
-                    .setIsOvenOn(true)
-                    .setTemperature(180 + i * 10)
-                    .setBakingTask("Cake")
-                    .setRemainingTime(30 - i * 5)
-                    .build();
-            controlRequestObserver.onNext(statusUpdate);
-            Thread.sleep(1000);
-        }
+//        for (int i = 0; i < 3; i++) {
+//            OvenProto.OvenStatusResponse statusUpdate = OvenProto.OvenStatusResponse.newBuilder()
+//                    .setIsOvenOn(true)
+//                    .setTemperature(180 + i * 10)
+//                    .setBakingTask("Cake")
+//                    .setRemainingTime(30 - i * 5)
+//                    .build();
+//            controlRequestObserver.onNext(statusUpdate);
+//            Thread.sleep(1000);
+//        }
 
         controlRequestObserver.onCompleted();
 
