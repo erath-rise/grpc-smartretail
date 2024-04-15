@@ -196,9 +196,9 @@ public class MobileAppGUI extends JFrame {
 
         if (response != null && !response.equals(FridgeProto.FridgeStatusResponse.getDefaultInstance())) {
             String status = response.getIsFridgeOn() ? "On" : "Off";
-            fridgeStatusLabel.setText(status);
-            fridgeTemperatureLabel.setText(String.format("%.1f°C", response.getTemperature()));
-            timestampLabel.setText(dateFormat.format(new Date()));
+            fridgeStatusLabel.setText("Status: " + status);
+            fridgeTemperatureLabel.setText("Temperature: " + response.getTemperature() + "°C");
+            timestampLabel.setText("Timestamp: " + dateFormat.format(new Date()));
         } else {
             fridgeStatusLabel.setText("Status: N/A");
             fridgeTemperatureLabel.setText("Temperature: N/A");
