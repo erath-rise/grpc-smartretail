@@ -59,6 +59,7 @@ public class MobileAppServer {
         // Extract Consul configuration properties
         String consulHost = props.getProperty("consul.host");
         int consulPort = Integer.parseInt(props.getProperty("consul.port"));
+        String serviceName = props.getProperty("mobile_app.service.name");
         int servicePort = Integer.parseInt(props.getProperty("mobile_app.service.port"));
         String healthCheckInterval = props.getProperty("mobile_app.service.healthCheckInterval");
 
@@ -77,7 +78,7 @@ public class MobileAppServer {
         // Define service details
         NewService newService = new NewService();
         newService.setId("mobile-app-service");
-        newService.setName("mobile-app-service");
+        newService.setName(serviceName);
         newService.setAddress(hostAddress);
         newService.setPort(servicePort);
 

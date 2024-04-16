@@ -57,6 +57,7 @@ public class OvenServer {
 
         // Extract Consul configuration properties
         String consulHost = props.getProperty("consul.host");
+        String serviceName = props.getProperty("oven.service.name");
         int consulPort = Integer.parseInt(props.getProperty("consul.port"));
         int servicePort = Integer.parseInt(props.getProperty("oven.service.port"));
         String healthCheckInterval = props.getProperty("oven.service.healthCheckInterval");
@@ -76,7 +77,7 @@ public class OvenServer {
         // Define service details
         NewService newService = new NewService();
         newService.setId("oven-service");
-        newService.setName("oven-service");
+        newService.setName(serviceName);
         newService.setAddress(hostAddress);
         newService.setPort(servicePort);
 

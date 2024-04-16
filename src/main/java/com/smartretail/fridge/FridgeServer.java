@@ -57,6 +57,7 @@ public class FridgeServer {
 
         // Extract Consul configuration properties
         String consulHost = props.getProperty("consul.host");
+        String serviceName = props.getProperty("fridge.service.name");
         int consulPort = Integer.parseInt(props.getProperty("consul.port"));
         int servicePort = Integer.parseInt(props.getProperty("fridge.service.port"));
         String healthCheckInterval = props.getProperty("fridge.service.healthCheckInterval");
@@ -76,7 +77,7 @@ public class FridgeServer {
         // Define service details
         NewService newService = new NewService();
         newService.setId("fridge-service");
-        newService.setName("fridge-service");
+        newService.setName(serviceName);
         newService.setAddress(hostAddress);
         newService.setPort(servicePort);
 
