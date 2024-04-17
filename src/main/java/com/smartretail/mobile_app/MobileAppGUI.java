@@ -16,18 +16,16 @@ import java.util.Timer;
 public class MobileAppGUI extends JFrame {
     private MobileAppServiceGrpc.MobileAppServiceBlockingStub blockingStub;
     private FridgeServiceGrpc.FridgeServiceBlockingStub fridgeBlockingStub;
-
     private Timer timer;
-
     private JLabel ovenStatusLabel;
     private JLabel ovenTemperatureLabel;
     private JLabel ovenBakingTaskLabel;
     private JLabel ovenRemainingTimeLabel;
     private JButton ovenControlButton;
-
     private JLabel fridgeStatusLabel;
     private JLabel fridgeTemperatureLabel;
     private JLabel timestampLabel;
+    private JTextArea fridgeHistoryTextArea;
     private JButton fridgeTurnOnButton;
     private JButton fridgeTurnOffButton;
 
@@ -39,7 +37,7 @@ public class MobileAppGUI extends JFrame {
     private void initComponents() {
         setTitle("Mobile App");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setPreferredSize(new Dimension(400, 300));
+        setPreferredSize(new Dimension(600, 500));
 
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
@@ -98,6 +96,11 @@ public class MobileAppGUI extends JFrame {
 
         timestampLabel = new JLabel("Timestamp: ");
         fridgePanel.add(timestampLabel);
+
+        fridgeHistoryTextArea = new JTextArea(10, 30);
+        fridgeHistoryTextArea.setEditable(false);
+        JScrollPane scrollPane = new JScrollPane(fridgeHistoryTextArea);
+        fridgePanel.add(scrollPane);
 
 
         fridgeTurnOnButton = new JButton("Turn On");
@@ -196,9 +199,12 @@ public class MobileAppGUI extends JFrame {
 
         if (response != null && !response.equals(FridgeProto.FridgeStatusResponse.getDefaultInstance())) {
             String status = response.getIsFridgeOn() ? "On" : "Off";
+            String temperature = response.getTemperature() + "°C";
+            String timestamp = dateFormat.format(new Date());
             fridgeStatusLabel.setText("Status: " + status);
-            fridgeTemperatureLabel.setText("Temperature: " + response.getTemperature() + "°C");
-            timestampLabel.setText("Timestamp: " + dateFormat.format(new Date()));
+            fridgeTemperatureLabel.setText("Temperature: " + temperature);
+            timestampLabel.setText("Timestamp: " + timestamp);
+            fridgeHistoryTextArea.append("Status: " + status + ", Temperature: " + temperature + ", Timestamp: " + timestamp + "\n");
         } else {
             fridgeStatusLabel.setText("Status: N/A");
             fridgeTemperatureLabel.setText("Temperature: N/A");
@@ -220,7 +226,9 @@ public class MobileAppGUI extends JFrame {
                 .setTurnOn(turnOn)
                 .build();
         fridgeBlockingStub.controlFridge(request);
-        updateFridgeStatus();
+        if (!turnOn) {
+            fridgeHistoryTextArea.setText("");
+        }
     }
 
 
@@ -239,7 +247,7 @@ public class MobileAppGUI extends JFrame {
                     }
                 });
             }
-        }, 0, 15000); // Run every 15 seconds
+        }, 0, 15000);
     }
 
     private void stopFridgeStatusUpdater() {
