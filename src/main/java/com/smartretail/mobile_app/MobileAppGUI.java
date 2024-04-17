@@ -177,9 +177,9 @@ public class MobileAppGUI extends JFrame {
             String status = response.getIsFridgeOn() ? "On" : "Off";
             String temperature = response.getTemperature() + "°C";
             String timestamp = dateFormat.format(new Date());
-//            fridgeStatusLabel.setText("Status: " + status);
-//            fridgeTemperatureLabel.setText("Temperature: " + temperature);
-//            timestampLabel.setText("Timestamp: " + timestamp);
+            fridgeStatusLabel.setText("Status: " + status);
+            fridgeTemperatureLabel.setText("Temperature: " + temperature);
+            timestampLabel.setText("Timestamp: " + timestamp);
             fridgeHistoryTextArea.append("Status: " + status + ", Temperature: " + temperature + ", Timestamp: " + timestamp + "\n");
         } else {
             fridgeStatusLabel.setText("Status: N/A");
