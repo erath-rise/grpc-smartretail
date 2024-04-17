@@ -21,7 +21,8 @@ public class MobileAppGUI extends JFrame {
     private JLabel ovenTemperatureLabel;
     private JLabel ovenBakingTaskLabel;
     private JLabel ovenRemainingTimeLabel;
-    private JButton ovenControlButton;
+    private JButton getOvenStatusButton;
+    private JButton ovenTurnOffButton;
     private JLabel fridgeStatusLabel;
     private JLabel fridgeTemperatureLabel;
     private JLabel timestampLabel;
@@ -30,7 +31,7 @@ public class MobileAppGUI extends JFrame {
     private JButton fridgeTurnOffButton;
 
     public MobileAppGUI() {
-        setupGRPCConnection();
+        gRPCConnection();
         initComponents();
     }
 
@@ -70,14 +71,23 @@ public class MobileAppGUI extends JFrame {
         ovenRemainingTimeLabel = new JLabel("Remaining Time: ");
         ovenPanel.add(ovenRemainingTimeLabel);
 
-        ovenControlButton = new JButton("Turn On");
-        ovenControlButton.addActionListener(new ActionListener() {
+        getOvenStatusButton = new JButton("Get Oven Status");
+        getOvenStatusButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                toggleOvenControl();
+                updateOvenStatus();
             }
         });
-        ovenPanel.add(ovenControlButton);
+        ovenPanel.add(getOvenStatusButton);
+
+        ovenTurnOffButton = new JButton("Turn Off");
+        ovenTurnOffButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                turnOffOven();
+            }
+        });
+        ovenPanel.add(ovenTurnOffButton);
 
         return ovenPanel;
     }
@@ -103,7 +113,7 @@ public class MobileAppGUI extends JFrame {
         fridgePanel.add(scrollPane);
 
 
-        fridgeTurnOnButton = new JButton("Turn On");
+        fridgeTurnOnButton = new JButton("Get Fridge Status");
         fridgeTurnOnButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -127,7 +137,7 @@ public class MobileAppGUI extends JFrame {
         return fridgePanel;
     }
 
-    private void setupGRPCConnection() {
+    private void gRPCConnection() {
         ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50053)
                 .usePlaintext()
                 .build();
@@ -135,20 +145,12 @@ public class MobileAppGUI extends JFrame {
         fridgeBlockingStub = FridgeServiceGrpc.newBlockingStub(ManagedChannelBuilder.forAddress("localhost", 50052).usePlaintext().build());
     }
 
-    private void toggleOvenControl() {
-        boolean isOvenOn = ovenControlButton.getText().equals("Turn Off");
+    private void turnOffOven() {
         OvenProto.OvenControlRequest request = OvenProto.OvenControlRequest.newBuilder()
-                .setTurnOn(!isOvenOn)
+                .setTurnOn(false)
                 .build();
         blockingStub.controlOven(request);
-
-        ovenControlButton.setText(isOvenOn ? "Turn On" : "Turn Off");
-
-        if (isOvenOn) {
-            stopOvenStatusUpdater();
-        } else {
-            startOvenStatusUpdater();
-        }
+        displayDefaultOvenStatus();
     }
 
     private void displayDefaultOvenStatus() {
@@ -156,32 +158,6 @@ public class MobileAppGUI extends JFrame {
         ovenTemperatureLabel.setText("Temperature: N/A");
         ovenBakingTaskLabel.setText("Baking Task: N/A");
         ovenRemainingTimeLabel.setText("Remaining Time: N/A");
-    }
-
-    private void startOvenStatusUpdater() {
-        if (timer != null) {
-            timer.cancel();
-        }
-        timer = new Timer();
-        timer.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                SwingUtilities.invokeLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        updateOvenStatus();
-                    }
-                });
-            }
-        }, 0, 15000);
-    }
-
-    private void stopOvenStatusUpdater() {
-        if (timer != null) {
-            timer.cancel();
-            timer = null;
-            displayDefaultOvenStatus();
-        }
     }
 
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -201,9 +177,9 @@ public class MobileAppGUI extends JFrame {
             String status = response.getIsFridgeOn() ? "On" : "Off";
             String temperature = response.getTemperature() + "°C";
             String timestamp = dateFormat.format(new Date());
-            fridgeStatusLabel.setText("Status: " + status);
-            fridgeTemperatureLabel.setText("Temperature: " + temperature);
-            timestampLabel.setText("Timestamp: " + timestamp);
+//            fridgeStatusLabel.setText("Status: " + status);
+//            fridgeTemperatureLabel.setText("Temperature: " + temperature);
+//            timestampLabel.setText("Timestamp: " + timestamp);
             fridgeHistoryTextArea.append("Status: " + status + ", Temperature: " + temperature + ", Timestamp: " + timestamp + "\n");
         } else {
             fridgeStatusLabel.setText("Status: N/A");
