@@ -45,4 +45,14 @@ public class MobileAppServiceImpl extends MobileAppServiceGrpc.MobileAppServiceI
         fridgeBlockingStub.getFridgeStatus(fridgeRequest);
         responseObserver.onCompleted();
     }
+
+    @Override
+    public void healthCheck(MobileAppProto.HealthCheckRequest request,
+                            StreamObserver<MobileAppProto.HealthCheckResponse> responseObserver) {
+        MobileAppProto.HealthCheckResponse response = MobileAppProto.HealthCheckResponse.newBuilder()
+                .setStatus(200)
+                .build();
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
+    }
 }

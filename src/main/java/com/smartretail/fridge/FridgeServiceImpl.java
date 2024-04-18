@@ -76,6 +76,14 @@ public class FridgeServiceImpl extends FridgeServiceGrpc.FridgeServiceImplBase {
         };
     }
 
+    public void healthCheck(FridgeProto.HealthCheckRequest request, StreamObserver<FridgeProto.HealthCheckResponse> responseObserver) {
+        FridgeProto.HealthCheckResponse response = FridgeProto.HealthCheckResponse.newBuilder()
+                .setStatus(200)
+                .build();
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
+    }
+
     private void loadFridgeData() {
         try (BufferedReader br = new BufferedReader(new FileReader(fridgeDataFile))) {
             String line;
