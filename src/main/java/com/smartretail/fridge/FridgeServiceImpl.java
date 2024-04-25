@@ -28,8 +28,10 @@ public class FridgeServiceImpl extends FridgeServiceGrpc.FridgeServiceImplBase {
         if (!fridgeStatusList.isEmpty()) {
             FridgeProto.FridgeStatusResponse response = fridgeStatusList.get(currentIndex);
             responseObserver.onNext(response);
+            // Move to the next fridge status
             currentIndex = (currentIndex + 1) % fridgeStatusList.size();
         } else {
+            // if fridge status list is empty, return default response
             responseObserver.onNext(FridgeProto.FridgeStatusResponse.getDefaultInstance());
         }
         responseObserver.onCompleted();
@@ -41,6 +43,7 @@ public class FridgeServiceImpl extends FridgeServiceGrpc.FridgeServiceImplBase {
         System.out.println("Fridge is now " + (turnOn ? "on" : "off"));
 
         FridgeProto.FridgeControlResponse response = FridgeProto.FridgeControlResponse.newBuilder().build();
+
         responseObserver.onNext(response);
         responseObserver.onCompleted();
     }
@@ -87,7 +90,7 @@ public class FridgeServiceImpl extends FridgeServiceGrpc.FridgeServiceImplBase {
     private void loadFridgeData() {
         try (BufferedReader br = new BufferedReader(new FileReader(fridgeDataFile))) {
             String line;
-            br.readLine(); // Skip header line
+            br.readLine();
 
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");

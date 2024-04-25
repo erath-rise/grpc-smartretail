@@ -41,7 +41,7 @@ public class OvenServiceImpl extends OvenServiceGrpc.OvenServiceImplBase {
             System.out.println("Turning oven off...");
         }
 
-        // Oven control delay simulation
+        // Simulate the oven delay
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -58,8 +58,8 @@ public class OvenServiceImpl extends OvenServiceGrpc.OvenServiceImplBase {
 
     @Override
     public void monitorOvenStatus(OvenProto.OvenMonitorRequest request, StreamObserver<OvenProto.OvenStatusResponse> responseObserver) {
-        // Simulate real-time monitoring by sending oven status periodically
-        int numUpdates = 5;
+        // Simulate monitor by sending oven status periodically
+        int numUpdates = 7;
         for (int i = 0; i < numUpdates; i++) {
             OvenProto.OvenStatusResponse response = getRandomOvenStatusFromList();
             responseObserver.onNext(response);
@@ -154,8 +154,9 @@ public class OvenServiceImpl extends OvenServiceGrpc.OvenServiceImplBase {
 
     private static void scheduleTimer() {
         timer = new Timer();
-        timer.scheduleAtFixedRate(new Task(), 0, 15000); // Schedule the task to run every 15 seconds
-    } // Schedule the task to run every 15 seconds
+        timer.scheduleAtFixedRate(new Task(), 0, 5000);
+        // Schedule the task to run every 15 mins (for demonstration purposes, it is set to 5 seconds
+    }
 
     public static class Task extends TimerTask {
         private int index = 0;

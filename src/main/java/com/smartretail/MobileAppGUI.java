@@ -1,4 +1,4 @@
-package com.smartretail.mobile_app;
+package com.smartretail;
 
 import com.smartretail.generated.*;
 import io.grpc.ManagedChannel;
@@ -223,7 +223,8 @@ public class MobileAppGUI extends JFrame {
                     }
                 });
             }
-        }, 0, 15000);
+        }, 0, 5000);
+        // Schedule the task to run every 15 mins (for demonstration purposes, it is set to 5 seconds)
     }
 
     private void stopFridgeStatusUpdater() {
