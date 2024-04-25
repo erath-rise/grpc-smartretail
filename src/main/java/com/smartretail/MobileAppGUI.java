@@ -1,6 +1,10 @@
 package com.smartretail;
 
-import com.smartretail.generated.*;
+import mobile_app.MobileAppProto;
+import mobile_app.MobileAppServiceGrpc;
+import oven.OvenProto;
+import fridge.FridgeProto;
+import fridge.FridgeServiceGrpc;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 

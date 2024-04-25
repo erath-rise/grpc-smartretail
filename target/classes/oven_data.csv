@@ -2,6 +2,7 @@ isOvenOn,temperature,bakingTask,remainingTime
 true,180,Cake,30
 true,200,Wrap,15
 true,200,Pizza,20
+false,0,No Task,0
 true,160,Cookies,15
 true,180,Cake,15
 false,280, Pizza,20
