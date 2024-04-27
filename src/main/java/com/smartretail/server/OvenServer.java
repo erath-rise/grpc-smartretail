@@ -2,7 +2,9 @@ package com.smartretail.server;
 
 import com.ecwid.consul.v1.ConsulClient;
 import com.ecwid.consul.v1.agent.model.NewService;
+
 import com.smartretail.serviceImpl.OvenServiceImpl;
+
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 

@@ -2,7 +2,9 @@ package com.smartretail.server;
 
 import com.ecwid.consul.v1.ConsulClient;
 import com.ecwid.consul.v1.agent.model.NewService;
+
 import com.smartretail.serviceImpl.FridgeServiceImpl;
+
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 
@@ -84,7 +86,7 @@ public class FridgeServer {
 
         consulClient.agentServiceRegister(newService);
 
-        System.out.println("Registered service to Consul, Host: " + hostAddress);
+        System.out.println("Service registered to Consul successfully. Host: " + hostAddress );
     }
 
     public static void main(String[] args) throws IOException, InterruptedException {

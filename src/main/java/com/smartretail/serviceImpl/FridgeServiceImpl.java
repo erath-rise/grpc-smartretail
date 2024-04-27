@@ -2,6 +2,7 @@ package com.smartretail.serviceImpl;
 
 import fridge.FridgeProto;
 import fridge.FridgeServiceGrpc;
+
 import io.grpc.stub.StreamObserver;
 
 import java.io.BufferedReader;
