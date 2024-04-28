@@ -20,6 +20,7 @@ import java.util.Timer;
 public class MobileAppGUI extends JFrame {
     private MobileAppServiceGrpc.MobileAppServiceBlockingStub blockingStub;
     private FridgeServiceGrpc.FridgeServiceBlockingStub fridgeBlockingStub;
+
     private Timer timer;
     private JLabel ovenStatusLabel;
     private JLabel ovenTemperatureLabel;
@@ -27,6 +28,7 @@ public class MobileAppGUI extends JFrame {
     private JLabel ovenRemainingTimeLabel;
     private JButton getOvenStatusButton;
     private JButton ovenTurnOffButton;
+
     private JLabel fridgeStatusLabel;
     private JLabel fridgeTemperatureLabel;
     private JLabel timestampLabel;
@@ -141,6 +143,7 @@ public class MobileAppGUI extends JFrame {
         return fridgePanel;
     }
 
+    // Establish gRPC connection
     private void gRPCConnection() {
         ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50053)
                 .usePlaintext()
@@ -162,6 +165,15 @@ public class MobileAppGUI extends JFrame {
         ovenTemperatureLabel.setText("Temperature: N/A");
         ovenBakingTaskLabel.setText("Baking Task: N/A");
         ovenRemainingTimeLabel.setText("Remaining Time: N/A");
+    }
+
+    private void updateOvenStatus() {
+        MobileAppProto.OvenMonitorRequest request = MobileAppProto.OvenMonitorRequest.newBuilder().build();
+        OvenProto.OvenStatusResponse response = blockingStub.monitorOvenStatus(request).next();
+        ovenStatusLabel.setText("Status: " + (response.getIsOvenOn() ? "On" : "Off"));
+        ovenTemperatureLabel.setText("Temperature: " + response.getTemperature() + "°C");
+        ovenBakingTaskLabel.setText("Baking Task: " + response.getBakingTask());
+        ovenRemainingTimeLabel.setText("Remaining Time: " + response.getRemainingTime() + " seconds");
     }
 
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -199,8 +211,6 @@ public class MobileAppGUI extends JFrame {
         timestampLabel.setText("Timestamp: N/A");
     }
 
-
-
     private void controlFridge(boolean turnOn) {
         FridgeProto.FridgeControlRequest request = FridgeProto.FridgeControlRequest.newBuilder()
                 .setTurnOn(turnOn)
@@ -210,7 +220,6 @@ public class MobileAppGUI extends JFrame {
             fridgeHistoryTextArea.setText("");
         }
     }
-
 
     private void startFridgeStatusUpdater() {
         if (timer != null) {
@@ -228,7 +237,7 @@ public class MobileAppGUI extends JFrame {
                 });
             }
         }, 0, 5000);
-        // Schedule the task to run every 15 mins (for demonstration purposes, it is set to 5 seconds)
+        // Schedule the task to run every 15 mins (for demonstration purposes, set to 5 seconds)
     }
 
     private void stopFridgeStatusUpdater() {
@@ -239,15 +248,6 @@ public class MobileAppGUI extends JFrame {
     }
 
 
-    private void updateOvenStatus() {
-        MobileAppProto.OvenMonitorRequest request = MobileAppProto.OvenMonitorRequest.newBuilder().build();
-        OvenProto.OvenStatusResponse response = blockingStub.monitorOvenStatus(request).next();
-        ovenStatusLabel.setText("Status: " + (response.getIsOvenOn() ? "On" : "Off"));
-        ovenTemperatureLabel.setText("Temperature: " + response.getTemperature() + "°C");
-        ovenBakingTaskLabel.setText("Baking Task: " + response.getBakingTask());
-        ovenRemainingTimeLabel.setText("Remaining Time: " + response.getRemainingTime() + " seconds");
-    }
-
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
@@ -256,5 +256,4 @@ public class MobileAppGUI extends JFrame {
             }
         });
     }
-
 }

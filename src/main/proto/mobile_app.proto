@@ -9,19 +9,16 @@ import "fridge.proto";
 import "oven.proto";
 
 service MobileAppService {
-  // Unary RPC for controlling the oven
+
   rpc ControlOven(oven.OvenControlRequest) returns (oven.OvenControlResponse) {}
 
-  // Unary RPC for controlling the fridge
   rpc ControlFridge(fridge.FridgeControlRequest) returns (fridge.FridgeControlResponse) {}
 
-  // Server Streaming RPC for displaying real-time status of oven
   rpc MonitorOvenStatus(OvenMonitorRequest) returns (stream oven.OvenStatusResponse) {}
 
-  // Server Streaming RPC for displaying real-time status of fridge
+  //  displaying real-time status of fridge
   rpc MonitorFridgeStatus(FridgeMonitorRequest) returns (stream fridge.FridgeStatusResponse) {}
 
-  // Server-side streaming RPC for health check
   rpc HealthCheck(HealthCheckRequest) returns (stream HealthCheckResponse) {}
 }
 

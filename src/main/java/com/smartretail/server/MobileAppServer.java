@@ -16,7 +16,6 @@ public class MobileAppServer {
     private Server server;
 
     private void start() throws IOException {
-        /* The port on which the server should run */
         int port = 50053;
         server = io.grpc.ServerBuilder.forPort(port)
                 .addService(new MobileAppServiceImpl())

@@ -16,7 +16,6 @@ import java.util.Properties;
 public class FridgeServer {
     private Server server;
     private void start() throws IOException {
-        /* The port on which the server should run */
         int port = 50052;
         server = ServerBuilder.forPort(port)
                 .addService(new FridgeServiceImpl())

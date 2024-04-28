@@ -7,19 +7,15 @@ package oven;
 
 
 service OvenService {
-  // Unary RPC for getting oven status
+
   rpc GetOvenStatus(OvenStatusRequest) returns (OvenStatusResponse) {}
 
-  // Unary RPC for controlling the oven
   rpc ControlOven(OvenControlRequest) returns (OvenControlResponse) {}
 
-  // Server Streaming RPC for real-time monitoring of oven status
   rpc MonitorOvenStatus(OvenMonitorRequest) returns (stream OvenStatusResponse) {}
 
-  // Bidirectional Streaming RPC for energy optimization
   rpc OptimizeEnergy(stream OvenStatusResponse) returns (stream OvenControlRequest) {}
 
-  // Server-side streaming RPC for health check
   rpc HealthCheck(HealthCheckRequest) returns (stream HealthCheckResponse) {}
 }
 

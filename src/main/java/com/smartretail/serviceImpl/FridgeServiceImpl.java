@@ -95,7 +95,6 @@ public class FridgeServiceImpl extends FridgeServiceGrpc.FridgeServiceImplBase {
 
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
-//                String timestamp = data[0];
                 float temperature = Float.parseFloat(data[0]);
                 boolean isFridgeOn = Boolean.parseBoolean(data[1]);
 
@@ -103,7 +102,6 @@ public class FridgeServiceImpl extends FridgeServiceGrpc.FridgeServiceImplBase {
                         .setTemperature(temperature)
                         .setIsFridgeOn(isFridgeOn)
                         .build();
-
                 fridgeStatusList.add(status);
             }
         } catch (IOException e) {

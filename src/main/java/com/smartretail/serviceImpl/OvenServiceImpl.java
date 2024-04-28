@@ -58,7 +58,7 @@ public class OvenServiceImpl extends OvenServiceGrpc.OvenServiceImplBase {
 
     @Override
     public void monitorOvenStatus(OvenProto.OvenMonitorRequest request, StreamObserver<OvenProto.OvenStatusResponse> responseObserver) {
-        // Simulate monitor by sending oven status periodically
+        // monitor by sending oven status periodically
         int numUpdates = 7;
         for (int i = 0; i < numUpdates; i++) {
             OvenProto.OvenStatusResponse response = getRandomOvenStatusFromList();
@@ -78,8 +78,8 @@ public class OvenServiceImpl extends OvenServiceGrpc.OvenServiceImplBase {
         return new StreamObserver<OvenProto.OvenStatusResponse>() {
             @Override
             public void onNext(OvenProto.OvenStatusResponse status) {
-                // Check if the oven is on and the temperature is above a certain threshold
-                if (status.getIsOvenOn() && status.getTemperature() > 200) {
+                // Check if the oven is on and no baking task is running
+                if (status.getIsOvenOn() && status.getRemainingTime() == 0) {
                     // Turn off the oven to save energy
                     OvenProto.OvenControlRequest request = OvenProto.OvenControlRequest.newBuilder()
                             .setTurnOn(false)
